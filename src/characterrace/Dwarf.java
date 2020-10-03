@@ -10,10 +10,12 @@ public class Dwarf extends CharacterRace implements Utilities {
         raceName = "Dwarf";
         subRaceName = "";
         speed = 25;
-        abilityScoreModifiers[CON] += 2;
+
+        abilityScores[CON] += 2;
 
         traits.add(darkvision);
         traits.add(dwarvenResilience);
+        traits.add(dwarvenCombatTraining);
         traits.add(toolProficiency);
         traits.add(stonecunning);
     }
