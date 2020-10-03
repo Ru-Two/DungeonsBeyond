@@ -34,18 +34,25 @@ public interface Utilities {
 
     //Dwarf traits
     public static final Trait dwarvenResilience = new Trait("Dwarven Resilience","You have advantage on saving throws against poison, and you have resistance against poison damage.");
+    public static final Trait dwarvenCombatTraining = new Trait("Dwarven Combat Training", "You have proficiency with the battleaxe, handaxe, throwing hammer and warhammer.");
     public static final Trait toolProficiency = new Trait("Tool Proficiency","You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.");
     public static final Trait stonecunning = new Trait("Stonecunning","Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.");
     public static final Trait dwarvenToughness = new Trait("Dwarven Toughness","Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.");
+    public static final Trait dwarvenArmourTraining = new Trait("Dwarven Armour Training","You have proficiency with light and medium armour.");
 
     //Elf traits
+    public static final Trait keenSenses = new Trait("Keen Senses","You have proficiency in the Perception skill.");
     public static final Trait feyAncestry = new Trait("Fey Ancestry","You have advantage on saving throws against being charmed, and magic can’t put you to sleep.");
     public static final Trait trance = new Trait("Trance","Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep");
+    public static final Trait elfWeaponTraining = new Trait("Elf Weapon Training","You have proficiency with the longsword, shortsword, longbow, and shortbow.");
     public static final Trait cantrip = new Trait("Cantrip","You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.");
+    public static final Trait extraLanguage = new Trait("Extra Language", "You can speak, read and write an extra language of your choice.");
+    public static final Trait fleetOfFoot = new Trait("Fleet of Foot","Your base walking speed increases to 35 feet.");
     public static final Trait maskOfTheWild = new Trait("Mask of the Wild","You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.");
     public static final Trait superiorDarkvision = new Trait("Superior Darkvision","Your darkvision has a radius of 120ft.");
     public static final Trait sunlightSensitivity = new Trait("Sunlight Sensitivity","You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.");
     public static final Trait drowMagic = new Trait("Drow Magic","You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.");
+    public static final Trait drowWeaponTraining = new Trait("Drow Weapon Training","You have proficiency with rapier, shortsword, and hand crossbows.");
 
     //Halfling traits
     public static final Trait lucky = new Trait("Lucky","When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.");
@@ -80,7 +87,11 @@ public interface Utilities {
                                                                 "Fire Starter.\n This device produces a miniature flame, which you can use to light a candle, torch or campfire. Using the device requires your action.\n" +
                                                                 "Music Box.\n When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches a songs end or when it is closed.");
 
+    //Half-elf traits
+    public static final Trait skillVersatility = new Trait("Skill Versatility","You gain proficiency in two skills of your choice.");
+
     //Half-orc traits
+    public static final Trait menacing = new Trait("Menacing","You gain proficiency in Intimidation skill.");
     public static final Trait relentlessEndurance = new Trait("Relentless Endurance","When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.");
     public static final Trait savageAttacks = new Trait("Savage Attacks","When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.");
 
