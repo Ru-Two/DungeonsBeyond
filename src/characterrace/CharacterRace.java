@@ -1,5 +1,6 @@
 package characterrace;
 
+import character.Skill;
 import utilities.*;
 import java.util.*;
 
@@ -8,14 +9,17 @@ public abstract class CharacterRace {
     protected String raceName;
     protected String subRaceName;
     protected int speed;
-    protected ArrayList<String> traits;
+    protected ArrayList<Trait> traits;
+    protected ArrayList<Integer> skills;
     protected int[] abilityScoreModifiers;
-    protected int[] additionalAbilityScoreModifiers;
 
     public CharacterRace(){
         abilityScoreModifiers = new int[6];
-        additionalAbilityScoreModifiers = new int[6];
-        traits = new ArrayList<String>();
+
+        Arrays.fill(abilityScoreModifiers, 0);
+
+        traits = new ArrayList<Trait>();
+        skills = new ArrayList<Integer>();
     }
 
 }
