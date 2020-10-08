@@ -5,6 +5,12 @@ public abstract class Item {
     protected int cost;
     protected int weight;
 
+    public Item(){
+        name = "null";
+        cost = 0;
+        weight = 0;
+    }
+
     public Item(String n, int c, int w){
         name = n;
         cost = c;
