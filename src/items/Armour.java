@@ -5,6 +5,7 @@ public class Armour extends Item{
     private int str;
     private int modifier;
     private boolean stl;
+
     public Armour(String n, int base_ac, int mod, int Strength, Boolean Stealth, int c, int w){
         super(n,c,w);
         ac = base_ac;
