@@ -1,15 +1,12 @@
 package characterclass;
 
-import utilities.Utilities;
+import static utilities.Utilities.*;
 
-public class Barbarian extends CharacterClass implements Utilities {
+public class Barbarian extends CharacterClass {
+
     Barbarian(){
-        super();
+        super("Barbarian", 12);
 
-        className = "Barbarian";
-        startingHealth = 12 + CON;
-        hitDie = 12;
-        weaponProficiencies.add("");
         features.add(abilityScoreImprovement);
         features.add(rage);
         features.add(unarmoredDefense);
