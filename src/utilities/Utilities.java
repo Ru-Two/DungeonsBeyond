@@ -29,6 +29,7 @@ public final class Utilities {
     public static final int SLEIGHT_OF_HAND = 15;
     public static final int STEALTH = 16;
     public static final int SURVIVAL = 17;
+    
 
     //weapon types
     public static final int SIMPLE_MELEE = 0;
@@ -113,4 +114,86 @@ public final class Utilities {
     public static final Trait infernalLegacy = new Trait("InfernalLegacy","You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.");
 
 
+
+    //Universal feature
+    public static final Feature abilityScoreImprovement = new Feature(4, "Ability Score Improvement", "When you reach the 4th level, and again at 8th, 12th, 16th,\n" +
+            "and 19th level, you can increase on ability score of your\n" +
+            "choice by 2, or you can increase two ability scores of\n" +
+            "your choice by 1. As normal, you can't increase an ability\n" +
+            "score above 20 using this feature.");
+
+    //Barbarian features
+    public static final Feature rage = new Feature(1, "Rage", "In battle, you fight with primal ferocity. On your turn,\n" +
+            "you can enter a rage as a bonus action.\n" +
+            "While raging, you gain the following benefits if you\n" +
+            "aren't wearing heavy armor:\n" +
+            "- You have advantage on Strength checks and Strength saving throws.\n" +
+            "- When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, \n" +
+            "as shown in the Rage Damage column of the Barbarian table.\n" +
+            "- You have resistance to bludgeoning, piercing, and slashing damage.\n\n" +
+            "If you are able to cast spells, you can't cast them or\n" +
+            "concentrate on them while raging.\n" +
+            "Your rage lasts for 1 minute. It ends early if you are\n" +
+            "knocked unconscious or if your turn ends and you\n" +
+            "haven't attacked a hostile creature since your last turn\n" +
+            "or taken damage since then. You can also end your rage\n" +
+            "on your turn as a bonus action.\n" +
+            "Once you have raged a number of times shown\n" +
+            "for your barbarian level in the Rages column of the\n" +
+            "Barbarian table, you must finish a long rest before you\n" +
+            "can rage again.");
+    public static final Feature unarmoredDefense = new Feature(1, "Unarmored Defense", "While you are not wearing any armor, your Armor Class\n" +
+            "equals 10+ your Dexterity modifier + your Constitution\n" +
+            "modifier. You can use a shield and still gain this benefit.");
+    public static final Feature recklessAttack = new Feature(2, "Reckless Attack", "Starting at 2nd level, you can throw aside all concern\n" +
+            "for defense to attack with fierce desperation. When\n" +
+            "you make your first attack on your turn, you can decide\n" +
+            "to attack recklessly. Doing so gives you advantage on\n" +
+            "melee weapon attack rolls using Strength during this\n" +
+            "turn, but attack rolls against you have advantage until\n" +
+            "your next turn.");
+    public static final Feature dangerSense = new Feature(2, "Danger Sense", "At 2nd level, you gain an uncanny sense of when things\n" +
+            "nearby aren't as they should be, giving you an edge\n" +
+            "when you dodge away from danger.\n" +
+            "You have advantage on Dexterity saving throws\n" +
+            "against effects that you can see, such as traps and spells.\n" +
+            "To gain this benefit, you can't be blinded, deafened, or\n" +
+            "incapacitated.");
+    public static final Feature primalPath = new Feature(3, "Primal Path", "At 3rd level, you choose a path that shapes the nature of\n" +
+            "your rage. Choose the Path of the Berserker or the Path\n" +
+            "of the Totem Warrior, both detailed at the end of the\n" +
+            "class description. Your choice grants you features at 3rd\n" +
+            "level and again at 6th, 10th, and 14th levels.");
+    public static final Feature extraAttack = new Feature(5, "Extra Attack", "Beginning at 5th level, you can attack twice, instead of\n" +
+            "once, whenever you take the Attack action on your turn.");
+    public static final Feature fastMovement = new Feature(5, "Fast Movement", "Starting at 5th level, your speed increases by 10 feet\n" +
+            "while you aren't wearing heavy armor.");
+    public static final Feature feralInstinct = new Feature(7, "Feral Instinct", "By 7th level, your instincts are so honed that you have\n" +
+            "advantage on initiative rolls.\n" +
+            "Additionally, if you are surprised at the beginning of\n" +
+            "combat and aren't incapacitated, you can act normally\n" +
+            "on your on your first turn, but only if you enter your rage before\n" +
+            "doing anything else on that turn.");
+    public static final Feature brutalCritical = new Feature(9, "Brutal Critical", "Beginning at 9th level, you can roll one additional\n" +
+            "weapon damage die when determining the extra\n" +
+            "damage for a critical hit with a melee attack.\n" +
+            "This increases to two additional dice at 13th level\n" +
+            "and three additional dive at 17th level");
+    public static final Feature relentlessRage = new Feature(11, "Relentless Rage", "Starting at the 11th level, your rage can keep you fighting\n" +
+            "despite grievous wounds. IF you drop to 0 hit points\n" +
+            "while you're raging and don't die outright, you can make\n" +
+            "a DC 10 Constitution saving throw. If you succeed, you\n" +
+            "drop to 1 hit point instead.\n" +
+            "Each time you use this feature after the first, the DC\n" +
+            "increases by 5. When you finish a short or long rest, the\n" +
+            "DC resets to 10.");
+    public static final Feature persistentRage = new Feature(15, "Persistent Rage", "Beginning at 15th level, your rage is so fierce that\n" +
+            "it ends early only if you fall unconscious or if you\n" +
+            "choose to end it.");
+    public static final Feature indomitableMight = new Feature(18, "Indomitable Might", "Beginning at 18th level, if your total for a Strength\n" +
+            "check is less than your Strength score, you can use that\n" +
+            "score in place of the total.");
+    public static final Feature primalChampion = new Feature(20, "Primal Champion", "At 20th level, you embody the power of the wilds. Your\n" +
+            "Strength and Constitution scores increase by 4. Your\n" +
+            "maximum for those scores is now 24.");
 }
