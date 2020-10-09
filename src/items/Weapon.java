@@ -12,7 +12,6 @@ public class Weapon extends Item{
     private int weaponType;
     private int dmgModifer;
 
-    // add Dice class and make dmgType of that class
     public Weapon(String n, int weaponType, Dice dmgDice, String dmgType, String properties, int c, int w){
         super(n,c,w);
         this.weaponType = weaponType;
@@ -31,7 +30,7 @@ public class Weapon extends Item{
         this.dmgDice = new Dice(dmgDice);
         this.dmgType = dmgType;
         this.properties = properties;
-        
+
         if (weaponType == SIMPLE_RANGED || weaponType == MARTIAL_RANGED) { dmgModifer = DEX; }
         if (weaponType == SIMPLE_MELEE || weaponType == MARTIAL_MELEE) { dmgModifer = STR; }
     }

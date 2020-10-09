@@ -11,6 +11,11 @@ public abstract class Item {
         weight = 0;
     }
 
+    public Item(String n){
+        this();
+        name = n;
+    }
+
     public Item(String n, int c, int w){
         name = n;
         cost = c;
