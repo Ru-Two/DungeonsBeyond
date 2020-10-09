@@ -1,6 +1,7 @@
 package character;
 
 import utilities.*;
+import static utilities.Utilities.*;
 
 public class Skill {
     private String name;

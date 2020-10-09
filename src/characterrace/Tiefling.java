@@ -1,8 +1,8 @@
 package characterrace;
 
-import utilities.*;
+import static utilities.Utilities.*;
 
-public class Tiefling extends CharacterRace implements Utilities {
+public class Tiefling extends CharacterRace {
 
     public Tiefling(){
         super();

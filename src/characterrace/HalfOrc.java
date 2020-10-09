@@ -1,8 +1,8 @@
 package characterrace;
 
-import utilities.*;
+import static utilities.Utilities.*;
 
-public class HalfOrc extends CharacterRace implements Utilities {
+public class HalfOrc extends CharacterRace {
 
     public HalfOrc(){
         super();

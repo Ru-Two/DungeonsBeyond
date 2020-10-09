@@ -1,6 +1,7 @@
 package characterrace;
 
 import utilities.*;
+import static utilities.Utilities.*;
 import java.util.*;
 
 public abstract class CharacterRace {

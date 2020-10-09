@@ -1,5 +1,7 @@
 package characterrace;
 
+import static utilities.Utilities.*;
+
 public class HalflingLightfoot extends Halfling{
 
     public HalflingLightfoot(){

@@ -1,8 +1,8 @@
 package characterrace;
 
-import utilities.*;
+import static utilities.Utilities.*;
 
-public class Gnome extends CharacterRace implements Utilities {
+public class Gnome extends CharacterRace {
 
     public Gnome(){
         super();

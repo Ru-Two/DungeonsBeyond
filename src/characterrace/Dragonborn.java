@@ -1,8 +1,8 @@
 package characterrace;
 
-import utilities.*;
+import static utilities.Utilities.*;
 
-public class Dragonborn extends CharacterRace implements Utilities {
+public class Dragonborn extends CharacterRace {
 
     public Dragonborn(){
         super();

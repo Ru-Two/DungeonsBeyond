@@ -1,5 +1,7 @@
 package characterrace;
 
+import static utilities.Utilities.*;
+
 public class ElfWood extends Elf {
 
     public ElfWood(){

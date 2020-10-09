@@ -1,8 +1,8 @@
 package characterrace;
 
-import utilities.*;
+import static utilities.Utilities.*;
 
-public class Dwarf extends CharacterRace implements Utilities {
+public class Dwarf extends CharacterRace {
 
     public Dwarf(){
         super();

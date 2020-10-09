@@ -1,6 +1,6 @@
 package utilities;
 
-public interface Utilities {
+public final class Utilities {
 
     // Order of ability scores
     public static final int STR = 0;
@@ -10,6 +10,7 @@ public interface Utilities {
     public static final int WIS = 4;
     public static final int CHA = 5;
 
+    //order of skills
     public static final int ACROBATICS = 0;
     public static final int ANIMAL_HANDLING = 1;
     public static final int ARCANA = 2;
@@ -28,6 +29,12 @@ public interface Utilities {
     public static final int SLEIGHT_OF_HAND = 15;
     public static final int STEALTH = 16;
     public static final int SURVIVAL = 17;
+
+    //weapon types
+    public static final int SIMPLE_MELEE = 0;
+    public static final int SIMPLE_RANGED = 1;
+    public static final int MARTIAL_MELEE = 2;
+    public static final int MARTIAL_RANGED = 3;
 
     //universal traits
     public static final Trait darkvision = new Trait("Darkvision", "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.");

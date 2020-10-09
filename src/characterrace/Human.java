@@ -1,8 +1,8 @@
 package characterrace;
 
-import utilities.*;
+import static utilities.Utilities.*;
 
-public class Human extends CharacterRace implements Utilities {
+public class Human extends CharacterRace {
 
     public Human(){
         super();

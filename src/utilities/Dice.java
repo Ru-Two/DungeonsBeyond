@@ -23,6 +23,7 @@ public class Dice {
         numOfDice = Integer.parseInt(nums[1]);
     }
 
+    //rolls dice and returns result
     public int roll(){
         int sum = 0;
         for (int i = 0; i < numOfDice; i++){
@@ -31,6 +32,7 @@ public class Dice {
         return sum;
     }
 
+    //rolls dice and provides an array containing each die's result
     public int[] roll_GrabArr(){
         int [] arr = new int[numOfDice];
         for (int i = 0; i < numOfDice; i++){
