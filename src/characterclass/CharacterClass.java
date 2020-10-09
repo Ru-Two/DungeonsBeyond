@@ -2,7 +2,7 @@ package characterclass;
 
 import utilities.*;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public abstract class CharacterClass {
     protected String className;
@@ -10,7 +10,7 @@ public abstract class CharacterClass {
     protected Dice hitDie;
 
     protected String[] savingThrows;
-    protected ArrayList<Feature> features;
+    protected ArrayList<ArrayList<Feature>> features;
     protected ArrayList<Integer> weaponProficiencies;
     protected ArrayList<Integer> armourProficiencies;
     protected ArrayList<Integer> skillProficiencies;
@@ -18,7 +18,9 @@ public abstract class CharacterClass {
     public CharacterClass(){
         savingThrows = new String[2];
 
-        features = new ArrayList<Feature>();
+        features = new ArrayList<ArrayList<Feature>>();
+        for (int i = 0; i <= 20; i++){ features.add(new ArrayList<Feature>()); }
+
         weaponProficiencies = new ArrayList<Integer>();
         armourProficiencies = new ArrayList<Integer>();
         skillProficiencies = new ArrayList<Integer>();
@@ -61,8 +63,12 @@ public abstract class CharacterClass {
         return savingThrows;
     }
 
-    public ArrayList<Feature> getFeatures() {
+    public ArrayList<ArrayList<Feature>> getFeatures() {
         return features;
+    }
+
+    public ArrayList<Feature> getFeatures(int lvl){
+        return features.get(lvl);
     }
 
     public ArrayList<Integer> getArmourProficiencies() {
