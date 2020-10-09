@@ -45,6 +45,14 @@ public class Dice {
         return (int)(Math.random() * (max-min+1)) + min;
     }
 
+    public int getSides() {
+        return sides;
+    }
+
+    public int getNumOfDice() {
+        return numOfDice;
+    }
+
     public String toString(){
         return "" + numOfDice + "d" + sides;
     }
