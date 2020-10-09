@@ -36,6 +36,12 @@ public final class Utilities {
     public static final int MARTIAL_MELEE = 2;
     public static final int MARTIAL_RANGED = 3;
 
+    //armour types
+    public static final int LIGHT_ARMOUR = 0;
+    public static final int MEDIUM_ARMOUR = 1;
+    public static final int HEAVY_ARMOUR = 2;
+    public static final int SHIELD_ARMOUR = 3;
+
     //universal traits
     public static final Trait darkvision = new Trait("Darkvision", "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.");
 
