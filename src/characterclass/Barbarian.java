@@ -12,7 +12,7 @@ public class Barbarian extends CharacterClass {
         features.get(unarmoredDefense.getLevel()).add(unarmoredDefense);
         features.get(recklessAttack.getLevel()).add(recklessAttack);
         features.get(dangerSense.getLevel()).add(dangerSense);
-        features.get(primalPath.getLevel()).add(primalPath);
+        //features.get(primalPath.getLevel()).add(primalPath);      //have not implemented player input yet
         features.get(extraAttack.getLevel()).add(extraAttack);
         features.get(fastMovement.getLevel()).add(fastMovement);
         features.get(feralInstinct.getLevel()).add(feralInstinct);
@@ -21,8 +21,7 @@ public class Barbarian extends CharacterClass {
         features.get(persistentRage.getLevel()).add(persistentRage);
         features.get(indomitableMight.getLevel()).add(indomitableMight);
         features.get(primalChampion.getLevel()).add(primalChampion);
-
     }
 
-
+    
 }

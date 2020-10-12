@@ -114,6 +114,7 @@ public final class Utilities {
     public static final Trait infernalLegacy = new Trait("InfernalLegacy","You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.");
 
 
+    // TODO: 10/11/2020 maybe switch feature names to all caps: in case of bard feature spell casting where multiple paragraphs are written it makes it look like each paragraph is a different feature when printed
 
     //Universal feature
     public static final Feature abilityScoreImprovement = new Feature(4, "Ability Score Improvement", "When you reach the 4th level, and again at 8th, 12th, 16th,\n" +
@@ -196,4 +197,121 @@ public final class Utilities {
     public static final Feature primalChampion = new Feature(20, "Primal Champion", "At 20th level, you embody the power of the wilds. Your\n" +
             "Strength and Constitution scores increase by 4. Your\n" +
             "maximum for those scores is now 24.");
+
+    //Bard features
+    public static final Feature spellcasting = new Feature(1, "Spellcasting", "You have learned to untangle and reshape the fabric of\n" +
+            "reality in harmony with your wishes and music. Your\n" +
+            "spells are part of your vast repertoire, magic that you\n" +
+            "can tune to different situations. S ee chapter 10 for the\n" +
+            "general rules of spellcasting and chapter 11 for the\n" +
+            "bard spell list.\n\n" +
+            "Cantrips\n" +
+            "You know two cantrips of your choice from the bard\n" +
+            "spell list. You learn additional bard cantrips of your\n" +
+            "choice at higher levels, as show n in the Cantrips Known\n" +
+            "column of the Bard table.\n\n" +
+            "Spell Slots\n" +
+            "The Bard table show s how many spell slots you have to\n" +
+            "cast your spells of 1st level and higher. To cast one of\n" +
+            "these spells, you must expend a slot of the spell’s level\n" +
+            "or higher. You regain all expended spell slots when you\n" +
+            "finish a long rest.\n\n" +
+            "For example, if you know the 1st-level spell cure\n" +
+            "wounds and have a 1st-level and a 2nd-level spell slot\n" +
+            "available, you can cast cure wounds using either slot.\n" +
+            "Spells Known of 1st Level and Higher\n" +
+            "You know four 1st-level spells of your choice from the\n" +
+            "bard spell list.\n\n" +
+            "The Spells Known column of the Bard table shows\n" +
+            "when you learn m ore bard spells of your choice. Each of\n" +
+            "these spells must be of a level for which you have spell\n" +
+            "slots, as show n on the table. For instance, when you\n" +
+            "reach 3rd level in this class, you can learn one new spell\n" +
+            "of 1st or 2nd level.\n\n" +
+            "Additionally, when you gain a level in this class, you\n" +
+            "can choose one of the bard spells you know and replace\n" +
+            "it with another spell from the bard spell list, which also\n" +
+            "must be of a level for which you have spell slots.\n\n" +
+            "Spellcasting Ability\n" +
+            "Charisma is your spellcasting ability for your bard\n" +
+            "spells. Your magic comes from the heart and soul you\n" +
+            "pour into the performance of your music or oration.\n" +
+            "You use your Charisma whenever a spell refers to your\n" +
+            "spellcasting ability. In addition, you use your Charisma\n" +
+            "modifier when setting the saving throw DC for a bard\n" +
+            "spell you cast and when making an attack roll with one.\n\n" +
+            "Spell save DC = 8 + proficiency bonus + CHA modifier\n" +
+            "Spell attack modifier = proficiency bonus + CHA modifier\n\n" +
+            "Ritual Casting\n" +
+            "You can cast any bard spell you know as a ritual if that\n" +
+            "spell has the ritual tag.\n\n" +
+            "Spellcasting Focus\n" +
+            "You can use a musical instrument\n" +
+            "as a spellcasting focus for your bard spells.");
+    public static final Feature bardicInspiration = new Feature(1, "Bardic Inspiration", "You can inspire others through stirring words or music.\n" +
+            "To do so, you use a bonus action on your turn to choose\n" +
+            "one creature other than yourself within 60 feet of you\n" +
+            "w ho can hear you. That creature gains one Bardic\n" +
+            "Inspiration die, a d6.\n\n" +
+            "Once within the next 10 minutes, the creature can roll\n" +
+            "the die and add the number rolled to one ability check,\n" +
+            "attack roll, or saving throw it makes. The creature can\n" +
+            "wait until after it rolls the d20 before deciding to use the\n" +
+            "Bardic Inspiration die, but must decide before the DM\n" +
+            "says whether the roll succeeds or fails. Once the Bardic\n" +
+            "Inspiration die is rolled, it is lost. A creature can have\n" +
+            "only one Bardic Inspiration die at a time. \n\n" +
+            "You can use this feature a number of tim es equal\n" +
+            "to your Charisma modifier (a minim um of once). You\n" +
+            "regain any expended uses w hen you finish a long rest.\n\n" +
+            "Your Bardic Inspiration die changes when you reach\n" +
+            "certain levels in this class. The die becomes a d8 at 5th\n" +
+            "level, a d10 at 10th level, and a d12 at 15th level.");
+    public static final Feature jackOfAllTrades = new Feature(2, "Jack of All Trades", "Starting at 2nd level, you can add half your proficiency\n" +
+            "bonus, rounded down, to any ability check you make that\n" +
+            "doesn’t already include your proficiency bonus.");
+    public static final Feature songOfRest = new Feature(2, "Song of Rest", "Beginning at 2nd level, you can use soothing music or\n" +
+            "oration to help revitalize your wounded allies during\n" +
+            "a short rest. If you or any friendly creatures who can\n" +
+            "hear your performance regain hit points at the end of\n" +
+            "the short rest, each of those creatures regains an extra\n" +
+            "1d6 hit points.\n" +
+            "The extra hit points increase when you reach certain\n" +
+            "levels in this class: to 1d8 at 9th level, to 1d10 at 13th\n" +
+            "level, and to 1d 12 at 17th level.");
+    public static final Feature bardCollege = new Feature(3, "Bard College", "At 3rd level, you delve into the advanced techniques of\n" +
+            "a bard college of your choice: the College of Lore or the\n" +
+            "College of Valor, both detailed at the end of the class\n" +
+            "description. Your choice grants you features at 3rd level\n" +
+            "and again at 6th and 14th level.");
+    public static final Feature expertise = new Feature (3, "Expertise", "At 3rd level, choose two of your skill proficiencies. Your\n" +
+            "proficiency bonus is doubled for any ability check you\n" +
+            "make that uses either of the chosen proficiencies.\n" +
+            "At 10th level, you can choose another two skill\n" +
+            "proficiencies to gain this benefit.");
+    public static final Feature fontOfInspiration = new Feature(5, "Font of Inspiration", "Beginning when you reach 5th level, you regain all of\n" +
+            "your expended uses of Bardic Inspiration when you\n" +
+            "finish a short or long rest.");
+    public static final Feature coutercharm = new Feature(6, "Countercharm", "At 6th level, you gain the ability to use musical notes or\n" +
+            "words of power to disrupt mind-influencing effects. As\n" +
+            "an action, you can start a performance that lasts until\n" +
+            "the end of your next turn. During that time, you and any\n" +
+            "friendly creatures within 30 feet of you have advantage\n" +
+            "on saving throws against being frightened or charmed.\n" +
+            "A creature must be able to hear you to gain this benefit.\n" +
+            "The performance ends early if you are incapacitated or\n" +
+            "silenced or if you voluntarily end it (no action required).");
+    public static final Feature magicalSecrets = new Feature(10, "Magical Secrets", "By 10th level, you have plundered magical knowledge\n" +
+            "from a wide spectrum of disciplines. Choose two spells\n" +
+            "from any class, including this one. A spell you choose\n" +
+            "must be of a level you can cast, as shown on the Bard\n" +
+            "table, or a cantrip.\n" +
+            "The chosen spells count as bard spells for you and are\n" +
+            "included in the number in the Spells Known column of\n" +
+            "the Bard table.\n" +
+            "You learn two additional spells from any class at 14th\n" +
+            "level and again at 18th level.");
+    public static Feature superiorInspiration = new Feature(20, "Superior Inspiration", "At 20th level, when you roll initiative and have no uses\n" +
+            "of Bardic Inspiration left, you regain one use.");
+
 }
