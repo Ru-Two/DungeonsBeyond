@@ -20,6 +20,7 @@ public class CharacterInfo {
     private int proficiencyBonus;
     private Dice hitDice;
     private boolean inspiration;
+    private boolean[][] deathSaves;
 
     private int armourClass;
     private Armour currentArmour;
@@ -47,6 +48,9 @@ public class CharacterInfo {
         inspiration = false;
         armourClass = 10; //temporary
         shield = false;
+
+        deathSaves = new boolean[2][3];
+        resetDeathSaves();
 
         //ability scores and saving throws
         abilityScores = new AbilityScore[6];
@@ -126,10 +130,69 @@ public class CharacterInfo {
         for (int s:cclass.getSavingThrows()){ savingThrows[s] = true; }
         for (int sp:cclass.getSkillProficiencies()){ skills[sp].setProficient(PROFICIENT); }
 
-        // TODO: Starting health after determining CON ability score
         maxHp = cclass.getStartingHealth() + getMod(CON);
-        tmpMaxHp = maxHp;
+        resetHp();
+    }
+
+    //Levels up your character
+    public void levelUp(){
+        levelUpTo(level+1);
+    }
+
+    public void levelUpTo(int targetLevel){
+        int i = level;
+        for (; i < targetLevel; i++) {
+            level++;
+            maxHp += hitDice.roll();
+            resetHp();
+            updateProficiency();
+            // TODO: ability score improvement on level up check and perform, as well as any features that modify stats
+        }
+    }
+
+    public void resetHp(){
         currHp = maxHp;
+        tmpMaxHp = maxHp;
+    }
+
+    public void resetDeathSaves(){
+        Arrays.fill(deathSaves[SUCCESS], false);
+        Arrays.fill(deathSaves[FAILURE], false);
+    }
+
+    //marks one death save as failed and returns if character is still alive or not as boolean
+    public boolean failDeathSave(){
+        if (deathSaves[FAILURE][0] == false){
+            deathSaves[FAILURE][0] = true;
+            return false;
+        }
+        else if (deathSaves[FAILURE][1] == false){
+            deathSaves[FAILURE][1] = true;
+            return false;
+        }
+        else if (deathSaves[FAILURE][2] == false){
+            deathSaves[FAILURE][2] = true;
+            return true;
+        }
+        return false;
+    }
+
+    //marks one death save as succeeded and returns if player is back up from being unconscious or not as boolean
+    public boolean succedDeathSave(){
+        if (deathSaves[SUCCESS][0] == false){
+            deathSaves[SUCCESS][0] = true;
+            return false;
+        }
+        else if (deathSaves[SUCCESS][1] == false){
+            deathSaves[SUCCESS][1] = true;
+            return false;
+        }
+        else if (deathSaves[SUCCESS][2] == false){
+            deathSaves[SUCCESS][2] = true;
+            currHp = 1;
+            return true;
+        }
+        return false;
     }
 
     public static int[] rollAbilityScores(){
@@ -172,6 +235,10 @@ public class CharacterInfo {
 
     public int getProficiencyBonus() {
         return proficiencyBonus;
+    }
+
+    public void updateProficiency(){
+        proficiencyBonus = (int)((level - 1)/4) + 2;
     }
 
     public int getMaxHp() {
@@ -219,8 +286,16 @@ public class CharacterInfo {
         return cclass;
     }
 
+    public String getClassName(){
+        return cclass.getClassName();
+    }
+
     public CharacterRace getRace() {
         return race;
+    }
+
+    public String getRaceName(){
+        return race.getRaceName();
     }
 
     public AbilityScore[] getAbilityScores() {
