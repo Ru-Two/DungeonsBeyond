@@ -10,14 +10,14 @@ public abstract class CharacterClass {
     protected Dice hitDie;
     protected int spellcasterAbility;
 
-    protected String[] savingThrows;
+    protected int[] savingThrows;
     protected ArrayList<ArrayList<Feature>> features;
     protected ArrayList<Integer> weaponProficiencies;
     protected ArrayList<Integer> armourProficiencies;
     protected ArrayList<Integer> skillProficiencies;
 
     public CharacterClass(){
-        savingThrows = new String[2];
+        savingThrows = new int[2];
 
         features = new ArrayList<ArrayList<Feature>>();
         for (int i = 0; i <= 20; i++){ features.add(new ArrayList<Feature>()); }
@@ -60,7 +60,7 @@ public abstract class CharacterClass {
         return hitDie;
     }
 
-    public String[] getSavingThrows() {
+    public int[] getSavingThrows() {
         return savingThrows;
     }
 
