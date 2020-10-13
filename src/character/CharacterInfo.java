@@ -3,8 +3,9 @@ package character;
 import characterrace.*;
 import characterclass.*;
 
-import java.beans.PersistenceDelegate;
 import java.util.*;
+
+import items.*;
 import utilities.*;
 import static utilities.Utilities.*;
 
@@ -21,6 +22,8 @@ public class CharacterInfo {
     private boolean inspiration;
 
     private int armourClass;
+    private Armour currentArmour;
+    private boolean shield;
     private int initiative;
     private int speed;
 
@@ -36,11 +39,14 @@ public class CharacterInfo {
     private ArrayList<Integer> weaponProficiencies;
     private ArrayList<Integer> armourProficiencies;
 
+    private ArrayList<Item> items;
+
     public CharacterInfo(){
         level = 1;
         proficiencyBonus = 2;
         inspiration = false;
-        armourClass = 10;
+        armourClass = 10; //temporary
+        shield = false;
 
         //ability scores and saving throws
         abilityScores = new AbilityScore[6];
@@ -89,17 +95,16 @@ public class CharacterInfo {
         this.characterName = characterName;
         cclass = c;
         race = r;
-        // TO DO: User's choice on what ability scores they want. 4 options - predetermined set, rolled set, point buy, manual input
+        // TODO: User's choice on what ability scores they want. 4 options - predetermined set, rolled set, point buy, manual input
         this.mergeClass();
         this.mergeRace();
-
+        initiative = getMod(DEX);
     }
 
     // Pulls information from current race in class and merges the info over to character
-    public void mergeRace(){
-        ArrayList<Integer> raceSkills = race.getSkills();
-        for(int i = 0; i < raceSkills.size(); i++){
-            skills[raceSkills.get(i)].setProficient(PROFICIENT);
+    private void mergeRace(){
+        for(int rs:race.getSkillsAsArray()){
+            skills[rs].setProficient(PROFICIENT);
         }
 
         traits.addAll(race.getTraits());
@@ -112,17 +117,22 @@ public class CharacterInfo {
     }
 
     // Pulls information from current characterClass in this class and merges the info over to character
-    public void mergeClass(){
+    private void mergeClass(){
         weaponProficiencies.addAll(cclass.getWeaponProficiencies());
         armourProficiencies.addAll(cclass.getArmourProficiencies());
         features.addAll(cclass.getFeatures());
         hitDice = cclass.getHitDie();
 
         for (int s:cclass.getSavingThrows()){ savingThrows[s] = true; }
-        // TO DO: skill proficiencies, health and other stuff
+        for (int sp:cclass.getSkillProficiencies()){ skills[sp].setProficient(PROFICIENT); }
+
+        // TODO: Starting health after determining CON ability score
+        maxHp = cclass.getStartingHealth() + getMod(CON);
+        tmpMaxHp = maxHp;
+        currHp = maxHp;
     }
 
-    public int[] rollAbilityScores(){
+    public static int[] rollAbilityScores(){
         int[] tmpScores = new int[6];
         Arrays.fill(tmpScores, 0);
         int[] rolled;
@@ -135,5 +145,99 @@ public class CharacterInfo {
         }
         return tmpScores;
     }
+
+    public int getMod(int type){
+        return abilityScores[type].getModifier();
+    }
+
+    public String getPlayerName(){
+        return playerName;
+    }
+
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getProficiencyBonus() {
+        return proficiencyBonus;
+    }
+
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    public int getTmpMaxHp() {
+        return tmpMaxHp;
+    }
+
+    public int getCurrHp() {
+        return currHp;
+    }
+
+    public void setShield(boolean s){
+        shield = s;
+        equipArmour(currentArmour);
+    }
+
+    public void equipArmour(Armour a){
+        currentArmour = a;
+
+        int tmpType = a.getArmourType();
+
+        armourClass = currentArmour.getAc();
+
+        if (tmpType == LIGHT_ARMOUR) { armourClass += getMod(DEX); }
+        if (tmpType == MEDIUM_ARMOUR) { armourClass += getMod(DEX) <= 2 ? getMod(DEX) : 2; }
+        if (shield) { armourClass += 2; }
+    }
+
+    public int getArmourClass() {
+        return armourClass;
+    }
+
+    public boolean hasInspiration() {
+        return inspiration;
+    }
+
+    public Dice getHitDice() {
+        return hitDice;
+    }
+
+    public CharacterClass getCharacterClass() {
+        return cclass;
+    }
+
+    public CharacterRace getRace() {
+        return race;
+    }
+
+    public AbilityScore[] getAbilityScores() {
+        return abilityScores;
+    }
+
+    public Skill[] getSkills() {
+        return skills;
+    }
+
+    public ArrayList<Trait> getTraits() {
+        return traits;
+    }
+
+    public ArrayList<ArrayList<Feature>> getFeatures() {
+        return features;
+    }
+
 
 }
