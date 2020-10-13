@@ -586,7 +586,7 @@ public final class Utilities {
             "can perform the somatic and verbal components of a\n" +
             "druid spell while in a beast shape, but you aren't able to\n" +
             "provide material components.");
-    public static final Feature archdruid = new Feature(20, "Archdruid", "At 20th level, you can use your W ild Shape an unlimited\n" +
+    public static final Feature archdruid = new Feature(20, "Archdruid", "At 20th level, you can use your Wild Shape an unlimited\n" +
             "number of times.\n" +
             "\tAdditionally, you can ignore the verbal and somatic\n" +
             "components of your druid spells, as well as any material\n" +
