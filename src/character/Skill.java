@@ -4,12 +4,13 @@ import utilities.*;
 import static utilities.Utilities.*;
 
 public class Skill {
+
     private String name;
-    private boolean proficient;
+    private int proficient;
     private int modifier;
     private int constName;
 
-    public Skill(String n, boolean p, int m, int c){
+    public Skill(String n, int p, int m, int c){
         name = n;
         proficient = p;
         modifier = m;
@@ -18,12 +19,12 @@ public class Skill {
 
     public Skill(String n, int m, int c){
         name = n;
-        proficient = false;
+        proficient = NOT_PROFICIENT;
         modifier = m;
         constName = c;
     }
 
-    public void setProficient(boolean p) {
+    public void setProficient(int p) {
         proficient = p;
     }
 
@@ -31,7 +32,7 @@ public class Skill {
         return name;
     }
 
-    public boolean isProficient() {
+    public int isProficient() {
         return proficient;
     }
 
