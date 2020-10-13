@@ -23,22 +23,32 @@ public class Dice {
         numOfDice = Integer.parseInt(nums[1]);
     }
 
-    //rolls dice and returns result
-    public int roll(){
+    //rolls dice n times
+    public int roll(int n){
         int sum = 0;
-        for (int i = 0; i < numOfDice; i++){
+        for (int i = 0; i < numOfDice*n; i++){
             sum += rand(1,sides);
         }
         return sum;
     }
 
-    //rolls dice and provides an array containing each die's result
-    public int[] roll_GrabArr(){
-        int [] arr = new int[numOfDice];
-        for (int i = 0; i < numOfDice; i++){
+    //rolls dice and returns result
+    public int roll(){
+        return roll(1);
+    }
+
+    //returns array of rolled die n times
+    public int[] roll_GrabArr(int n){
+        int [] arr = new int[numOfDice*n];
+        for (int i = 0; i < numOfDice*n; i++){
             arr[i] = rand(1,sides);
         }
         return arr;
+    }
+
+    //rolls dice and provides an array containing each die's result
+    public int[] roll_GrabArr(){
+        return roll_GrabArr(1);
     }
 
     public int rand(int min, int max){
