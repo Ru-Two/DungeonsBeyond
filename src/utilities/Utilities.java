@@ -446,4 +446,151 @@ public final class Utilities {
             "you finish a long rest.\n" +
             "\tAt 20th level, your call for intervention succeeds\n" +
             "automatically, no roll required.");
+    
+     //Druid features
+    // TODO: 10/13/2020 druid circle needs a lot of stuff 
+    // TODO: 10/13/2020 maybe create animal files for wild shape 
+    public static final Feature druidic = new Feature(1, "Druidic", "You know Druidic, the secret language of druids. You\n" +
+            "can speak the language and use it to leave hidden\n" +
+            "messages. You and others who know this language\n" +
+            "automatically spot such a message. Others spot the\n" +
+            "message's presence with a successful DC 15 Wisdom\n" +
+            "(Perception) check but can’t decipher it without magic.");
+    public static final Feature getSpellcastingDruid = new Feature(1, "Spellcasting", "Drawing on the divine essence of nature itself, you\n" +
+            "can cast spells to shape that essence to your will. See\n" +
+            "chapter 10 for the general rules of spellcasting and\n" +
+            "chapter 11 for the druid spell list.\n\n" +
+            "Cantrips\n" +
+            "At 1st level, you know two cantrips of your choice from\n" +
+            "the druid spell list. You learn additional druid cantrips\n" +
+            "of your choice at higher levels, as shown in the Cantrips\n" +
+            "Known column of the Druid table.\n\n" +
+            "Preparing and Casting Spells\n" +
+            "The Druid table show s how many spell slots you have\n" +
+            "to cast your spells of 1st level and higher. To cast one of\n" +
+            "these druid spells, you must expend a slot of the spell's\n" +
+            "level or higher. You regain all expended spell slots when\n" +
+            "you finish a long rest.\n" +
+            "\tYou prepare the list of druid spells that are available\n" +
+            "for you to cast, choosing from the druid spell list. When\n" +
+            "you do so, choose a number o f druid spells equal to\n" +
+            "your Wisdom modifier + your druid level (minimum of\n" +
+            "one spell). The spells must be of a level for which you\n" +
+            "have spell slots.\n" +
+            "\tFor example, if you are a 3rd-level druid, you have four\n" +
+            "1st-level and two 2nd-level spell slots. With a Wisdom\n" +
+            "of 16, your list of prepared spells can include six spells\n" +
+            "of 1st or 2nd level, in any combination. If you prepare\n" +
+            "the 1st-level spell cure wounds, you can cast it using\n" +
+            "a 1st-level or 2nd-level slot. Casting the spell doesn't\n" +
+            "remove it from your list of prepared spells.\n" +
+            "\tYou can also change your list of prepared spells when\n" +
+            "you finish a long rest. Preparing a new list of druid\n" +
+            "spells requires time spent in prayer and meditation: at\n" +
+            "least 1 minute per spell level for each spell on your list.\n\n" +
+            "Spellcasting Ability\n" +
+            "Wisdom is your spellcasting ability for your druid\n" +
+            "spells, since your magic draws upon your devotion and\n" +
+            "attunement to nature. You use your Wisdom whenever\n" +
+            "a spell refers to your spellcasting ability. In addition,\n" +
+            "you use your Wisdom modifier when setting the saving\n" +
+            "throw DC for a druid spell you cast and when making an\n" +
+            "attack roll with one.\n\n" +
+            "Spell save DC = 8 + proficiency bonus + WIS modifier\n" +
+            "Spell attack modifier = proficiency bonus + WIS modifier\n\n" +
+            "Ritual Casting\n" +
+            "You can cast a druid spell as a ritual if that spell has the\n" +
+            "ritual tag and you have the spell prepared.\n\n" +
+            "Spellcasting Focus\n" +
+            "You can use a druidic focus as a\n" +
+            "spellcasting focus for your druid spells.");
+    public static final Feature wildShape = new Feature(2, "Wild Shape", "Starting at 2nd level, you can use your action to\n" +
+            "magically assume the shape of a beast that you have\n" +
+            "seen before. You can use this feature twice. You regain\n" +
+            "expended uses when you finish a short or long rest.\n" +
+            "\tYour druid level determines the beasts you can\n" +
+            "transform into, as shown in the Beast Shapes table. At\n" +
+            "2nd level, for example, you can transform into any beast\n" +
+            "that has a challenge rating of 1/4 or lower that doesn't\n" +
+            "have a flying or swimming speed.\n\n" +
+            "Beast Shapes\n" +
+            "Level\tmax CR\tLimitations\t\t\t\t\t\tExample\n" +
+            " 2nd\t 1/4\tNo flying or swimming speed\t\tWolf\n" +
+            " 4th\t 1/2\tNo flying speed\t\t\t\t\tCrocodile\n" +
+            " 8th\t 1\t\t--\t\t\t\t\t\t\t\tGiant eagle\n\n" +
+            "You can stay in a beast shape for a number of hours\n" +
+            "equal to half your druid level (rounded down). You then\n" +
+            "revert to your normal form unless you expend another\n" +
+            "use of this feature. You can revert to your normal\n" +
+            "form earlier by using a bonus action on your turn. You\n" +
+            "automatically revert if you fall unconscious, drop to\n" +
+            "0 hit points, or die.\n" +
+            "\tWhile you are transformed, the following rules apply:\n" +
+            "- Your game statistics are replaced by the statistics of\n" +
+            "the beast, but you retain your alignment, personality,\n" +
+            "and Intelligence, Wisdom , and Charisma scores. You\n" +
+            "\n" +
+            "also retain all of your skill and saving throw proficien-\n" +
+            "cies, in addition to gaining those of the creature. If\n" +
+            "\n" +
+            "the creature has the same proficiency as you and the\n" +
+            "bonus in its stat block is higher than yours, use the\n" +
+            "creature’s bonus instead of yours. If the creature has\n" +
+            "any legendary or lair actions, you can't use them.\n" +
+            "- When you transform, you assume the beast’s hit\n" +
+            "points and Hit Dice. W hen you revert to your norm al\n" +
+            "form, you return to the number of hit points you had\n" +
+            "before you transformed. However, if you revert as a\n" +
+            "result of dropping to 0 hit points, any excess damage\n" +
+            "carries over to your norm al form. For example, if you\n" +
+            "take 10 damage in animal form and have only 1 hit\n" +
+            "point left, you revert and take 9 damage. As long as\n" +
+            "the excess damage doesn't reduce your norm al form\n" +
+            "to 0 hit points, you aren't knocked unconscious.\n" +
+            "- You can’t cast spells, and your ability to speak or\n" +
+            "take any action that requires hands is limited to the\n" +
+            "capabilities of your beast form. Transforming doesn't\n" +
+            "break your concentration on a spell you’ve already\n" +
+            "cast, however, or prevent you from taking actions that\n" +
+            "are part of a spell, such as call lightning, that you’ve\n" +
+            "already cast.\n" +
+            "- You retain the benefit of any features from your class,\n" +
+            "race, or other source and can use them if the new\n" +
+            "form is physically capable of doing so. However, you\n" +
+            "\n" +
+            "can’t use any o f your special senses, such as darkvi-\n" +
+            "sion, unless your new form also has that sense.\n" +
+            "\n" +
+            "- You choose whether your equipment falls to the\n" +
+            "ground in your space, merges into your new form, or\n" +
+            "is worn by it. W orn equipment functions as normal,\n" +
+            "but the DM decides whether it is practical for the new\n" +
+            "\n" +
+            "form to w ear a piece of equipment, based on the crea-\n" +
+            "ture’s shape and size. Your equipment doesn't change\n" +
+            "\n" +
+            "size or shape to match the new form, and any equipment\n" +
+            "that the new form can’t wear must either fall to the\n" +
+            "ground or merge with it. Equipment that merges with\n" +
+            "the form has no effect until you leave the form.");
+    public static final Feature druidCircle = new Feature(2, "Druid Circle", "At 2nd level, you choose to identify with a circle of druids:\n" +
+            "the Circle of the Land or the Circle of the Moon, both\n" +
+            "detailed at the end of the class description. Your choice\n" +
+            "grants you features at 2nd level and again at 6th, 10th,\n" +
+            "and 14th level.");
+    public static final Feature timelessBody = new Feature(18, "Timeless Body", "Starting at 18th level, the primal magic that you wield\n" +
+            "causes you to age more slowly. For every 10 years that\n" +
+            "pass, your body ages only 1 year.");
+    public static final Feature beastSpells = new Feature(18, "Beast Spells", "Beginning at 18th level, you can cast many of your druid\n" +
+            "spells in any shape you assume using Wild Shape. You\n" +
+            "can perform the somatic and verbal components of a\n" +
+            "druid spell while in a beast shape, but you aren't able to\n" +
+            "provide material components.");
+    public static final Feature archdruid = new Feature(20, "Archdruid", "At 20th level, you can use your W ild Shape an unlimited\n" +
+            "number of times.\n" +
+            "\tAdditionally, you can ignore the verbal and somatic\n" +
+            "components of your druid spells, as well as any material\n" +
+            "components that lack a cost and aren't consumed by a\n" +
+            "spell. You gain this benefit in both your normal shape\n" +
+            "and your beast shape from Wild Shape.");
 }
