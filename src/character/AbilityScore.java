@@ -57,7 +57,7 @@ public class AbilityScore {
     }
 
     public int getScore(){
-        return base + racialBonus + miscBonus + otherModifier;
+        return (base + racialBonus + miscBonus + otherModifier) <= 20 ? base + racialBonus + miscBonus + otherModifier : 20;
     }
 
     public int getModifier(){

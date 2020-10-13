@@ -10,8 +10,6 @@ public final class Utilities {
     public static final Dice d6 = new Dice(6);
     public static final Dice d4 = new Dice(4);
 
-    public static final int[] proficiencies = {0,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6};
-
     // Order of ability scores
     public static final int STR = 0;
     public static final int DEX = 1;
@@ -39,6 +37,10 @@ public final class Utilities {
     public static final int SLEIGHT_OF_HAND = 15;
     public static final int STEALTH = 16;
     public static final int SURVIVAL = 17;
+
+    //death saves
+    public static final int SUCCESS = 0;
+    public static final int FAILURE = 1;
 
     //proficiencies
     public static final int NOT_PROFICIENT = 0;
