@@ -11,6 +11,6 @@ public class DungeonsBeyond {
     }
 
     public static void main(String[] args){
-        System.out.println(bardicInspiration);
+        System.out.println(divineIntervention);
     }
 }
