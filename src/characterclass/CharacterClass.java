@@ -8,6 +8,7 @@ public abstract class CharacterClass {
     protected String className;
     protected int startingHealth;
     protected Dice hitDie;
+    protected int spellcasterAbility;
 
     protected String[] savingThrows;
     protected ArrayList<ArrayList<Feature>> features;

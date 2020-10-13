@@ -1,13 +1,13 @@
 package characterclass;
 
 import static utilities.Utilities.*;
-
 public class Bard extends CharacterClass{
     Bard(){
         super("Bard", 8);
+        spellcasterAbility = CHA;
 
         features.get(abilityScoreImprovement.getLevel()).add(abilityScoreImprovement);
-        features.get(spellcasting.getLevel()).add(spellcasting);
+        features.get(spellcastingBard.getLevel()).add(spellcastingBard);
         features.get(bardicInspiration.getLevel()).add(bardicInspiration);
         features.get(jackOfAllTrades.getLevel()).add(jackOfAllTrades);
         features.get(songOfRest.getLevel()).add(songOfRest);

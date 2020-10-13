@@ -199,7 +199,9 @@ public final class Utilities {
             "maximum for those scores is now 24.");
 
     //Bard features
-    public static final Feature spellcasting = new Feature(1, "Spellcasting", "You have learned to untangle and reshape the fabric of\n" +
+    // TODO: 10/12/2020 add tabs to the paragraphs as shown in book
+    // TODO: 10/12/2020 IMPLEMENT THE BARD COLLEGES
+    public static final Feature spellcastingBard = new Feature(1, "Spellcasting", "You have learned to untangle and reshape the fabric of\n" +
             "reality in harmony with your wishes and music. Your\n" +
             "spells are part of your vast repertoire, magic that you\n" +
             "can tune to different situations. S ee chapter 10 for the\n" +
@@ -211,7 +213,7 @@ public final class Utilities {
             "choice at higher levels, as show n in the Cantrips Known\n" +
             "column of the Bard table.\n\n" +
             "Spell Slots\n" +
-            "The Bard table show s how many spell slots you have to\n" +
+            "The Bard table shows how many spell slots you have to\n" +
             "cast your spells of 1st level and higher. To cast one of\n" +
             "these spells, you must expend a slot of the spell’s level\n" +
             "or higher. You regain all expended spell slots when you\n" +
@@ -262,14 +264,14 @@ public final class Utilities {
             "Inspiration die is rolled, it is lost. A creature can have\n" +
             "only one Bardic Inspiration die at a time. \n\n" +
             "You can use this feature a number of tim es equal\n" +
-            "to your Charisma modifier (a minim um of once). You\n" +
+            "to your Charisma modifier (a minimum of once). You\n" +
             "regain any expended uses w hen you finish a long rest.\n\n" +
             "Your Bardic Inspiration die changes when you reach\n" +
             "certain levels in this class. The die becomes a d8 at 5th\n" +
             "level, a d10 at 10th level, and a d12 at 15th level.");
     public static final Feature jackOfAllTrades = new Feature(2, "Jack of All Trades", "Starting at 2nd level, you can add half your proficiency\n" +
             "bonus, rounded down, to any ability check you make that\n" +
-            "doesn’t already include your proficiency bonus.");
+            "doesn't already include your proficiency bonus.");
     public static final Feature songOfRest = new Feature(2, "Song of Rest", "Beginning at 2nd level, you can use soothing music or\n" +
             "oration to help revitalize your wounded allies during\n" +
             "a short rest. If you or any friendly creatures who can\n" +
@@ -314,4 +316,124 @@ public final class Utilities {
     public static Feature superiorInspiration = new Feature(20, "Superior Inspiration", "At 20th level, when you roll initiative and have no uses\n" +
             "of Bardic Inspiration left, you regain one use.");
 
+    //Cleric features
+    // TODO: 10/12/2020 fix this since it has book references
+    // TODO: 10/12/2020 IMPLEMENT THE DIVINEDOMAIN CHOICES
+    public static Feature spellcastingCleric = new Feature(1, "Spellcasting", "As a conduit for divine power, you can cast cleric spells.\n" +
+            "See chapter 10 for the general rules of spellcasting and\n" +
+            "chapter 11 for the cleric spell list.\n\n" +
+            "Cantrips\n" +
+            "At 1st level, you know three cantrips of your choice from\n" +
+            "the cleric spell list. You learn additional cleric cantrips\n" +
+            "of your choice at higher levels, as shown in the Cantrips\n" +
+            "Known column of the Cleric table.\n\n" +
+            "Preparing and Casting Spells\n" +
+            "The Cleric table shows how many spell slots you have\n" +
+            "to cast your spells of 1st level and higher. To cast one of\n" +
+            "these spells, you must expend a slot of the spell’s level\n" +
+            "or higher. You regain all expended spell slots when you\n" +
+            "finish a long rest.\n" +
+            "\tYou prepare the list of cleric spells that are available\n" +
+            "for you to cast, choosing from the cleric spell list. When\n" +
+            "you do so, choose a number of cleric spells equal to\n" +
+            "your Wisdom modifier + your cleric level (minimum of\n" +
+            "one spell). The spells must be of a level for which you\n" +
+            "have spell slots.\n" +
+            "\tFor example, if you are a 3rd-level cleric, you have four\n" +
+            "1st-level and two 2nd-level spell slots. With a Wisdom\n" +
+            "of 16, your list of prepared spells can include six spells\n" +
+            "of 1st or 2nd level, in any combination. If you prepare\n" +
+            "the 1st-level spell cure wounds, you can cast it using\n" +
+            "a 1st-level or 2nd-level slot. Casting the spell doesn't\n" +
+            "remove it from your list of prepared spells.\n" +
+            "\tYou can change your list of prepared spells when you\n" +
+            "finish a long rest. Preparing a new list of cleric spells\n" +
+            "requires time spent in prayer and meditation: at least 1\n" +
+            "minute per spell level for each spell on your list.\n\n" +
+            "Spellcasting Ability\n" +
+            "Wisdom is your spellcasting ability for your cleric spells.\n" +
+            "The power of your spells comes from your devotion to\n" +
+            "your deity. You use your Wisdom whenever a cleric spell\n" +
+            "refers to your spellcasting ability. In addition, you use\n" +
+            "your Wisdom modifier when setting the saving throw\n" +
+            "DC for a cleric spell you cast and when making an\n" +
+            "attack roll with one.\n\n" +
+            "Spell save DC = 8 + proficiency bonus + WIS modifier\n" +
+            "Spell attack modifier = proficiency bonus + WIS modifier\n\n" +
+            "Ritual Casting\n" +
+            "You can cast a cleric spell as a ritual if that spell has the\n" +
+            "ritual tag and you have the spell prepared.\n\n" +
+            "Spellcasting Focus\n" +
+            "You can use a holy symbol as a\n" +
+            "spellcasting focus for your cleric spells.");
+    public static final Feature divineDomain = new Feature(1, "Divine Domain", "Choose one domain related to your deity: Knowledge,\n" +
+            "Life, Light, Nature, Tempest, Trickery, or War. Each\n" +
+            "domain is detailed at the end of the class description,\n" +
+            "and each one provides examples of gods associated\n" +
+            "with it. Your choice grants you domain spells and other\n" +
+            "features when you choose it at 1st level. It also grants\n" +
+            "you additional ways to use Channel Divinity when you\n" +
+            "gain that feature at 2nd level, and additional benefits at\n" +
+            "6th, 8th, and 17th levels.\n\n" +
+            "Domain Spells\n" +
+            "Each domain has a list of spells—its domain spells—\n" +
+            "that you gain at the cleric levels noted in the domain\n" +
+            "description. Once you gain a dom ain spell, you always\n" +
+            "have it prepared, and it doesn't count against the\n" +
+            "number of spells you can prepare each day.\n" +
+            "\tIf you have a dom ain spell that doesn't appear on the\n" +
+            "cleric spell list, the spell is nonetheless a cleric spell for you.");
+    public static final Feature channelDivinity = new Feature(2, "Channel Divinity", "At 2nd level, you gain the ability to channel divine\n" +
+            "energy directly from your deity, using that energy to fuel\n" +
+            "magical effects. You start with two such effects: Turn\n" +
+            "Undead and an effect determined by your domain. Some\n" +
+            "domains grant you additional effects as you advance in\n" +
+            "levels, as noted in the dom ain description.\n" +
+            "\tWhen you use your Channel Divinity, you choose\n" +
+            "which effect to create. You must then finish a short or\n" +
+            "long rest to use your Channel Divinity again.\n" +
+            "\tSome Channel Divinity effects require saving throws.\n" +
+            "When you use such an effect from this class, the DC\n" +
+            "equals your cleric spell save DC.\n" +
+            "\tBeginning at 6th level, you can use your Channel\n" +
+            "Divinity twice between rests, and beginning at 18th level,\n" +
+            "you can use it three times between rests. When you finish\n" +
+            "a short or long rest, you regain your expended uses.\n\n" +
+            "Channel Divinity: Turn Undead\n" +
+            "As an action, you present your holy symbol and speak a\n" +
+            "prayer censuring the undead. Each undead that can see\n" +
+            "or hear you within 30 feet of you must make a Wisdom\n" +
+            "saving throw. If the creature fails its saving throw, it is\n" +
+            "turned for 1 minute or until it takes any damage.\n" +
+            "\tA turned creature must spend its turns trying to move\n" +
+            "as far away from you as it can, and it can’t willingly\n" +
+            "move to a space within 30 feet of you. It also can’t take\n" +
+            "reactions. For its action, it can use only the Dash action\n" +
+            "or try to escape from an effect that prevents it from\n" +
+            "moving. If there’s nowhere to move, the creature can use\n" +
+            "the Dodge action.");
+    public static final Feature destroyUndead = new Feature(5, "Destroy Undead", "Starting at 5th level, when an undead fails its saving\n" +
+            "throw against your Turn Undead feature, the creature is\n" +
+            "instantly destroyed if its challenge rating is at or below a\n" +
+            "certain threshold, as shown in the Destroy Undead table.\n\n" +
+            "Destroy Undead:\n" +
+            "Cleric Level \tDestroys Undead of CR...\n" +
+            "5th\t\t\t\t1/2 or lower\n" +
+            "8th\t\t\t\t1 or lower\n" +
+            "11th\t\t\t2 or lower\n" +
+            "14th\t\t\t3 or lower\n" +
+            "17th\t\t\t4 or lower");
+    public static final Feature divineIntervention = new Feature(10, "Divine Intervention", "Beginning at 10th level, you can call on your deity to\n" +
+            "intervene on your behalf when your need is great.\n" +
+            "\tImploring your deity's aid requires you to use your\n" +
+            "action. Describe the assistance you seek, and roll\n" +
+            "percentile dice. If you roll a number equal to or lower\n" +
+            "than your cleric level, your deity intervenes. The DM\n" +
+            "chooses the nature of the intervention; the effect of any\n" +
+            "cleric spell or cleric dom ain spell would be appropriate.\n" +
+            "\tIf your deity intervenes, you can’t use this feature\n" +
+            "again for 7 days. Otherwise, you can use it again after\n" +
+            "you finish a long rest.\n" +
+            "\tAt 20th level, your call for intervention succeeds\n" +
+            "automatically, no roll required.");
 }
