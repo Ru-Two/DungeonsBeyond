@@ -22,6 +22,18 @@ public abstract class CharacterRace {
         skills = new ArrayList<Integer>();
     }
 
+    public String getRaceName() {
+        return raceName;
+    }
+
+    public String getSubRaceName() {
+        return subRaceName;
+    }
+
+    public int getSpeed(){
+        return speed;
+    }
+
     public int[] getAbilityScores(){
         return abilityScores;
     }
