@@ -2,6 +2,16 @@ package utilities;
 
 public final class Utilities {
 
+    public static final Dice d100 = new Dice(100);
+    public static final Dice d20 = new Dice(20);
+    public static final Dice d12 = new Dice(12);
+    public static final Dice d10 = new Dice(10);
+    public static final Dice d8 = new Dice(8);
+    public static final Dice d6 = new Dice(6);
+    public static final Dice d4 = new Dice(4);
+
+    public static final int[] proficiencies = {0,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6};
+
     // Order of ability scores
     public static final int STR = 0;
     public static final int DEX = 1;
