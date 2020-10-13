@@ -34,12 +34,16 @@ public final class Utilities {
     public static final int NATURE = 10;
     public static final int PERCEPTION = 11;
     public static final int PERFORMANCE = 12;
-    public static final int PERSUASSION = 13;
+    public static final int PERSUASION = 13;
     public static final int RELIGION = 14;
     public static final int SLEIGHT_OF_HAND = 15;
     public static final int STEALTH = 16;
     public static final int SURVIVAL = 17;
-    
+
+    //proficiencies
+    public static final int NOT_PROFICIENT = 0;
+    public static final int PROFICIENT = 1;
+    public static final int DOUBLE_PROFICIENT = 2;
 
     //weapon types
     public static final int SIMPLE_MELEE = 0;
