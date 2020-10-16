@@ -43,14 +43,23 @@ public class CharacterInfo {
     private ArrayList<Item> items;
 
     public CharacterInfo(){
+        playerName = "";
+        characterName = "";
+
         level = 1;
+        maxHp = 10; //temporary
+        resetHp();
         proficiencyBonus = 2;
+        hitDice = new Dice(10); //temporary
         inspiration = false;
-        armourClass = 10; //temporary
         shield = false;
+        equipArmour(new Armour("No Armour", 10, NO_ARMOUR, false, 0, 0)); //temporary
 
         deathSaves = new boolean[2][3];
         resetDeathSaves();
+
+        initiative = 0; //temporary
+        speed = 30; //temporary
 
         //ability scores and saving throws
         abilityScores = new AbilityScore[6];
@@ -91,6 +100,11 @@ public class CharacterInfo {
         features = new ArrayList<ArrayList<Feature>>();
         weaponProficiencies = new ArrayList<Integer>();
         armourProficiencies = new ArrayList<Integer>();
+    }
+
+    public CharacterInfo(String characterName){
+        this();
+        this.characterName = characterName;
     }
 
     public CharacterInfo(String playerName, String characterName, CharacterClass c, CharacterRace r){
@@ -207,6 +221,14 @@ public class CharacterInfo {
             }
         }
         return tmpScores;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
     }
 
     public int getMod(int type){
