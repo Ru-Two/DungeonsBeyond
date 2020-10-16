@@ -8,6 +8,8 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 import utilities.*;
+
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import static utilities.Utilities.*;
 
 public class DungeonsBeyond {
@@ -27,6 +29,7 @@ public class DungeonsBeyond {
         mainWindow.setIconImage(getImage("src/graphics/db_logo.png"));
         mainWindow.setSize(sheetSize);
         mainWindow.setLayout(null);
+        mainWindow.setDefaultCloseOperation(EXIT_ON_CLOSE);
         mainWindow.setVisible(true);
     }
 
