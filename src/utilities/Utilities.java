@@ -600,4 +600,409 @@ public final class Utilities {
             "components that lack a cost and aren't consumed by a\n" +
             "spell. You gain this benefit in both your normal shape\n" +
             "and your beast shape from Wild Shape.");
+
+    //Fighter Features
+    // TODO 10/18/2020 Different Martial Archetypes: Champion, Battle Master, Eldritch Knight
+    public static final Feature fightingStyle = new Feature(1, "Fighting Style", "You adopt a particular style of fighting as your specialty\n" +
+            "Choose one of the following options. You can't take a\n"+
+            "Fighting Style option more than once, even if you later\n"+
+            "get to choose again.\n\n"+
+
+            "Archer\n"+
+            "You gain a +2 bonus to attack rolls to make with\n"+
+            "ranged weapons\n\n"+
+
+            "Defense\n"+
+            "While you are wearing armor, you gain a +1 bonus to AC\n\n"+
+
+            "Dueling\n"+
+            "When you are wielding a melee weapon in on hand and\n"+
+            "no other weapons, you gain a +2 bonus to damage rolls\n"+
+            "with that weapon.\n\n"+
+
+            "Great Weapon Fighting\n"+
+            "When you roll a 1 or 2 on a damage die for an attack you\n"+
+            "make with a melee weapon that you are wielding with\n"+
+            "two hands, you can reroll the die and must use the new\n"+
+            "roll, even if the new roll is a 1 or a 2. The weapon must\n"+
+            "have the two-handed or versatile property for you to gain\n"+
+            "this benefit.\n\n"+
+
+            "Protection\n"+
+            "When a creature you can see attacks a target other\n"+
+            "than you that is within 5 feet of you, you can use your\n"+
+            "reaction to impose disadvantage on the attack roll. You\n"+
+            "must be wielding a shield\n\n"+
+
+            "Two-Weapon Fighting\n"+
+            "When you engage in two-weapon fighting, you can add\n"+
+            "your ability modifier to the damage of the attack\n"
+            );
+
+    public static final Feature secondWind = new Feature(1, "SecondWind", "You have a limited well of stamina that you can draw on\n"+
+            "to protect yourself from harm. On you rturn you can use\n" +
+            "a bonus action to regain hit points equal to 1d10 + your\n" +
+            "fighter level.\n" +
+            "   Once you use this feature, you must finish a short or\n" +
+            "long rest before you can use it again.\n"
+            );
+
+    public static final Feature actionSurge = new Feature(2, "Action Surge", "Starting at 2nd level, you can push yourself beyond your\n" +
+            "normal limited for a moment. On your turn, you can take\n" +
+            "one additional action on top of your regular action and a\n" +
+            "possible bonus action.\n" +
+            "Once you use this feature, you must finish a short or\n" +
+            "long rest before you can use it again. Starting at 17th\n" +
+            "level, you can use it twice before a rest, but only once on\n" +
+            "the same turn.\n"
+            );
+
+    public static final Feature martialArchetype = new Feature(3,"martialArchetype", "At 3rd level, you ch oose an archetype that you strive to\n" +
+            "emulate in your com bat styles and techniques. Choose\n" +
+            "Champion, Battle Master, or Eldritch Knight, all detailed\n" +
+            "at the end of the class description. The archetype you\n" +
+            "choose grants you features at 3rd level and again at 7th,\n" +
+            "10th, 15th, and 18th level. \n");
+
+    //ability Score Improvement level 4
+    //extra attack level 5
+
+    public static final Feature Indomitable = new Feature(9, "Indomitable","Beginning at 9th level, you can reroll a saving throw that\n" +
+            "you fail. If you do so, you must use the new roll, and you\n" +
+            "can’t use this feature again until you finish a long rest.\n" +
+            "You can use this feature tw ice between long rests\n" +
+            "starting at 13th level and three times between long rests\n" +
+            "starting at 17th level. \n"
+            );
+
+    //Monk Features
+    // TODO 10/18/2020 Monastic Traditions: Way of the open hand, Way of the shadow, Way of the four elements
+    //Unarmored Defence level 1
+
+    public static final Feature martialArts = new Feature(1, "Martial Arts", "At 1st level, your practice of martial arts gives you\n" +
+            "mastery of com bat styles that use unarmed strikes and\n" +
+            "monk weapons, which are shortswords and any simple\n" +
+            "melee weapons that don’t have the two-handed or\n" +
+            "heavy property.\n" +
+            "You gain the following benefits while you are unarmed\n" +
+            "or wielding only monk weapons and you aren’t wearing\n" +
+            "arm or or wielding a shield:\n" +
+            "• You can use Dexterity instead of Strength for the\n" +
+            "attack and damage rolls of your unarmed strikes and\n" +
+            "monk weapons.\n" +
+            "• You can roll a d4 in place of the normal damage\n" +
+            "of your unarmed strike or monk weapon. This die\n" +
+            "changes as you gain monk levels, as shown in the\n" +
+            "Martial Arts column of the Monk table.\n" +
+            "• When you use the Attack action with an unarmed\n" +
+            "strike or a monk weapon on your turn, you can make\n" +
+            "one unarmed strike as a bonus action. For example, if\n" +
+            "you take the Attack action and attack with a quarter-\n" +
+            "staff, you can also make an unarmed strike as a bonus\n" +
+            "action, assuming you haven't already taken a bonus\n" +
+            "action this turn.\n" +
+            "Certain monasteries use specialized forms of the\n" +
+            "monk weapons. For example, you might use a club\n" +
+            "that is two lengths of wood connected by a short chain\n" +
+            "(called a nunchaku) or a sickle with a shorter, straighter\n" +
+            "blade (called a kama). Whatever name you use for a\n" +
+            "monk weapon, you can use the game statistics provided\n" +
+            "for the weapon in chapter 5."
+            );
+
+    public static final Feature Ki = new Feature(2,"Ki", "Starting at 2nd level, your training allows you to\n" +
+            "harness the mystic energy of ki. Your access to this\n" +
+            "energy is represented by a number of ki points. Your\n" +
+            "monk level determines the number of points you have,\n" +
+            "as shown in the Ki Points column of the Monk table.\n" +
+            "You can spend these points to fuel various ki features.\n" +
+            "You start knowing three such features: Flurry of Blows,\n" +
+            "Patient Defense, and Step of the Wind. You learn more\n" +
+            "ki features as you gain levels in this class.\n" +
+            "When you spend a ki point, it is unavailable until\n" +
+            "you finish a short or long rest, at the end of which you\n" +
+            "draw all of your expended ki back into yourself. You\n" +
+            "must spend at least 30 minutes of the rest meditating to\n" +
+            "regain your ki points.\n" +
+            "Some of your ki features require your target to make\n" +
+            "a saving throw to resist the feature’s effects. The saving\n" +
+            "throw DC is calculated as follows:\n\n" +
+
+            "Ki save DC = 8 + your proficiency bonus +\n" +
+            "your Wisdom modifier\n\n" +
+
+            "Flurry of Blows\n" +
+            "Immediately after you take the Attack action on your\n" +
+            "turn, you can spend 1 ki point to make two unarmed\n" +
+            "strikes as a bonus action.\n\n" +
+
+            "Patient Defense\n" +
+            "You can spend 1 ki point to take the Dodge action as a\n" +
+            "bonus action on your turn.\n\n" +
+
+            "Step of the Wind\n" +
+            "You can spend 1 ki point to take the Disengage or Dash\n" +
+            "action as a bonus action on your turn, and your jump\n" +
+            "distance is doubled for the turn.\n"
+            );
+
+    public static final Feature unarmoredMovement = new Feature(2,"Unarmored Movement", "Starting at 2nd level, your speed increases by 10 feet\n" +
+            "while you are not wearing arm or or wielding a shield.\n" +
+            "This bonus increases when you reach certain monk\n" +
+            "levels, as shown in the Monk table.\n" +
+            "At 9th level, you gain the ability to move along vertical\n" +
+            "surfaces and across liquids on your turn without falling\n" +
+            "during the move.\n"
+            );
+
+    public static final Feature monasticTradition = new Feature(3, "Monastic Tradtion", "When you reach 3rd level, you commit yourself to a\n" +
+            "monastic tradition: the Way of the Open Hand, the Way\n" +
+            "of Shadow, or the Way of the Four Elements, all detailed\n" +
+            "at the end of the class description. Your tradition\n" +
+            "grants you features at 3rd level and again at 6th, 11th,\n" +
+            "and 17th level.\n"
+            );
+    public static final Feature deflectMissiles = new Feature(3, "Deflect Missiles","Starting at 3rd level, you can use your reaction to\n" +
+            "deflect or catch the missile when you are hit by a ranged\n" +
+            "weapon attack. When you do so, the damage you take\n" +
+            "from the attack is reduced by 1d 10 + your Dexterity\n" +
+            "modifier + your monk level.\n" +
+            "If you reduce the damage to 0, you can catch the\n" +
+            "missile if it is small enough for you to hold in one hand\n" +
+            "and you have at least one hand free. If you catch a\n" +
+            "missile in this way, you can spend 1 ki point to make a\n" +
+            "ranged attack with the weapon or piece of ammunition\n" +
+            "you just caught, as part of the same reaction. You make\n" +
+            "this attack with proficiency, regardless of your weapon\n" +
+            "proficiencies, and the missile counts as a monk weapon\n" +
+            "for the attack.\n"
+            );
+
+    //Ability Score Improvement level 4
+
+    public static final Feature slowFall = new Feature (4, "Slow Fall", "Beginning at 4th level, you can use your reaction when\n" +
+            "you fall to reduce any falling damage you take by an\n" +
+            "amount equal to five times your monk level.\n"
+    );
+
+    //Extra attack level 5
+
+    public static final Feature stunningStrike = new Feature (5, "Stunning Strike", "Starting at 5th level, you can interfere with the flow of\n" +
+            "ki in an opponent’s body. W hen you hit another creature\n" +
+            "with a melee weapon attack, you can spend 1 ki point to\n" +
+            "attempt a stunning strike. The target must succeed on a\n" +
+            "Constitution saving throw or be stunned until the end of\n" +
+            "your next turn.\n"
+            );
+
+    public static final Feature kiempoweredStrikes = new Feature(6, "Ki-Empowered Strikes", "Starting at 6th level, your unarmed strikes count as\n" +
+            "magical for the purpose of overcoming resistance and\n" +
+            "immunity to nonmagical attacks and damage.\n"
+            );
+
+    public static final Feature Evasion = new Feature (7, "Evasion", "At 7th level, your instinctive agility lets you dodge\n" +
+            "out of the way of certain area effects, such as a blue\n" +
+            "dragon’s lightning breath or a fireball spell. When you\n" +
+            "are subjected to an effect that allows you to make a\n" +
+            "Dexterity saving throw to take only half damage, you\n" +
+            "instead take no damage if you succeed on the saving\n" +
+            "throw, and only half damage if you fail.\n"
+            );
+
+    public static final Feature stillnessofMind = new Feature (7, "Stillness of Mind", "Starting at 7th level, you can use your action to end one\n" +
+            "effect on yourself that is causing you to be charmed\n" +
+            "or frightened.\n"
+            );
+
+    public static final Feature purityofBody = new Feature (10, "Purity of Body", "At 10th level, your mastery of the ki flowing through you\n" +
+            "makes you immune to disease and poison.\n"
+            );
+
+    public static final Feature tongueofthesunandMoon = new Feature(13, "Tongue of the Sun and Moon", "Starting at 13th level, you learn to touch the ki of other\n" +
+            "minds so that you understand all spoken languages.\n" +
+            "Moreover, any creature that can understand a language\n" +
+            "can understand what you say.\n"
+            );
+
+    //Timeless body level 15
+
+    public static final Feature emptyBody = new Feature (18, "Empty Body", "Beginning at 18th level, you can use your action to\n" +
+            "spend 4 ki points to become invisible for 1 minute.\n" +
+            "During that time, you also have resistance to all damage\n" +
+            "but force damage.\n" +
+            "Additionally, you can spend 8 ki points to cast the\n" +
+            "astral projection spell, without needing material\n" +
+            "components. When you do so, you can’t take any other\n" +
+            "creatures with you.\n"
+            );
+
+    public static final Feature perfectSelf = new Feature(20, "Perfect Self", "At 20th level, when you roll for initiative and have no ki\n" +
+            "points remaining, you regain 4 ki points.\n"
+            );
+
+    //Paladin
+    //TODO 10/18/2020
+
+    public static final Feature divineSense = new Feature(1, "Divine Sense", "The presence of strong evil registers on your senses like\n" +
+            "a noxious odor, and powerful good rings like heavenly\n" +
+            "music in your ears. As an action, you can open your\n" +
+            "awareness to detect such forces. Until the end of your\n" +
+            "next turn, you know the location of any celestial, fiend,\n" +
+            "or undead within 60 feet of you that is not behind total\n" +
+            "cover. You know the type (celestial, fiend, or undead) of\n" +
+            "any being whose presence you sense, but not its identity\n" +
+            "(the vampire Count Strahd von Zarovich, for instance).\n" +
+            "Within the same radius, you also detect the presence\n" +
+            "of any place or object that has been consecrated or\n" +
+            "desecrated, as with the hallow spell.\n" +
+            "You can use this feature a number of times equal to\n" +
+            "1 + your Charisma modifier. When you finish a long rest,\n" +
+            "you regain all expended uses.\n"
+            );
+
+    public static final Feature layonHands = new Feature (1, "Lay on Hands", "Your blessed touch can heal wounds. You have a pool\n" +
+            "of healing power that replenishes when you take a long\n" +
+            "rest. With that pool, you can restore a total number of\n" +
+            "hit points equal to your paladin level x 5.\n" +
+            "As an action, you can touch a creature and draw\n" +
+            "power from the pool to restore a number of hit points\n" +
+            "to that creature, up to the maximum amount remaining\n" +
+            "in your pool.\n" +
+            "Alternatively, you can expend 5 hit points from your\n" +
+            "pool of healing to cure the target of one disease or\n" +
+            "neutralize one poison affecting it. You can cure multiple\n" +
+            "diseases and neutralize multiple poisons with a single\n" +
+            "use of Lay on Hands, expending hit points separately\n" +
+            "for each one.\n" +
+            "This feature has no effect on undead and constructs.\n"
+            );
+
+    public static final Feature spellcastingPaladin = new Feature (2, "Spellcasting", "By 2nd level, you have learned to draw on divine\n" +
+            "magic through meditation and prayer to cast spells as\n" +
+            "a cleric does. See chapter 10 for the general rules of\n" +
+            "spellcasting and chapter 11 for the paladin spell list.\n\n" +
+
+            "Preparing and Casting Spells\n" +
+            "The Paladin table shows how many spell slots you have\n" +
+            "to cast your spells. To cast one of your paladin spells of\n" +
+            "1st level or higher, you must expend a slot of the spell’s\n" +
+            "level or higher. You regain all expended spell slots when\n" +
+            "you finish a long rest.\n" +
+            "You prepare the list of paladin spells that are available\n" +
+            "for you to cast, choosing from the paladin spell list.\n" +
+            "When you do so, chose a num ber of paladin spells\n" +
+            "equal to your Charisma modifier + half your paladin\n" +
+            "level, rounded down (minimum of one spell). The spells\n" +
+            "must be of a level for which you have spell slots.\n" +
+            "For example, if you are a 5th-level paladin, you have\n" +
+            "four 1st-level and two 2nd-level spell slots. With a\n" +
+            "Charisma of 14, your list of prepared spells can include\n" +
+            "four spells of 1st or 2nd level, in any combination. If you\n" +
+            "prepare the 1st-level spell cure wounds, you can cast\n" +
+            "it using a 1st-level or a 2nd-level slot. Casting the spell\n" +
+            "doesn’t remove it from your list of prepared spells.\n" +
+            "You can change your list of prepared spells when you\n" +
+            "finish a long rest. Preparing a new list of paladin spells\n" +
+            "requires time spent in prayer and meditation: at least 1\n" +
+            "minute per spell level for each spell on your list.\n\n" +
+
+            "Spellcasting Ability\n" +
+            "Charisma is your spellcasting ability for your paladin\n" +
+            "spells, since their pow er derives from the strength of\n"+
+            "your convictions. You use your Charisma whenever a\n" +
+            "spell refers to your spellcasting ability. In addition, you\n" +
+            "use your Charisma m odifier when setting the saving\n" +
+            "throw DC for a paladin spell you cast and when making\n" +
+            "an attack roll with one.\n\n" +
+
+            "Spell save DC = 8 + your proficiency bonus +\n" +
+            "your Charisma modifier\n" +
+            "Spell attack modifier = your proficiency bonus +\n" +
+            "your Charisma modifier\n\n" +
+
+            "Spellcasting Ability\n" +
+            "You can use a holy sym bol (found in chapter 5) as a\n" +
+            "spellcasting focus for your paladin spells.\n"
+            );
+
+    public static final Feature divineSmite = new Feature(2, "Divine Smite", "Starting at 2nd level, when you hit a creature with a\n" +
+            "melee weapon attack, you can expend one paladin spell\n" +
+            "slot to deal radiant damage to the target, in addition to\n" +
+            "the weapon’s damage. The extra damage is 2d8 for a\n" +
+            "1st-level spell slot, plus 1d8 for each spell level higher\n" +
+            "than 1st, to a maximum of 5d8. The damage increases\n" +
+            "by 1d8 if the target is an undead or a fiend.\n"
+            );
+
+    public static final Feature divineHealth = new Feature(3, "Divine Health", "By 3rd level, the divine magic flowing through you\n" +
+            "makes you immune to disease.\n"
+            );
+
+    public static final Feature sacredOath = new Feature(3, "Sacred Oath", "When you reach 3rd level, you swear the oath that binds\n" +
+            "you as a paladin forever. Up to this time you have been\n" +
+            "in a preparatory stage, committed to the path but not\n" +
+            "yet sworn to it. N ow you choose the Oath of Devotion,\n" +
+            "the Oath of the Ancients, or the Oath of Vengeance, all\n" +
+            "detailed at the end of the class description.\n" +
+            "Your choice grants you features at 3rd level and again\n" +
+            "at 7th, 15th, and 20th level. Those features include oath\n" +
+            "spells and the Channel Divinity feature.\n\n" +
+
+            "Oath Spells\n" +
+            "Each oath has a list of associated spells. You gain\n" +
+            "access to these spells at the levels specified in the oath\n" +
+            "description. Once you gain access to an oath spell, you\n" +
+            "always have it prepared. Oath spells don’t count against\n" +
+            "the number of spells you can prepare each day.\n" +
+            "If you gain an oath spell that doesn’t appear on the\n" +
+            "paladin spell list, the spell is nonetheless a paladin\n" +
+            "spell for you.\n\n" +
+
+            "Channel Divinity\n" +
+            "Your oath allows you to channel divine energy to fuel\n" +
+            "magical effects. Each Channel Divinity option provided\n" +
+            "by your oath explains how to use it.\n" +
+            "When you use your Channel Divinity, you choose\n" +
+            "which option to use. You must then finish a short or long\n" +
+            "rest to use your Channel Divinity again.\n" +
+            "Some Channel Divinity effects require saving throws.\n" +
+            "When you use such an effect from this class, the DC\n" +
+            "equals your paladin spell save DC.\n"
+            );
+
+    //Ability Score Imporvement level 4
+    //Extra Attack level 5
+
+    public static final Feature auraofProtection = new Feature(6, "Aura of Protection", "Starting at 6th level, whenever you or a friendly creature\n" +
+            "within 10 feet of you must make a saving throw, the\n" +
+            "creature gains a bonus to the saving throw equal to your\n" +
+            "Charisma m odifier (with a minim um bonus of +1). You\n" +
+            "must be conscious to grant this bonus.\n" +
+            "At 18th level, the range of this aura increases to 30 feet.\n"
+            );
+
+    public static final Feature auraofCourage = new Feature(10, "Aura of Courage", "Starting at 10th level, you and friendly creatures\n" +
+            "within 10 feet of you can’t be frightened while you\n" +
+            "are conscious.\n" +
+            "At 18th level, the range of this aura increases to 30 feet.\n"
+            );
+
+    public static final Feature improveddivineSmite = new Feature (11, "Improved Divine Smite", "By 11th level, you are so suffused with righteous\n" +
+            "might that all your melee weapon strikes carry divine\n" +
+            "power with them. Whenever you hit a creature with a\n" +
+            "melee weapon, the creature takes an extra 1d8 radiant\n" +
+            "damage. If you also use your Divine Smite with an\n" +
+            "attack, you add this damage to the extra damage of your\n" +
+            "Divine Smite.\n"
+    );
+
+    public static final Feature cleansingTouch = new Feature(14, "Cleansing Touch", "Beginning at 14th level, you can use your action to\n" +
+            "end one spell on yourself or on one willing creature\n" +
+            "that you touch.\n" +
+            "You can use this feature a number of times equal\n" +
+            "to your Charisma modifier (a minimum of once). You\n" +
+            "regain expended uses when you finish a long rest.\n"
+    );
+
+
 }
