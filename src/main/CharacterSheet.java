@@ -4,8 +4,9 @@ import character.*;
 import utilities.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.*;
 
-public class CharacterSheet {
+public class CharacterSheet extends JPanel{
     private CharacterInfo character;
     private Dimension screenSize;
     private Dimension sheetSize;
@@ -24,15 +25,24 @@ public class CharacterSheet {
     private JPanel attackAndSpellcastingPanel;
     private JPanel equipmentPanel;
 
+    private BufferedImage tmpSheet;
+
     // TODO: set base graphics things here
     public CharacterSheet(){
         character = new CharacterInfo();
         screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         sheetSize = new Dimension((int)((screenSize.getHeight()-50)*(sheetSizeRatio.getWidth()/sheetSizeRatio.getHeight())), (int)screenSize.getHeight()-50);
+        tmpSheet = DungeonsBeyond.getImage("src/graphics/basic_sheet.png");
     }
 
     public CharacterSheet(String characterName){
         this();
         character.setCharacterName(characterName);
+    }
+
+    @Override
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        g.drawImage(tmpSheet, 0, 0, this);
     }
 }
