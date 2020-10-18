@@ -6,6 +6,7 @@ public class Paladin extends CharacterClass{
 
     Paladin(){
         super("Paladin", 10);
+        spellcasterAbility = CHA;
 
         features.get(divineSense.getLevel()).add(divineSense);
         features.get(layonHands.getLevel()).add(layonHands);
