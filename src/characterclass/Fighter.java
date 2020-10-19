@@ -1,6 +1,7 @@
 package characterclass;
 
 import static utilities.Utilities.*;
+
 public class Fighter extends CharacterClass {
 
         Fighter(){

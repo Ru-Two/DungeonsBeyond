@@ -1,4 +1,7 @@
+package characterclass;
+
 import static utilities.Utilities.*;
+
 public class Warlock extends CharacterClass{
 	Warlock(){
         super("Warlock", 8);
@@ -13,6 +16,4 @@ public class Warlock extends CharacterClass{
         features.get(eldritchMaster.getLevel()).add(eldritchMaster);
         
     }
- }
-
 }
