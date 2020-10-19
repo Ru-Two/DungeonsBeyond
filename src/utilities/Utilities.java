@@ -1349,23 +1349,23 @@ public static final Feature theivesCant = new Feature(1, "Theives' Cant", "Durin
 		"thieves’ guild, whether loot is nearby, or whether the\n" + "people in an area are easy marks or will provide a safe\n" + 
 				"house for thieves on the run.");
 
-public static final Feature cunningAction = new Feature(1, "Cunning Action", "Starting at 2nd level, your quick thinking and agility\n" + 
+public static final Feature cunningAction = new Feature(2, "Cunning Action", "Starting at 2nd level, your quick thinking and agility\n" + 
 		"allow you to move and act quickly. You can take a\n" + 
 		"bonus action on each of your turns in combat. This\n" + 
 		"action can be used only to take the Dash, Disengage,\n" + 
 		"or Hide action." );
 
-public static final Feature roguishArchetype = new Feature(1, "Roguish Archetype", "At 3rd level, you choose an archetype that you emulate\n" + 
+public static final Feature roguishArchetype = new Feature(3, "Roguish Archetype", "At 3rd level, you choose an archetype that you emulate\n" + 
 		"in the exercise of your rogue abilities: Thief, Assassin,\n" + 
 		"or Arcane Trickster, all detailed at the end of the class\n" + 
 		"description. Your archetype choice grants you features\n" + 
 		"at 3rd level and then again at 9th, 13th, and 17th level." );
 
-public static final Feature uncannyDodge = new Feature(1, "Uncanny Dodge", "Starting at 5th level, when an attacker that you can see\n" + 
+public static final Feature uncannyDodge = new Feature(5, "Uncanny Dodge", "Starting at 5th level, when an attacker that you can see\n" + 
 		"hits you with an attack, you can use your reaction to\n" + 
 		"halve the attack’s damage against you." );
 
-public static final Feature evasion = new Feature(1, "Evasion", "Beginning at 7th level, you can nimbly dodge out o f the\n" + 
+public static final Feature evasion = new Feature(7, "Evasion", "Beginning at 7th level, you can nimbly dodge out o f the\n" + 
 		"way of certain area effects, such as a red dragon’s fiery\n" + 
 		"breath or an ice storm spell. When you are subjected\n" + 
 		"to an effect that allows you to m ake a Dexterity saving\n" + 
@@ -1373,24 +1373,24 @@ public static final Feature evasion = new Feature(1, "Evasion", "Beginning at 7t
 		"damage if you succeed on the saving throw, and only\n" + 
 		"half damage if you fail." );
 
-public static final Feature reliableTalent = new Feature(1, "Reliable Talent", "By 11th level, you have refined your chosen skills until\n" + 
+public static final Feature reliableTalent = new Feature(11, "Reliable Talent", "By 11th level, you have refined your chosen skills until\n" + 
 		"they approach perfection. Whenever you make an ability\n" + 
 		"check that lets you add your proficiency bonus, you can\n" + 
 		"treat a d20 roll of 9 or lower as a 10." );
 
-public static final Feature blindsense = new Feature(1, "Blindsense",  "Starting at 14th level, if you are able to hear, you are\n" + 
+public static final Feature blindsense = new Feature(14, "Blindsense",  "Starting at 14th level, if you are able to hear, you are\n" + 
 		"aware of the location of any hidden or invisible creature\n" + 
 		"within 10 feet of you.");
 
-public static final Feature slipperyMind = new Feature(1, "Slippery Mind", "By 15th level, you have acquired greater mental\n" + 
+public static final Feature slipperyMind = new Feature(15, "Slippery Mind", "By 15th level, you have acquired greater mental\n" + 
 		"strength. You gain proficiency in Wisdom saving throws." );
 
-public static final Feature elusive = new Feature(1, "Elusive", "Beginning at 18th level, you are so evasive that\n" + 
+public static final Feature elusive = new Feature(18, "Elusive", "Beginning at 18th level, you are so evasive that\n" + 
 		"attackers rarely gain the upper hand against you. No\n" + 
 		"attack roll has advantage against you while you aren’t\n" + 
 		"incapacitated.");
 
-public static final Feature strokeOfLuck = new Feature(1, "Stroke Of Luck", "At 20th level, you have an uncanny knack for succeeding\n" + 
+public static final Feature strokeOfLuck = new Feature(20, "Stroke Of Luck", "At 20th level, you have an uncanny knack for succeeding\n" + 
 		"w hen you need to. If your attack misses a target within\n" + 
 		"range, you can turn the m iss into a hit. Alternatively, if\n" + 
 		"you fail an ability check, you can treat the d20 roll as a 20.\n" + 
