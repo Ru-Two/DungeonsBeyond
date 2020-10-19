@@ -2,7 +2,8 @@ import static utilities.Utilities.*;
 public class Warlock extends CharacterClass{
 	Warlock(){
         super("Warlock", 8);
-        
+        spellcasterAbility = CHA;
+		
         features.get(otherworldlyPatron.getLevel()).add(otherworldlyPatron);
         features.get(pactMagic.getLevel()).add(pactMagic);
         features.get(eldritchInvocations.getLevel()).add(eldritchInvocations);
