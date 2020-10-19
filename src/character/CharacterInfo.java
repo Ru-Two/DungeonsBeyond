@@ -37,6 +37,7 @@ public class CharacterInfo {
 
     private ArrayList<Trait> traits;
     private ArrayList<ArrayList<Feature>> features;
+    private ArrayList<Feature> currentFeatures;
     private ArrayList<Integer> weaponProficiencies;
     private ArrayList<Integer> armourProficiencies;
 
@@ -139,6 +140,8 @@ public class CharacterInfo {
         weaponProficiencies.addAll(cclass.getWeaponProficiencies());
         armourProficiencies.addAll(cclass.getArmourProficiencies());
         features.addAll(cclass.getFeatures());
+        for (int i = 1; i <= level; i++) currentFeatures.addAll(features.get(i));
+
         hitDice = cclass.getHitDie();
 
         for (int s:cclass.getSavingThrows()){ savingThrows[s] = true; }
@@ -160,6 +163,7 @@ public class CharacterInfo {
             maxHp += hitDice.roll();
             resetHp();
             updateProficiency();
+            currentFeatures.addAll(features.get(level));
             // TODO: ability score improvement on level up check and perform, as well as any features that modify stats
         }
     }
@@ -336,5 +340,7 @@ public class CharacterInfo {
         return features;
     }
 
-
+    public ArrayList<Feature> getCurrentFeatures() {
+        return currentFeatures;
+    }
 }
