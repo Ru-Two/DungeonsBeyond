@@ -9,7 +9,7 @@ public class Wizard extends CharacterClass{
         features.get(arcaneTraditon.getLevel()).add(arcaneTraditon);
         features.get(abilityScoreImprovement.getLevel()).add(abilityScoreImprovement);
         features.get(spellMastery.getLevel()).add(spellMastery);
-        features.get(signatureSpell.getLevel()).add(signatureSpell);
+        features.get(signatureSpells.getLevel()).add(signatureSpells);
         
     }
  }
