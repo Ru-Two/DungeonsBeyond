@@ -1662,7 +1662,7 @@ public static final Feature arcaneRecovery = new Feature(1, "Arcane Recovery", "
 		"up), and none of the slots can be 6th level or higher.\n" + 
 		"\tFor example, if you’re a 4th-level wizard, you can recover\n" + 
 		"up to two levels worth of spell slots. You can recover either\n" + 
-		"a 2nd-level spell slot or two 1st-level spell slots.")
+		"a 2nd-level spell slot or two 1st-level spell slots.");
 
 public static final Feature arcaneTradition = new Feature(2, "Arcane Tradition", "When you reach 2nd level, you choose an arcane\n" + 
 		"tradition, shaping your practice of m agic through one\n" + 
