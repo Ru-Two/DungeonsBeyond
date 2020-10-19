@@ -1003,7 +1003,170 @@ public final class Utilities {
             "to your Charisma modifier (a minimum of once). You\n" +
             "regain expended uses when you finish a long rest.\n"
     );
-    
+
+    //Ranger Class
+    //TODO 10/18/2020 Ranger Archetypes: Hunter, Beast Master
+
+    public static final Feature favoredEnemy = new Feature(1, "Favored Enemy", "Beginning at 1st level, you have significant experience\n" +
+            "studying, tracking, hunting, and even talking to a certain\n" +
+            "type of enemy.\n" +
+            "Choose a type of favored enemy: aberrations,\n" +
+            "beasts, celestials, constructs, dragons, elementals, fey,\n" +
+            "fiends, giants, monstrosities, oozes, plants, or undead.\n" +
+            "Alternatively, you can select two races of humanoid\n" +
+            "(such as gnolls and orc s) as favored enemies.\n" +
+            "You have advantage on W isdom (Survival) checks to\n" +
+            "track your favored enem ies, as w ell as on Intelligence\n" +
+            "checks to recall information about them.\n" +
+            "W hen you gain this feature, you also learn one\n" +
+            "language of your choice that is spoken by your favored\n" +
+            "enemies, if they speak one at all.\n" +
+            "You ch oose one additional favored enemy, as well as\n" +
+            "an associated language, at 6th and 14th level. As you\n" +
+            "gain levels, your choices should reflect the types of\n" +
+            "monsters you have encountered on your adventures." );
+
+    public static final Feature naturalExplorer = new Feature(1, "Natural Explorer", "You are particularly familiar with one type of natural\n" +
+            "environment and are adept at traveling and surviving in\n" +
+            "such regions. Choose one type of favored terrain: arctic,\n" +
+            "coast, desert, forest, grassland, mountain, swamp,\n" +
+            "or the Underdark. W hen you make an Intelligence or\n" +
+            "Wisdom check related to your favored terrain, your\n" +
+            "proficiency bonus is doubled if you are using a skill that\n" +
+            "you’re proficient in.\n" +
+            "While traveling for an hour or m ore in your favored\n" +
+            "terrain, you gain the following benefits:\n" +
+            "• Difficult terrain doesn’t slow your group’s travel.\n" +
+            "• Your group can’t become lost except by magical\n" +
+            "means.\n" +
+            "• Even when you are engaged in another activity while\n" +
+            "traveling (such as foraging, navigating, or tracking),\n" +
+            "you remain alert to danger.\n" +
+            "• If you are traveling alone, you can move stealthily at\n" +
+            "a normal pace.\n" +
+            "• When you forage, you find twice as much food as you\n" +
+            "normally would.\n" +
+            "• While tracking other creatures, you also learn their\n" +
+            "exact number, their sizes, and how long ago they\n" +
+            "passed through the area.\n" +
+            "You choose additional favored terrain types at 6th\n" +
+            "and 10th level.\n"
+            );
+
+    //Fighting Style Level 2
+
+    public static final Feature spellcastingRogue = new Feature(2, "Spellcasting", "By the time you reach 2nd level, you have learned to\n" +
+            "use the magical essence of nature to cast spells, much\n" +
+            "as a druid does. See chapter 10 for the general rules of\n" +
+            "spellcasting and chapter 11 for the ranger spell list.\n\n" +
+
+            "Spell Slots\n" +
+            "The Ranger table shows how many spell slots you have\n" +
+            "to cast your spells of 1st level and higher. To cast one of\n" +
+            "these spells, you must expend a slot of the spell’s level\n" +
+            "or higher. You regain all expended spell slots when you\n" +
+            "finish a long rest.\n" +
+            "For example, if you know the 1st-level spell animal\n" +
+            "friendship and have a 1st-level and a 2nd-level spell slot\n" +
+            "available, you can cast animal friendship using either slot.\n\n" +
+
+            "Spells known of 1st level and higher\n" +
+            "You know two 1st-level spells of your choice from the\n" +
+            "ranger spell list.\n" +
+            "The Spells Known column of the Ranger table shows\n" +
+            "when you learn more ranger spells of your choice. Each\n" +
+            "of these spells must be of a level for which you have\n"+
+            "spell slots. For instance, when you reach 5th level in this\n" +
+            "class, you can learn one new spell of 1st or 2nd level.\n" +
+            "Additionally, when you gain a level in this class,\n" +
+            "you can ch oose one of the ranger spells you know\n" +
+            "and replace it with another spell from the ranger\n" +
+            "spell list, which also must be of a level for which you\n" +
+            "have spell slots.\n\n" +
+
+            "Spellcasting Ability\n" +
+            "Wisdom is your spellcasting ability for your ranger\n" +
+            "spells, since your magic draws on your attunement to\n" +
+            "nature. You use your Wisdom whenever a spell refers\n" +
+            "to your spellcasting ability. In addition, you use your\n" +
+            "Wisdom modifier w hen setting the saving throw DC for\n" +
+            "a ranger spell you cast and when making an attack roll\n" +
+            "with one.\n\n" +
+            "Spell save DC = 8 + your proficiency bonus +\n" +
+            "your Wisdom modifier\n" +
+            "Spell attack modifier = your proficiency bonus +\n" +
+            "your Wisdom modifier\n"
+            );
+
+    public static final Feature rangerArchetype = new Feature(3, "Ranger Archetype","At 3rd level, you choose an archetype that you strive\n" +
+            "to emulate: Hunter or Beast Master, both detailed at\n" +
+            "the end of the class description. Your choice grants\n" +
+            "you features at 3rd level and again at 7th, 11th,\n" +
+            "and 15th level.\n"
+            );
+
+    public static final Feature primevalAwareness = new Feature(3, "Primeval Awareness", "Beginning at 3rd level, you can use your action and\n" +
+            "expend one ranger spell slot to focus your awareness on\n" +
+            "the region around you. For 1 minute per level of the spell\n" +
+            "slot you expend, you can sense whether the following\n" +
+            "types of creatures are present within 1 mile of you (or\n" +
+            "within up to 6 miles if you are in your favored terrain):\n" +
+            "aberrations, celestials, dragons, elementals, fey, fiends,\n" +
+            "and undead. This feature doesn’t reveal the creatures’\n" +
+            "location or number."
+            );
+
+    //Ability Score Improvement Level 4
+    //Extra Attack Level 5
+
+    public static final Feature landsStride = new Feature(8, "Land's Stride", "Starting at 8th level, moving through nonmagical\n" +
+            "difficult terrain costs you no extra movement. You can\n" +
+            "also pass through nonmagical plants without being\n" +
+            "slowed by them and without taking damage from them if\n" +
+            "they have thorns, spines, or a similar hazard.\n" +
+            "In addition, you have advantage on saving throws\n" +
+            "against plants that are magically created or manipulated\n" +
+            "to impede movement, such those created by the\n" +
+            "entangle spell.\n"
+            );
+
+    public static final Feature hideinplainSight = new Feature(10, "Hide in Plain Sight", "Starting at 10th level, you can spend 1 minute creating\n" +
+            "camouflage for yourself. You must have access to fresh\n" +
+            "mud, dirt, plants, soot, and other naturally occurring\n" +
+            "materials with which to create your camouflage.\n" +
+            "Once you are camouflaged in this way, you can try\n" +
+            "to hide by pressing yourself up against a solid surface,\n" +
+            "such as a tree or wall, that is at least as tall and wide\n" +
+            "as you are. You gain a +10 bonus to Dexterity (Stealth)\n" +
+            "checks as long as you remain there without moving or\n" +
+            "taking actions. Once you move or take an action or a\n" +
+            "reaction, you must camouflage yourself again to gain\n" +
+            "this benefit.\n"
+            );
+
+    public static final Feature Vanish = new Feature (14, "Vanish", "Starting at 14th level, you can use the Hide action as a\n" +
+            "bonus action on your turn. Also, you can’t be tracked by\n" +
+            "nonmagical means, unless you choose to leave a trail.\n"
+             );
+
+    public static final Feature feralSenses = new Feature (18, "Feral Senses", "At 18th level, you gain preternatural senses that help\n" +
+            "you fight creatures you can’t see. W hen you attack a\n" +
+            "creature you can’t see, your inability to see it doesn’t\n" +
+            "im pose disadvantage on your attack rolls against it.\n" +
+            "You are also aware of the location of any invisible\n" +
+            "creature within 30 feet of you, provided that the\n" +
+            "creature isn’t hidden from you and you aren’t\n" +
+            "blinded or deafened.\n"
+            );
+
+    public static final Feature foeSlayer = new Feature (20, "Foe Slayer", "At 20th level, you become an unparalleled hunter of your\n" +
+            "enemies. Once on each of your turns, you can add your\n" +
+            "Wisdom modifier to the attack roll or the damage roll of\n" +
+            "an attack you make against one of your favored enemies.\n" +
+            "You can choose to use this feature before or after the\n" +
+            "roll, but before any effects of the roll are applied.\n"
+            );
+	
 //Sourcerer Features
 // TODO 10/18/2020 expand on sourcerous orgin feature: Draconic, Bloodline or Wild Magic.
 
