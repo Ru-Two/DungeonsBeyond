@@ -1396,6 +1396,150 @@ public static final Feature strokeOfLuck = new Feature(20, "Stroke Of Luck", "At
 		"you fail an ability check, you can treat the d20 roll as a 20.\n" + 
 		"\tOnce you use this feature, you can’t use it again until\n" + 
 		"you finish a short or long rest.");	
-	
+
+//Warlock Features
+//TODO 10/18/2020 expand on otherworldly patron: the Archfey, the Fiend, and the Great Old One
+//		  expand on pact boon: pact of the chain, pact of the blade, and pact of the tome
+
+public static final Feature otherworldlyPatron = new Feature(1, "otherworldlyPatron", "At 1st level, you have struck a bargain with an\n" + 
+		"otherworldly being of your choice: the Archfey, the\n" + 
+		"Fiend, or the Great Old One, each of which is detailed\n" + 
+		"at the end of the class description. Your choice\n" + 
+		"grants you features at 1st level and again at 6th, 10th,\n" + 
+		"and 14th level.");
+
+public static final Feature pactMagic = new Feature(1, "Pact Magic", "Your arcane research and the magic bestow ed on you\n" + 
+		"by your patron have given you facility with spells. See\n" + 
+		"chapter 10 for the general rules of spellcasting and\n" + 
+		"chapter 11 for the w arlock spell list.\n" + 
+		"\nCantrips\n" + 
+		"You know two cantrips of your choice from the warlock\n" + 
+		"spell list. You learn additional warlock cantrips of your\n" + 
+		"choice at higher levels, as shown in the Cantrips Known\n" + 
+		"column of the Warlock table.\n" + 
+		"\nSpell Slots\n" + 
+		"The Warlock table shows how many spell slots you have.\n" + 
+		"The table also shows what the level of those slots is; all\n" + 
+		"of your spell slots are the same level. To cast one of your\n" + 
+		"warlock spells of 1st level or higher, you must expend a\n" + 
+		"spell slot. You regain all expended spell slots when you\n" + 
+		"finish a short or long rest.\n" + 
+		"\tFor example, when you are 5th level, you have\n" + 
+		"two 3rd-level spell slots. To cast the 1st-level spell\n" + 
+		"thunderwave, you must spend one of those slots, and\n" + 
+		"you cast it as a 3rd-level spell.\n" + 
+		"\nSpells Known of 1st Level and Higher\n" + 
+		"At 1st level, you know two 1st-level spells of your choice\n" + 
+		"from the warlock spell list.\n" + 
+		"\tThe Spells Known column of the Warlock table shows\n" + 
+		"when you learn more warlock spells of your choice of 1st\n" + 
+		"level and higher. A spell you choose must be of a level\n" + 
+		"no higher than what’s show n in the table's Slot Level\n" + 
+		"column for your level. W hen you reach 6th level, for\n" + 
+		"example, you learn a new warlock spell, which can be\n" + 
+		"1st, 2nd, or 3rd level." + "\n\tAdditionally, when you gain a level in this class,\n" + 
+				"you can choose one of the warlock spells you know\n" + 
+				"and replace it with another spell from the warlock\n" + 
+				"spell list, which also must be of a level for which you\n" + 
+				"have spell slots.\n" + 
+				"\nSpellcasting Ability\n" + 
+				"Charisma is your spellcasting ability for your warlock\n" + 
+				"spells, so you use your Charisma whenever a spell refers\n" + 
+				"to your spellcasting ability. In addition, you use your\n" + 
+				"Charisma modifier w hen setting the saving throw DC\n" + 
+				"for a w arlock spell you cast and when making an attack\n" + 
+				"roll with one.\n" + 
+				"Spell save DC = 8 + your proficiency bonus +\n" + 
+				"your Charisma modifier\n" + 
+				"Spell attack modifier = your proficiency bonus +\n" + 
+				"your Charisma modifier\n" + 
+				"\n" + 
+				"\nSpellcasting Focus\n" + 
+				"You can use an arcane focus (found in chapter 5) as a\n" + 
+				"spellcasting focus for your warlock spells." );
+
+public static final Feature  eldridgeInvocations = new Feature(2, "Eldridge Invocations", "In your study of occult lore, you have unearthed eldritch\n" + 
+		"invocations, fragments of forbidden knowledge that\n" + 
+		"imbue you with an abiding magical ability.\n" + 
+		"\tAt 2nd level, you gain two eldritch invocations of your\n" + 
+		"choice. Your invocation options are detailed at the end\n" + 
+		"of the class description. When you gain certain w arlock\n" + 
+		"levels, you gain additional invocations of your choice,\n" + 
+		"as show n in the Invocations Known colum n of the\n" + 
+		"Warlock table.\n" + 
+		"\tAdditionally, when you gain a level in this class,\n" + 
+		"you can choose one of the invocations you know and\n" + 
+		"replace it with another invocation that you could learn\n" + 
+		"at that level." );
+
+public static final Feature pactBoon = new Feature(3, "Pact Boon", "At 3rd level, your otherworldly patron bestow s a gift\n" + 
+		"upon you for your loyal service. You gain one of the\n" + 
+		"following features of your choice.\n" + 
+		"\nPact of the Chain\n" + 
+		"You learn the find familiar spell and can cast it as a\n" + 
+		"ritual. The spell doesn’t count against your number of\n" + 
+		"spells known.\n" + 
+		"\tWhen you cast the spell, you can choose one of the\n" + 
+		"norm al form s for your familiar or one of the following\n" + 
+		"special forms: imp, pseudodragon, quasit, or sprite.\n" + 
+		"\tAdditionally, when you take the Attack action, you can\n" + 
+		"forgo one of your own attacks to allow your familiar to\n" + 
+		"make one attack o f its own.\n" + 
+		"\nPact of the Blade\n" + 
+		"You can use your action to create a pact weapon in your\n" + 
+		"empty hand. You can choose the form that this melee\n" + 
+		"weapon takes each time you create it (see chapter 5 for\n" + 
+		"weapon options). You are proficient with it while you\n" + 
+		"wield it. This w eapon counts as m agical for the purpose\n" + 
+		"of overcom ing resistance and immunity to nonm agical\n" + 
+		"attacks and damage." + "\tYour pact weapon disappears if it is m ore than 5 feet\n" + 
+				"away from you for 1 minute or more. It also disappears\n" + 
+				"if you use this feature again, if you dismiss the weapon\n" + 
+				"(no action required), or if you die.\n" + 
+				"\tYou can transform one magic weapon into your pact\n" + 
+				"weapon by performing a special ritual while you hold\n" + 
+				"the weapon. You perform the ritual over the course\n" + 
+				"of 1 hour, which can be done during a short rest.\n" + 
+				"You can then dismiss the weapon, shunting it into an\n" + 
+				"extradimensional space, and it appears whenever you\n" + 
+				"create your pact weapon thereafter. You can’t affect an\n" + 
+				"artifact or a sentient w eapon in this way. The weapon\n" + 
+				"ceases being your pact weapon if you die, if you perform\n" + 
+				"the 1-hour ritual on a different weapon, or if you use\n" + 
+				"a 1-hour ritual to break your bond to it. The weapon\n" + 
+				"appears at your feet if it is in the extradimensional space\n" + 
+				"when the bond breaks.\n" + 
+				"\nPact of the Tome\n" + 
+				"Your patron gives you a grimoire called a Book of\n" + 
+				"Shadows. W hen you gain this feature, choose three\n" + 
+				"cantrips from any class’s spell list. While the book is on\n" + 
+				"your person, you can cast those cantrips at will. They\n" + 
+				"don’t count against your number of cantrips known.\n" + 
+				"\tIf you lose your Book o f Shadows, you can perform\n" + 
+				"a 1-hour cerem ony to receive a replacement from your\n" + 
+				"patron. This ceremony can be performed during a short\n" + 
+				"or long rest, and it destroys the previous book. The book\n" + 
+				"turns to ash when you die.");
+
+public static final Feature  mysticArcanum = new Feature(6, "Mystic Arcanum", "At 11th level, your patron bestow s upon you a magical\n" + 
+		"secret called an arcanum. Choose one 6th-level spell\n" + 
+		"from the warlock spell list as this arcanum.\n" + 
+		"You can cast your arcanum spell once without\n" + 
+		"expending a spell slot. You must finish a long rest before\n" + 
+		"you can do so again.\n" + 
+		"\tAt higher levels, you gain more warlock spells of your\n" + 
+		"choice that can be cast in this way: one 7th-level spell\n" + 
+		"at 13th level, one 8th-level spell at 15th level, and one\n" + 
+		"9th-level spell at 17th level. You regain all uses of your\n" + 
+		"Mystic Arcanum when you finish a long rest.");
+
+public static final Feature  eldritchMaster = new Feature(20, "Eldritch Master", "At 20th level, you can draw on your inner reserve of\n" + 
+		"mystical power while entreating your patron to regain\n" + 
+		"expended spell slots. You can spend 1 minute entreating\n" + 
+		"your patron for aid to regain all your expended spell slots\n" + 
+		"from your Pact Magic feature. Once you regain spell slots\n" + 
+		"with this feature, you must finish a long rest before you\n" + 
+		"can do so again." );
+
 	
 }
