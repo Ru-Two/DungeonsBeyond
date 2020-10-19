@@ -1458,7 +1458,7 @@ public static final Feature pactMagic = new Feature(1, "Pact Magic", "Your arcan
 				"You can use an arcane focus (found in chapter 5) as a\n" + 
 				"spellcasting focus for your warlock spells." );
 
-public static final Feature  eldridgeInvocations = new Feature(2, "Eldridge Invocations", "In your study of occult lore, you have unearthed eldritch\n" + 
+public static final Feature  eldritchInvocations = new Feature(2, "Eldritch Invocations", "In your study of occult lore, you have unearthed eldritch\n" +
 		"invocations, fragments of forbidden knowledge that\n" + 
 		"imbue you with an abiding magical ability.\n" + 
 		"\tAt 2nd level, you gain two eldritch invocations of your\n" + 
