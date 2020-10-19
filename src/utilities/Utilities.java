@@ -1178,8 +1178,8 @@ public static final Feature spellcastingSourcerer = new Feature(1, "Spellcasting
 		"\nCantrips\n" + 
 		"At 1st level, you know four cantrips of your choice from\n" + 
 		"the sorcerer spell list. You learn additional sorcerer\n" + 
-		"cantrips of your choice at higher levels, as show n in the\n" + 
-		"Cantrips Known colum n of the Sorcerer table.\n" + 
+		"cantrips of your choice at higher levels, as shown in the\n" + 
+		"Cantrips Known column of the Sorcerer table.\n" + 
 		"\nSpellSlots\n" + 
 		"The Sorcerer table show s how many spell slots you\n" + 
 		"have to cast your spells of 1st level and higher. To cast\n" + 
@@ -1219,8 +1219,8 @@ public static final Feature spellcastingSourcerer = new Feature(1, "Spellcasting
 		"spellcasting focus for your sorcerer spells.");
 
 public static final Feature sorcerousOrgin = new Feature(1, "Sorcerours Orgin","Choose a sorcerous origin, which describes the\n" + 
-		"source of your innate magical power: D raconic\n" + 
-		"Bloodline or W ild Magic, both detailed at the end of the\n" + 
+		"source of your innate magical power: Draconic\n" + 
+		"Bloodline or Wild Magic, both detailed at the end of the\n" + 
 		"class description.\n" + 
 		"\tYour choice grants you features when you choose it at\n" + 
 		"1st level and again at 6th, 14th, and 18th level.");
@@ -1232,7 +1232,7 @@ public static final Feature fontOfMagic = new Feature(2, "Font of Magic", "At 2n
 		"\nSorcery Points\n" + 
 		"You have 2 sorcery points, and you gain m ore as you\n" + 
 		"reach higher levels, as shown in the Sorcery Points\n" + 
-		"colum n of the Sorcerer table. You can never have\n" + 
+		"column of the Sorcerer table. You can never have\n" + 
 		"m ore sorcery points than shown on the table for your\n" + 
 		"level. You regain all spent sorcery points when you\n" + 
 		"finish a long rest.\n" + 
@@ -1261,12 +1261,12 @@ public static final Feature fontOfMagic = new Feature(2, "Font of Magic", "At 2n
 
 public static final Feature metamagic = new Feature(3, "Metamagic", "At 3rd level, you gain the ability to twist your spells\n" + 
 		"to suit your needs. You gain two of the following\n" + 
-		"M etamagic options of your choice. You gain another one\n" + 
+		"Metamagic options of your choice. You gain another one\n" + 
 		"at 10th and 17th level.\n" + 
 		"\tYou can use only one M etam agic option on a spell\n" + 
 		"w hen you cast it, unless otherwise noted." + "\nCareful Spell\n" + 
 				"W hen you cast a spell that forces other creatures to make\n" + 
-				"a saving throw, you can protect som e of those creatures\n" + 
+				"a saving throw, you can protect some of those creatures\n" + 
 				"from the spell’s full force. To do so, you spend 1 sorcery\n" + 
 				"point and choose a number o f those creatures up to your\n" + 
 				"Charisma modifier (minimum of one creature). A chosen\n" + 
@@ -1284,8 +1284,8 @@ public static final Feature metamagic = new Feature(3, "Metamagic", "At 3rd leve
 				"sorcery point to reroll a number of the damage dice up\n" + 
 				"to your Charisma modifier (minimum of one). You must\n" + 
 				"use the new rolls.\n" + 
-				"\tYou can use Em powered Spell even if you have\n" + 
-				"already used a different M etam agic option during the\n" + 
+				"\tYou can use Empowered Spell even if you have\n" + 
+				"already used a different Metamagic option during the\n" + 
 				"casting of the spell.\n" + 
 				"\nExtended Spell\n" + 
 				"When you cast a spell that has a duration of 1 minute\n" + 
@@ -1304,14 +1304,98 @@ public static final Feature metamagic = new Feature(3, "Metamagic", "At 3rd leve
 				"When you cast a spell, you can spend 1 sorcery point to\n" + 
 				"cast it without any som atic or verbal components.\n" + 
 				"\nTwinned Spell\n" + 
-				"W hen you cast a spell that targets only one creature and\n" + 
+				"When you cast a spell that targets only one creature and\n" + 
 				"doesn’t have a range of self, you can spend a number of\n" + 
 				"sorcery points equal to the spell’s level to target a second\n" + 
-				"creature in range with the sam e spell (1 sorcery point if\n" + 
+				"creature in range with the same spell (1 sorcery point if\n" + 
 				"the spell is a cantrip).\n" );
 
 public static final Feature sorcerousRestoration = new Feature(20, "Sorcerous Restoration","At 20th level, you regain 4 expended sorcery points\n" + 
-		"w henever you finish a short rest." );
+		"whenever you finish a short rest." );
 
 
+//Rogue Features
+//TODO 10/18/2020 expand on rogue archetypes: Theif, Assasin, Arcane Trickster.
+public static final Feature  rogueExpertise = new Feature(1, "Expertise", "At 1st level, choose two of your skill proficiencies, or\n" + 
+		"one of your skill proficiencies and your proficiency with\n" + 
+		"thieves’ tools. Your proficiency bonus is doubled for any\n" + 
+		"ability check you make that uses either of the chosen\n" + 
+		"proficiencies.\n" + 
+		"\tAt 6th level, you can choose two more of your\n" + 
+		"proficiencies (in skills or with thieves’ tools) to gain\n" + 
+		"this benefit.\n" );
+public static final Feature sneakAttack = new Feature(1, "Sneak Attack", "Beginning at 1st level, you know how to strike subtly\n" + 
+		"and exploit a foe’s distraction. Once per turn, you can\n" + 
+		"deal an extra 1d6 damage to one creature you hit with\n" + 
+		"an attack if you have advantage on the attack roll. The\n" + 
+		"attack must use a finesse or a ranged weapon.\n" + 
+		"\tYou don’t need advantage on the attack roll if another\n" + 
+		"enemy of the target is within 5 feet of it, that enemy\n" + 
+		"isn’t incapacitated, and you don’t have disadvantage on\n" + 
+		"the attack roll.\n" + 
+		"\tThe amount of the extra damage increases as you\n" + 
+		"gain levels in this class, as show n in the Sneak Attack\n" + 
+		"column of the Rogue table.");
+
+public static final Feature theivesCant = new Feature(1, "Theives' Cant", "During your rogue training you learned thieves’ cant, a\n" + 
+		"secret mix of dialect, jargon, and code that allows you to\n" + 
+		"hide messages in seem ingly normal conversation. Only\n" + 
+		"another creature that knows thieves’ cant understands\n" + 
+		"such messages. It takes four times longer to convey such\n" + 
+		"a message than it does to speak the same idea plainly.\n" + 
+		"\tIn addition, you understand a set of secret signs and\n" + 
+		"symbols used to convey short, simple messages, such\n" + 
+		"as whether an area is dangerous or the territory of a\n" + 
+		"thieves’ guild, whether loot is nearby, or whether the\n" + "people in an area are easy marks or will provide a safe\n" + 
+				"house for thieves on the run.");
+
+public static final Feature cunningAction = new Feature(1, "Cunning Action", "Starting at 2nd level, your quick thinking and agility\n" + 
+		"allow you to move and act quickly. You can take a\n" + 
+		"bonus action on each of your turns in combat. This\n" + 
+		"action can be used only to take the Dash, Disengage,\n" + 
+		"or Hide action." );
+
+public static final Feature roguishArchetype = new Feature(1, "Roguish Archetype", "At 3rd level, you choose an archetype that you emulate\n" + 
+		"in the exercise of your rogue abilities: Thief, Assassin,\n" + 
+		"or Arcane Trickster, all detailed at the end of the class\n" + 
+		"description. Your archetype choice grants you features\n" + 
+		"at 3rd level and then again at 9th, 13th, and 17th level." );
+
+public static final Feature uncannyDodge = new Feature(1, "Uncanny Dodge", "Starting at 5th level, when an attacker that you can see\n" + 
+		"hits you with an attack, you can use your reaction to\n" + 
+		"halve the attack’s damage against you." );
+
+public static final Feature evasion = new Feature(1, "Evasion", "Beginning at 7th level, you can nimbly dodge out o f the\n" + 
+		"way of certain area effects, such as a red dragon’s fiery\n" + 
+		"breath or an ice storm spell. When you are subjected\n" + 
+		"to an effect that allows you to m ake a Dexterity saving\n" + 
+		"throw to take only half damage, you instead take no\n" + 
+		"damage if you succeed on the saving throw, and only\n" + 
+		"half damage if you fail." );
+
+public static final Feature reliableTalent = new Feature(1, "Reliable Talent", "By 11th level, you have refined your chosen skills until\n" + 
+		"they approach perfection. Whenever you make an ability\n" + 
+		"check that lets you add your proficiency bonus, you can\n" + 
+		"treat a d20 roll of 9 or lower as a 10." );
+
+public static final Feature blindsense = new Feature(1, "Blindsense",  "Starting at 14th level, if you are able to hear, you are\n" + 
+		"aware of the location of any hidden or invisible creature\n" + 
+		"within 10 feet of you.");
+
+public static final Feature slipperyMind = new Feature(1, "Slippery Mind", "By 15th level, you have acquired greater mental\n" + 
+		"strength. You gain proficiency in Wisdom saving throws." );
+
+public static final Feature elusive = new Feature(1, "Elusive", "Beginning at 18th level, you are so evasive that\n" + 
+		"attackers rarely gain the upper hand against you. No\n" + 
+		"attack roll has advantage against you while you aren’t\n" + 
+		"incapacitated.");
+
+public static final Feature strokeOfLuck = new Feature(1, "Stroke Of Luck", "At 20th level, you have an uncanny knack for succeeding\n" + 
+		"w hen you need to. If your attack misses a target within\n" + 
+		"range, you can turn the m iss into a hit. Alternatively, if\n" + 
+		"you fail an ability check, you can treat the d20 roll as a 20.\n" + 
+		"\tOnce you use this feature, you can’t use it again until\n" + 
+		"you finish a short or long rest.");	
+	
+	
 }
