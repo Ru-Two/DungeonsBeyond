@@ -1541,5 +1541,159 @@ public static final Feature  eldritchMaster = new Feature(20, "Eldritch Master",
 		"with this feature, you must finish a long rest before you\n" + 
 		"can do so again." );
 
+//Wizard Features
+//TODO 10/18/2020 expand on arcane tradition (schools): abjuration, divination, conjuration, enchantment,
+//evocation, illusion, necromancy and transmutation
+
+public static final Feature spellcastingWizard = new Feature(1, "Spellcasting Wizard", "A s a student of arcane magic, you have a spellbook\n" + 
+		"containing spells that show the first glimmerings of\n" + 
+		"your true power. See chapter 10 for the general rules of\n" + 
+		"spellcasting and chapter 11 for the wizard spell list.\n" + 
+		"\nCantrips\n" + 
+		"At 1st level, you know three cantrips of your choice\n" + 
+		"from the wizard spell list. You learn additional wizard\n" + 
+		"cantrips of your choice at higher levels, as shown in the\n" + 
+		"Cantrips Known colum n of the Wizard table.\n" + 
+		"\nYour Spellbook\n" + 
+		"The spells that you add to your spellbook as you gain levels\n" + 
+		"reflect the arcane research you conduct on your own, as well\n" + 
+		"as intellectual breakthroughs you have had about the nature\n" + 
+		"of the multiverse. You might find other spells during your\n" + 
+		"adventures. You could discover a spell recorded on a scroll in\n" + 
+		"an evil wizard's chest, for example, or in a dusty tome in an\n" + 
+		"ancient library.\n" + 
+		"\tCopying a Spell into the Book. When you find a wizard spell\n" + 
+		"of 1st level or higher, you can add it to your spellbook if it is\n" + 
+		"of a level for which you have spell slots and if you can spare\n" + 
+		"the time to decipher and copy it.\n" + 
+		"Copying a spell into your spellbook involves reproducing\n" + 
+		"the basic form of the spell, then deciphering the unique\n" + 
+		"system of notation used by the wizard who wrote it. You\n" + 
+		"must practice the spell until you understand the sounds\n" + 
+		"or gestures required, then transcribe it into your spellbook\n" + 
+		"using your own notation.\n" + 
+		"\tFor each level of the spell, the process takes 2 hours and\n" + 
+		"costs 50 gp. The cost represents material components you\n" + 
+		"expend as you experiment with the spell to master it, as well\n" + 
+		"as the fine inks you need to record it. Once you have spent\n" + 
+		"this time and money, you can prepare the spell just like your\n" + 
+		"other spells.\n" + 
+		"\tReplacing the Book. You can copy a spell from your own\n" + 
+		"spellbook into another book— for example, if you want\n" + 
+		"to make a backup copy of your spellbook. This is just like\n" + 
+		"copying a new spell into your spellbook, but faster and easier,\n" + 
+		"since you understand your own notation and already know\n" + 
+		"how to cast the spell. You need spend only 1 hour and 10 gp\n" + 
+		"for each level of the copied spell.\n" + 
+		"\tIf you lose your spellbook, you can use the same procedure\n" + 
+		"to transcribe the spells that you have prepared into a new\n" + 
+		"spellbook. Filling out the remainder of your spellbook\n" + 
+		"requires you to find new spells to do so, as normal. For this\n" + 
+		"reason, many wizards keep backup spellbooks in a safe place.\n" + 
+		"\tThe Book’s Appearance. Your spellbook is a unique\n" + 
+		"compilation of spells, with its own decorative flourishes and\n" + 
+		"margin notes. It might be a plain, functional leather volume\n" + 
+		"that you received as a gift from your master, a finely bound\n" + 
+		"gilt-edged tome you found in an ancient library, or even a\n" + 
+		"loose collection of notes scrounged together after you lost\n" + 
+		"your previous spellbook in a mishap.\n" + 
+		"\n" + 
+		"\nSpellbook\n" + 
+		"At 1st level, you have a spellbook containing six 1st-level\n" + 
+		"wizard spells of your choice.\n" + 
+		"\nPreparing and Casting Spells\n" + 
+		"The Wizard table shows how many spell slots you have\n" + 
+		"to cast your spells of 1st level and higher. To cast one of\n" + 
+		"these spells, you must expend a slot of the spell’s level\n" + 
+		"or higher. You regain all expended spell slots when you\n" + 
+		"finish a long rest.\n" + 
+		"\tYou prepare the list of wizard spells that are available\n" + 
+		"for you to cast. To do so. choose a number of wizard\n" + 
+		"spells from your spellbook equal to your Intelligence\n" + 
+		"modifier + your wizard level (minimum of one spell). The\n" + 
+		"spells must be of a level for which you have spell slots.\n" + 
+		"\tFor example, if you're a 3rd-level wizard, you have\n" + 
+		"four 1st-level and two 2nd-level spell slots. With an\n" + 
+		"Intelligence o f 16, your list of prepared spells can\n" + 
+		"include six spells of 1st or 2nd level, in any combination,\n" + 
+		"chosen from your spellbook. If you prepare the 1st-level\n" + 
+		"spell magic missile, you can cast it using a 1st-level or a\n" + 
+		"2nd-level slot. Casting the spell doesn’t remove it from\n" + 
+		"your list of prepared spells.\n" + 
+		"\tYou can change your list of prepared spells when\n" + 
+		"you finish a long rest. Preparing a new list of wizard\n" + 
+		"spells requires time spent studying your spellbook and\n" + 
+		"m em orizing the incantations and gestures you must\n" + 
+		"make to cast the spell: at least 1 minute per spell level\n" + 
+		"for each spell on your list.\n" + 
+		"\nSpell casting Ability\n" + 
+		"Intelligence is your spellcasting ability for your wizard\n" + 
+		"spells, since you learn your spells through dedicated\n" + 
+		"study and memorization. You use your Intelligence\n" + 
+		"whenever a spell refers to your spellcasting ability.\n" + 
+		"In addition, you use your Intelligence m odifier when\n" + 
+		"setting the saving throw DC for a wizard spell you cast\n" + 
+		"and when making an attack roll with one.\n" + 
+		"Spell save DC = 8 + your proficiency bonus +\n" + 
+		"your Intelligence modifier\n" + 
+		"Spell attack modifier = your proficiency bonus +\n" + 
+		"your intelligence modifier\n" + 
+		"\n" + 
+		"\nRitual Casting\n" + 
+		"You can cast a w izard spell as a ritual if that spell has\n" + 
+		"the ritual tag and you have the spell in your spellbook.\n" + 
+		"You don't need to have the spell prepared.\n" + 
+		"\nSpellcasting Focus\n" + 
+		"You can use an arcane focus (found in chapter 5) as a\n" + 
+		"spellcasting focus for your wizard spells.\n" + 
+		"\nLearning Spells of 1st Level and Higher\n" + 
+		"Each time you gain a wizard level, you can add two\n" + 
+		"wizard spells of your choice to your spellbook. Each\n" + 
+		"of these spells must be of a level for which you have\n" + 
+		"spell slots, as shown on the Wizard table. On your\n" + 
+		"adventures, you might find other spells that you can add\n" + 
+		"to your spellbook (see the “Your Spellbook” sidebar).");
+
+public static final Feature arcaneRecovery = new Feature(1, "Arcane Recovery", "You have learned to regain some of your magical energy\n" + 
+		"by studying your spellbook. Once per day when you\n" + 
+		"finish a short rest, you can choose expended spell slots\n" + 
+		"to recover. The spell slots can have a combined level that\n" + 
+		"is equal to or less than half your wizard level (rounded\n" + 
+		"up), and none of the slots can be 6th level or higher.\n" + 
+		"\tFor example, if you’re a 4th-level wizard, you can recover\n" + 
+		"up to two levels worth of spell slots. You can recover either\n" + 
+		"a 2nd-level spell slot or two 1st-level spell slots.")
+
+public static final Feature arcaneTradition = new Feature(2, "Arcane Tradition", "When you reach 2nd level, you choose an arcane\n" + 
+		"tradition, shaping your practice of m agic through one\n" + 
+		"of eight schools: Abjuration, Conjuration, Divination,\n" + 
+		"Enchantment, Evocation, Illusion, Necromancy,\n" + 
+		"or Transmutation, all detailed at the end of the\n" + 
+		"class description.\n" + 
+		"\tYour choice grants you features at 2nd level and again\n" + 
+		"at 6th, 10th, and 14th level." );
+
+public static final Feature spellMastery = new Feature(18, "Spell Mastery", "At 18th level, you have achieved such mastery over\n" + 
+		"certain spells that you can cast them at will. Choose a\n" + 
+		"1st-level wizard spell and a 2nd-level wizard spell that\n" + 
+		"are in your spellbook. You can cast those spells at their\n" + 
+		"lowest level without expending a spell slot when you\n" + 
+		"have them prepared. If you want to cast either spell at a\n" + 
+		"higher level, you must expend a spell slot as normal.\n" + 
+		"\tBy spending 8 hours in study, you can exchange one\n" + 
+		"or both of the spells you chose for different spells of\n" + 
+		"the same levels." );
+
+public static final Feature signatureSpells = new Feature(20, "Signature Spells", "When you reach 20th level, you gain mastery over two\n" + 
+		"powerful spells and can cast them with little effort.\n" + 
+		"Choose two 3rd-level wizard spells in your spellbook\n" + 
+		"as your signature spells. You always have these spells\n" + 
+		"prepared, they don’t count against the number of spells\n" + 
+		"you have prepared, and you can cast each of them once at\n" + 
+		"3rd level without expending a spell slot. When you do so,\n" + 
+		"you can’t do so again until you finish a short or long rest.\n" + 
+		"If you want to cast either spell at a higher level, you\n" + 
+		"must expend a spell slot as normal.");
+
 	
 }
