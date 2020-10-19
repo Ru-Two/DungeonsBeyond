@@ -1003,6 +1003,152 @@ public final class Utilities {
             "to your Charisma modifier (a minimum of once). You\n" +
             "regain expended uses when you finish a long rest.\n"
     );
+    
+//Sourcerer Features
+// TODO 10/18/2020 expand on sourcerous orgin feature: Draconic, Bloodline or Wild Magic.
+
+public static final Feature spellcastingSourcerer = new Feature(1, "Spellcasting", "An event in your past, or in the life of a parent or\n" + 
+		"ancestor, left an indelible mark on you, infusing you with\n" + 
+		"arcane m agic. This font of magic, whatever its origin,\n" + 
+		"fuels your spells. See chapter 10 for the general rules of\n" + 
+		"spellcasting and chapter 11 for the sorcerer spell list.\n" + 
+		"\nCantrips\n" + 
+		"At 1st level, you know four cantrips of your choice from\n" + 
+		"the sorcerer spell list. You learn additional sorcerer\n" + 
+		"cantrips of your choice at higher levels, as show n in the\n" + 
+		"Cantrips Known colum n of the Sorcerer table.\n" + 
+		"\nSpellSlots\n" + 
+		"The Sorcerer table show s how many spell slots you\n" + 
+		"have to cast your spells of 1st level and higher. To cast\n" + 
+		"one of these sorcerer spells, you must expend a slot of\n" + 
+		"the spell’s level or higher. You regain all expended spell\n" + 
+		"slots w hen you finish a long rest.\n" + 
+		"\tFor example, if you know the 1st-level spell burning\n" + 
+		"hands and have a 1st-level and a 2nd-level spell slot\n" + 
+		"available, you can cast burning hands using either slot.\n" + 
+		"\nSpells Known of 1st Level and Higher\n" + 
+		"You know two 1st-level spells of your choice from the\n" + 
+		"sorcerer spell list.\n" + 
+		"\tThe Spells Known column of the Sorcerer table\n" + 
+		"show s when you learn more sorcerer spells of your\n" + 
+		"choice. Each of these spells must be of a level for which\n" + 
+		"you have spell slots. For instance, when you reach 3rd\n" + 
+		"level in this class, you can learn one new spell of 1st\n" + 
+		"or 2nd level.\n" + 
+		"\tAdditionally, when you gain a level in this class,\n" + 
+		"you can choose one of the sorcerer spells you know\n" + 
+		"and replace it with another spell from the sorcerer\n" + 
+		"spell list, which also must be of a level for w hich you\n" + 
+		"have spell slots.\n" + 
+		"\nSpell casting Ability\n" + 
+		"Charisma is your spellcasting ability for your sorcerer\n" + 
+		"spells, since the pow er of your m agic relies on your\n" + 
+		"ability to project your w ill into the world. You use your\n" + 
+		"Charisma whenever a spell refers to your spellcasting\n" + 
+		"ability. In addition, you use your Charisma modifier\n" + 
+		"when setting the saving throw DC for a sorcerer spell\n" + 
+		"you cast and w hen making an attack roll with one.\n" + 
+		"Spell save DC = 8 + your proficiency bonus +\n" + 
+		"your Charisma modifier\n" + 
+		"Spell attack modifier = your proficiency bonus +\n" + 
+		"your Charisma modifier\n" + "\n Spellcasting Focus\n" + 
+		"You can use an arcane focus (found in chapter 5) as a\n" + 
+		"spellcasting focus for your sorcerer spells.");
+
+public static final Feature sorcerousOrgin = new Feature(1, "Sorcerours Orgin","Choose a sorcerous origin, which describes the\n" + 
+		"source of your innate magical power: D raconic\n" + 
+		"Bloodline or W ild Magic, both detailed at the end of the\n" + 
+		"class description.\n" + 
+		"\tYour choice grants you features when you choose it at\n" + 
+		"1st level and again at 6th, 14th, and 18th level.");
+
+public static final Feature fontOfMagic = new Feature(2, "Font of Magic", "At 2nd level, you tap into a deep wellspring of magic\n" + 
+		"within yourself. This wellspring is represented by\n" + 
+		"sorcery points, which allow you to create a variety of\n" + 
+		"magical effects.\n" + 
+		"\nSorcery Points\n" + 
+		"You have 2 sorcery points, and you gain m ore as you\n" + 
+		"reach higher levels, as shown in the Sorcery Points\n" + 
+		"colum n of the Sorcerer table. You can never have\n" + 
+		"m ore sorcery points than shown on the table for your\n" + 
+		"level. You regain all spent sorcery points when you\n" + 
+		"finish a long rest.\n" + 
+		"\nFlexible Casting\n" + 
+		"You can use your sorcery points to gain additional spell\n" + 
+		"slots, or sacrifice spell slots to gain additional sorcery\n" + 
+		"points. You learn other ways to use your sorcery points\n" + 
+		"as you reach higher levels.\n" + 
+		"\tCreating Spell Slots. You can transform unexpended\n" + 
+		"sorcery points into one spell slot as a bonus action on\n" + 
+		"your turn. The Creating Spell Slots table show s the cost\n" + 
+		"of creating a spell slot of a given level. You can create\n" + 
+		"spell slots no higher in level than 5th.\n" + 
+		"\nCreating Spell Slots\n" + 
+		"Spell Slot Sorcery\n" + 
+		"Level Point Cost\n" + 
+		"1st 2\n" + 
+		"2nd 3\n" + 
+		"3rd 5\n" + 
+		"4th 6\n" + 
+		"5th 7\n" + 
+		"\tConverting a Spell Slot to Sorcery Points. As a\n" + 
+		"bonus action on your turn, you can expend one spell\n" + 
+		"slot and gain a number of sorcery points equal to the\n" + 
+		"slot’s level.\n" );
+
+public static final Feature metamagic = new Feature(3, "Metamagic", "At 3rd level, you gain the ability to twist your spells\n" + 
+		"to suit your needs. You gain two of the following\n" + 
+		"M etamagic options of your choice. You gain another one\n" + 
+		"at 10th and 17th level.\n" + 
+		"\tYou can use only one M etam agic option on a spell\n" + 
+		"w hen you cast it, unless otherwise noted." + "\nCareful Spell\n" + 
+				"W hen you cast a spell that forces other creatures to make\n" + 
+				"a saving throw, you can protect som e of those creatures\n" + 
+				"from the spell’s full force. To do so, you spend 1 sorcery\n" + 
+				"point and choose a number o f those creatures up to your\n" + 
+				"Charisma modifier (minimum of one creature). A chosen\n" + 
+				"creature automatically succeeds on its saving throw\n" + 
+				"against the spell.\n" + 
+				"\nDistant Spell\n" + 
+				"When you cast a spell that has a range of 5 feet or\n" + 
+				"greater, you can spend 1 sorcery point to double the\n" + 
+				"range of the spell.\n" + 
+				"\tWhen you cast a spell that has a range of touch, you\n" + 
+				"can spend 1 sorcery point to make the range of the\n" + 
+				"spell 30 feet.\n" + 
+				"\nEmpowered Spell\n" + 
+				"When you roll damage for a spell, you can spend 1\n" + 
+				"sorcery point to reroll a number of the damage dice up\n" + 
+				"to your Charisma modifier (minimum of one). You must\n" + 
+				"use the new rolls.\n" + 
+				"\tYou can use Em powered Spell even if you have\n" + 
+				"already used a different M etam agic option during the\n" + 
+				"casting of the spell.\n" + 
+				"\nExtended Spell\n" + 
+				"When you cast a spell that has a duration of 1 minute\n" + 
+				"or longer, you can spend 1 sorcery point to double its\n" + 
+				"duration, to a maximum duration of 24 hours.\n" + 
+				"\nHeightened Spell\n" + 
+				"When you cast a spell that forces a creature to make a\n" + 
+				"saving throw to resist its effects, you can spend 3 sorcery\n" + 
+				"points to give one target of the spell disadvantage on its\n" + 
+				"first saving throw made against the spell.\n" + 
+				"\nQuickened Spell\n" + 
+				"When you cast a spell that has a casting time of 1 action,\n" + 
+				"you can spend 2 sorcery points to change the casting\n" + 
+				"time to 1 bonus action for this casting.\n" + 
+				"\nSubtle Spell\n" + 
+				"When you cast a spell, you can spend 1 sorcery point to\n" + 
+				"cast it without any som atic or verbal components.\n" + 
+				"\nTwinned Spell\n" + 
+				"W hen you cast a spell that targets only one creature and\n" + 
+				"doesn’t have a range of self, you can spend a number of\n" + 
+				"sorcery points equal to the spell’s level to target a second\n" + 
+				"creature in range with the sam e spell (1 sorcery point if\n" + 
+				"the spell is a cantrip).\n" );
+
+public static final Feature sorcerousRestoration = new Feature(20, "Sorcerous Restoration","At 20th level, you regain 4 expended sorcery points\n" + 
+		"w henever you finish a short rest." );
 
 
 }
