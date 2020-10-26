@@ -9,7 +9,7 @@ import java.util.*;
 public class SheetComponentPanel extends JPanel {
 
     ArrayList<DBImageComponent> images;
-    ArrayList<JTextComponent> texts;
+    ArrayList<DBTextComponent> texts;
     ArrayList<JTextField> textFields;
 
     public SheetComponentPanel(){
@@ -36,6 +36,11 @@ public class SheetComponentPanel extends JPanel {
         images.add(new DBImageComponent());
     }
 
+    public void addText(String text, int x, int y){
+        DBTextComponent newTxt = new DBTextComponent(text);
+        newTxt.setLocation(x,y);
+        texts.add(newTxt);
+    }
 
 
 }
