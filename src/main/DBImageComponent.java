@@ -10,6 +10,7 @@ public class DBImageComponent extends JComponent{
 
     public DBImageComponent(){
         img = null;
+        setLocation(0,0);
         imgDimension = new Dimension(100,100);
     }
 
