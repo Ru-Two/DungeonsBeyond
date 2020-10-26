@@ -10,7 +10,7 @@ public class SheetComponentPanel extends JPanel {
 
     ArrayList<DBImageComponent> images;
     ArrayList<DBTextComponent> texts;
-    ArrayList<JTextField> textFields;
+    ArrayList<DBTextAreaComponent> textAreas;
 
     public SheetComponentPanel(){
         setLocation(0,0);
@@ -33,7 +33,9 @@ public class SheetComponentPanel extends JPanel {
     }
 
     public void addImage(BufferedImage img, int x, int y, int width, int height){
-        images.add(new DBImageComponent());
+        DBImageComponent newImg = new DBImageComponent(img, width, height);
+        newImg.setLocation(x, y);
+        images.add(newImg);
     }
 
     public void addText(String text, int x, int y){
@@ -42,5 +44,21 @@ public class SheetComponentPanel extends JPanel {
         texts.add(newTxt);
     }
 
+    public void addTextField(){
+
+    }
+
+    @Override
+    public void paintComponent(Graphics g){
+        for (DBImageComponent img:images){
+            img.paintComponent(g);
+        }
+        for(DBTextComponent txt:texts){
+            txt.paintComponent(g);
+        }
+        for (DBTextAreaComponent txtArea:textAreas){
+            txtArea.paintComponents(g);
+        }
+    }
 
 }
