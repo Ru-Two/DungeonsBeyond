@@ -1,6 +1,7 @@
 package main;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.image.*;
 import java.util.*;
@@ -8,7 +9,8 @@ import java.util.*;
 public class SheetComponentPanel extends JPanel {
 
     ArrayList<DBImageComponent> images;
-    
+    ArrayList<JTextComponent> texts;
+    ArrayList<JTextField> textFields;
 
     public SheetComponentPanel(){
         setLocation(0,0);
@@ -31,8 +33,9 @@ public class SheetComponentPanel extends JPanel {
     }
 
     public void addImage(BufferedImage img, int x, int y, int width, int height){
-
+        images.add(new DBImageComponent());
     }
+
 
 
 }
