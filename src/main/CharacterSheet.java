@@ -32,6 +32,9 @@ public class CharacterSheet extends JPanel{
         character = new CharacterInfo();
         screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         sheetSize = new Dimension((int)((screenSize.getHeight()-50)*(sheetSizeRatio.getWidth()/sheetSizeRatio.getHeight())), (int)screenSize.getHeight()-50);
+
+        setSize(sheetSize);
+
         tmpSheet = DungeonsBeyond.getImage("src/graphics/basic_sheet.png");
     }
 
