@@ -1,22 +1,39 @@
 package main;
 
 import javax.swing.text.JTextComponent;
+import javax.swing.*;
 import java.awt.*;
 
-public class DBTextComponent extends JTextComponent {
+public class DBTextComponent extends JComponent {
+
+    String text;
     public DBTextComponent(){
-        setText(" ");
+        super();
+        setLocation(0,0);
+        text = " ";
     }
 
     public DBTextComponent(String text){
-        setText(text);
+        this();
+        this.text = text;
+    }
+
+    public DBTextComponent(String text, int x, int y){
+        this();
+        this.text = text;
+        setLocation(x,y);
+    }
+
+    public String getText(){
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     @Override
     public void paintComponent(Graphics g){
-        if(getText().equals(" ")){
-            g.drawString(getText(), getX(), getY());
-
-        }
+        g.drawString(text, getX(), getY());
     }
 }
