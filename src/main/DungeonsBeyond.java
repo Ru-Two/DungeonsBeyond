@@ -45,13 +45,13 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
         setSize(sheetSize);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
         setVisible(true);
     }
 
     @Override
     public void paint(Graphics g){
-        super.paint(g);
-        tmpCharacter.paintComponent(g);
+        super.paintComponents(g);
     }
 
     public static void main(String[] args){
