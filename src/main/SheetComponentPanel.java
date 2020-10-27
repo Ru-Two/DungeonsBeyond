@@ -15,6 +15,10 @@ public class SheetComponentPanel extends JPanel {
     public SheetComponentPanel(){
         setLocation(0,0);
         setSize(100,100);
+
+        images = new ArrayList<DBImageComponent>();
+        texts = new ArrayList<DBTextComponent>();
+        textAreas = new ArrayList<DBTextAreaComponent>();
     }
 
     public SheetComponentPanel(int x, int y){
@@ -38,14 +42,20 @@ public class SheetComponentPanel extends JPanel {
         images.add(newImg);
     }
 
+    public void addText(String text){
+        addText(text, 0, 0);
+    }
+
     public void addText(String text, int x, int y){
         DBTextComponent newTxt = new DBTextComponent(text);
-        newTxt.setLocation(x,y);
+        newTxt.setLocation(x, y);
         texts.add(newTxt);
     }
 
-    public void addTextField(){
-
+    public void addTextField(int x, int y){
+        DBTextAreaComponent newTextArea = new DBTextAreaComponent();
+        newTextArea.setLocation(x, y);
+        textAreas.add(newTextArea);
     }
 
     @Override
