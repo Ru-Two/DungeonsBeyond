@@ -9,19 +9,23 @@ import java.awt.image.*;
 import java.lang.*;
 import java.io.*;
 import java.util.*;
-import utilities.*;
 
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
-import static utilities.Utilities.*;
+public class DungeonsBeyond extends JFrame implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
 
-public class DungeonsBeyond extends JFrame implements ActionListener, KeyListener, MouseListener{
-    //JFrame mainWindow;
+    static final int OPTION_PANEL_HEIGHT = 160;
+
     Dimension screenSize;
     Dimension windowSize;
     Dimension sheetSize;
     Dimension sheetSizeRatio = new Dimension(17, 22);
 
+    ArrayList<CharacterSheet> allSheets;
     CharacterSheet tmpCharacter = null;
+    OptionPanel options;
+    SheetListPanel sheetListPanel;
+
+    CharacterSheet currentSheet = null;
+    int currentSheetIndex = 0;
 
     Timer ticks;
 
@@ -32,17 +36,30 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
         sheetSize = new Dimension((int)((screenSize.getHeight()-50)*(sheetSizeRatio.getWidth()/sheetSizeRatio.getHeight())), (int)screenSize.getHeight()-50);
 
-        ticks = new Timer(10, this);
+        windowSize = new Dimension((int)sheetSize.getHeight(), (int)sheetSize.getHeight());
+
+        allSheets = new ArrayList<CharacterSheet>();
+
+        options = new OptionPanel(0,0,(int)(sheetSize.getHeight() - sheetSize.getWidth()), OPTION_PANEL_HEIGHT);
+        add(options);
+
+        sheetListPanel = new SheetListPanel(0, (int)options.getHeight(), (int)options.getWidth(), (int)(windowSize.getHeight() - options.getHeight()));
+        add(sheetListPanel);
+
+
+
+        ticks = new Timer(1, this);
         ticks.start();
 
+
         tmpCharacter = new CharacterSheet();
-        add(tmpCharacter);
+        addSheet(tmpCharacter);
 
         addKeyListener(this);
         addMouseListener(this);
 
         setIconImage(getImage("src/graphics/db_logo.png"));
-        setSize(sheetSize);
+        setSize(windowSize);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -59,8 +76,31 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     }
 
+    public void createNewSheet(){
+        CharacterSheet newCharacter = new CharacterSheet();
+        addSheet(newCharacter);
+    }
+
+    public void addSheet(CharacterSheet cs){
+        allSheets.add(cs);
+        sheetListPanel.addSheet();
+        selectSheet(allSheets.size()-1);
+    }
+
+    public void selectSheet(int index){
+        if (currentSheet != null) {
+            remove(currentSheet);
+            currentSheet = allSheets.get(index);
+            currentSheetIndex = index;
+            sheetListPanel.selectSheet(index);
+            add(currentSheet);
+        }
+    }
+
     //ActionListener function
+
     public void actionPerformed(ActionEvent evt){
+        repaint();
         /*if (tmpCharacter != null){
             tmpCharacter.revalidate();
             tmpCharacter.repaint();
@@ -68,6 +108,7 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     }
 
     //KeyListener functions
+
     public void keyTyped(KeyEvent e) {}
 
     public void keyPressed(KeyEvent e) {}
@@ -84,7 +125,37 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     public void mouseExited(MouseEvent e) {}
 
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+        if (e.getButton() == MouseEvent.BUTTON1){
+
+            if (sheetListPanel.newSheetButtonIsClicked(translateForList(e.getPoint()))) {
+                createNewSheet();
+            }
+            int tmpIndex = sheetListPanel.selectSheet(translateForList(e.getPoint()));
+            if (tmpIndex != -1){
+                selectSheet(tmpIndex);
+            }
+        }
+    }
+
+
+    public Point translateForList(Point p){
+        return new Point((int)p.getX(), (int)(p.getY()-options.getHeight()));
+    }
+
+    public Point translateForSheet(Point p){
+        return new Point((int)(p.getX()-options.getWidth()),(int)p.getY());
+    }
+
+    //Mouse motion listener
+
+    public void mouseDragged(MouseEvent e){
+
+    }
+
+    public void mouseMoved(MouseEvent e){
+
+    }
 
     //fetches image of specified path
     public static BufferedImage getImage(String path){
