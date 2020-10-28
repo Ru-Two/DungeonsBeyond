@@ -83,6 +83,11 @@ public class CharacterSheet extends JPanel{
         character.setCharacterName(characterName);
     }
 
+    public CharacterSheet(int x, int y){
+        this();
+        setLocation(x, y);
+    }
+
     @Override
     public void paintComponent(Graphics g){
         g.setFont(new Font("Courier Regular", Font.PLAIN, FONT_SIZE));
