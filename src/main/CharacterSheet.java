@@ -36,7 +36,7 @@ public class CharacterSheet extends JPanel{
         screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         sheetSize = new Dimension((int)((screenSize.getHeight()-50)*(sheetSizeRatio.getWidth()/sheetSizeRatio.getHeight())), (int)screenSize.getHeight()-50);
         setSize(sheetSize);
-        setLocation(0,0);
+        setLocation((int)(sheetSize.getHeight() - sheetSize.getWidth()), 0);
 
         //initialize all panels
         headerPanel = new SheetComponentPanel(0,0, (int)sheetSize.getWidth()-60, 200);
@@ -86,7 +86,7 @@ public class CharacterSheet extends JPanel{
     @Override
     public void paintComponent(Graphics g){
         g.setFont(new Font("Courier Regular", Font.PLAIN, FONT_SIZE));
-        //g.drawImage(tmpSheet, 0, 0, this);
+        g.drawImage(tmpSheet, 0, 0, this);
 
         headerPanel.paintComponent(g);
         abilityScorePanel.paintComponent(g);
