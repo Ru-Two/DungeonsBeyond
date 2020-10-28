@@ -25,7 +25,7 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     SheetListPanel sheetListPanel;
 
     CharacterSheet currentSheet = null;
-    int currentSheetIndex = 0;
+    int currentSheetIndex = -1;
 
     Timer ticks;
 
@@ -48,11 +48,11 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
 
 
-        ticks = new Timer(1, this);
+        ticks = new Timer(2, this);
         ticks.start();
 
 
-        tmpCharacter = new CharacterSheet();
+        tmpCharacter = new CharacterSheet((int)options.getWidth(), 0);
         addSheet(tmpCharacter);
 
         addKeyListener(this);
@@ -69,6 +69,9 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     @Override
     public void paint(Graphics g){
         super.paintComponents(g);
+        if (currentSheetIndex >= 0){
+            displayCurrentSheet(g);
+        }
     }
 
     public static void main(String[] args){
@@ -76,8 +79,12 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     }
 
+    public void displayCurrentSheet(Graphics g){
+
+    }
+
     public void createNewSheet(){
-        CharacterSheet newCharacter = new CharacterSheet();
+        CharacterSheet newCharacter = new CharacterSheet((int)options.getWidth(), 0);
         addSheet(newCharacter);
     }
 
@@ -88,13 +95,13 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     }
 
     public void selectSheet(int index){
-        if (currentSheet != null) {
-            remove(currentSheet);
-            currentSheet = allSheets.get(index);
-            currentSheetIndex = index;
-            sheetListPanel.selectSheet(index);
-            add(currentSheet);
+        //currentSheet = allSheets.get(index);
+        if (currentSheetIndex != -1){
+            remove(allSheets.get(currentSheetIndex));
         }
+        currentSheetIndex = index;
+        sheetListPanel.selectSheet(index);
+        add(allSheets.get(currentSheetIndex));
     }
 
     //ActionListener function
