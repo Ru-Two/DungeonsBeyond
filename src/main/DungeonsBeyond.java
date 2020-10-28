@@ -91,17 +91,16 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     public void addSheet(CharacterSheet cs){
         allSheets.add(cs);
         sheetListPanel.addSheet();
+        add(allSheets.get(allSheets.size()-1));
         selectSheet(allSheets.size()-1);
     }
 
     public void selectSheet(int index){
         //currentSheet = allSheets.get(index);
-        if (currentSheetIndex != -1){
-            remove(allSheets.get(currentSheetIndex));
-        }
+        if (currentSheetIndex != -1) allSheets.get(currentSheetIndex).setVisible(false);
         currentSheetIndex = index;
         sheetListPanel.selectSheet(index);
-        add(allSheets.get(currentSheetIndex));
+        allSheets.get(currentSheetIndex).setVisible(true);
     }
 
     //ActionListener function
