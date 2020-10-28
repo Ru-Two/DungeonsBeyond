@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class DBTextComponent extends JComponent {
 
-    String text;
+    private String text;
     public DBTextComponent(){
         super();
         setLocation(0,0);

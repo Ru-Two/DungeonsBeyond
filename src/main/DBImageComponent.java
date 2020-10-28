@@ -5,8 +5,8 @@ import java.awt.*;
 import java.awt.image.*;
 
 public class DBImageComponent extends JComponent{
-    Image img;
-    Dimension imgDimension;
+    private Image img;
+    private Dimension imgDimension;
 
     public DBImageComponent(){
         img = null;

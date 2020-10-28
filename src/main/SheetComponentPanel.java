@@ -8,9 +8,9 @@ import java.util.*;
 
 public class SheetComponentPanel extends JPanel {
 
-    ArrayList<DBImageComponent> images;
-    ArrayList<DBTextComponent> texts;
-    ArrayList<DBTextAreaComponent> textAreas;
+    private ArrayList<DBImageComponent> images;
+    private ArrayList<DBTextComponent> texts;
+    private ArrayList<DBTextAreaComponent> textAreas;
 
     public SheetComponentPanel(){
         setLocation(0,0);
