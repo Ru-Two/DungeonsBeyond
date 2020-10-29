@@ -11,11 +11,13 @@ public class DBButton {
 
     private Image img;
     private Color selectColor;
+    private Color col;
 
     public DBButton(){
         bounds = new Rectangle(0,0,100,100);
         img = null;
         selectColor = new Color(255,255,255, 20);
+        col = Color.WHITE;
     }
 
     public DBButton(int x, int y, int wid, int hei){
@@ -37,15 +39,24 @@ public class DBButton {
     }
 
     public void drawButton(Graphics g, ImageObserver imgObs){
+        g.setColor(col);
+        g.fillRect(getX(), getY(), getWidth(), getHeight());
         g.setColor(Color.BLACK);
         g.drawRect(getX(), getY(), getWidth(), getHeight());
+
         if (img != null) g.drawImage(img, getX(), getY(), imgObs);
     }
 
     public void drawButtonSelected(Graphics g, ImageObserver imgObs){
-        if (img != null) g.drawImage(img, getX(), getY(), imgObs);
+        g.setColor(Color.WHITE);
+        g.fillRect(getX(), getY(), getWidth(), getHeight());
         g.setColor(selectColor);
         g.fillRect(getX(), getY(), getWidth(), getHeight());
+
+        if (img != null) g.drawImage(img, getX(), getY(), imgObs);
+
+        g.setColor(Color.BLACK);
+        g.drawRect(getX(), getY(), getWidth(), getHeight());
     }
 
     public void setBounds(int x, int y, int wid, int hei){
@@ -60,8 +71,12 @@ public class DBButton {
         this.img = img.getScaledInstance((int)bounds.getWidth(), (int)bounds.getHeight(), Image.SCALE_SMOOTH);
     }
 
-    public void setColor(Color col){
+    public void setSelectColor(Color col){
         selectColor = col;
+    }
+
+    public void setColor(Color col){
+        this.col = col;
     }
 
     public int getX(){

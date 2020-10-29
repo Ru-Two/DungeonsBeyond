@@ -26,6 +26,8 @@ public class SheetListPanel extends JPanel {
         setSize(100,100);
         BUTTON_SIZE = new Dimension(50,50);
         newSheetButton = new DBButton(getNextButtonBounds());
+        //newSheetButton.setImage(DungeonsBeyond.getImage("src/graphics/add_sheet.png"));
+        newSheetButton.setColor(new Color(5,250,20,60));
     }
 
     public SheetListPanel(int x, int y, int wid, int hei){
@@ -37,7 +39,7 @@ public class SheetListPanel extends JPanel {
 
     public void addSheet(){
         DBButton newBtn = new DBButton();
-        newBtn.setColor(SELECT_COLOR);
+        newBtn.setSelectColor(SELECT_COLOR);
         newBtn.setBounds(getNextButtonBounds());
         sheetButtons.add(newBtn);
         newSheetButton.setBounds(getNextButtonBounds());

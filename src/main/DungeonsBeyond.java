@@ -140,6 +140,7 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
             int tmpIndex = sheetListPanel.selectSheet(translateForList(e.getPoint()));
             if (tmpIndex != -1){
                 selectSheet(tmpIndex);
+                System.out.println("Sheet " +tmpIndex+ " selected");
             }
         }
     }
