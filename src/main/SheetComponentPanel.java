@@ -1,7 +1,6 @@
 package main;
 
 import javax.swing.*;
-import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.image.*;
 import java.util.*;
@@ -37,8 +36,7 @@ public class SheetComponentPanel extends JPanel {
     }
 
     public void addImage(BufferedImage img, int x, int y, int width, int height){
-        DBImageComponent newImg = new DBImageComponent(img, width, height);
-        newImg.setLocation(x, y);
+        DBImageComponent newImg = new DBImageComponent(img, x, y, width, height);
         images.add(newImg);
     }
 
@@ -47,19 +45,19 @@ public class SheetComponentPanel extends JPanel {
     }
 
     public void addText(String text, int x, int y){
-        DBTextComponent newTxt = new DBTextComponent(text);
-        newTxt.setLocation(x, y);
+        DBTextComponent newTxt = new DBTextComponent(text, x, y);
         texts.add(newTxt);
     }
 
-    public void addTextField(int x, int y){
-        DBTextAreaComponent newTextArea = new DBTextAreaComponent();
-        newTextArea.setLocation(x, y);
+    public void addTextField(int x, int y, int wid, int hei){
+        DBTextAreaComponent newTextArea = new DBTextAreaComponent(x, y, wid, hei);
         textAreas.add(newTextArea);
     }
 
     @Override
     public void paintComponent(Graphics g){
+        //super.paintComponent(g);
+
         for (DBImageComponent img:images){
             img.paintComponent(g);
         }
