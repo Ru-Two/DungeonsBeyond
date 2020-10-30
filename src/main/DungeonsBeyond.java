@@ -9,56 +9,45 @@ import java.awt.image.*;
 import java.lang.*;
 import java.io.*;
 import java.util.*;
+import static utilities.PreloadedImages.*;
 
 public class DungeonsBeyond extends JFrame implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
 
     static final int OPTION_PANEL_HEIGHT = 160;
 
-    Dimension screenSize;
-    Dimension windowSize;
-    Dimension sheetSize;
-    Dimension sheetSizeRatio = new Dimension(17, 22);
-
     ArrayList<CharacterSheet> allSheets;
     CharacterSheet tmpCharacter = null;
-    OptionPanel options;
-    SheetListPanel sheetListPanel;
-
-    CharacterSheet currentSheet = null;
     int currentSheetIndex = -1;
+
+    OptionPanel options;
+
+    SheetListPanel sheetListPanel;
 
     Timer ticks;
 
     public DungeonsBeyond(){
         super("Dungeons Beyond");
 
-        screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
-        sheetSize = new Dimension((int)((screenSize.getHeight()-50)*(sheetSizeRatio.getWidth()/sheetSizeRatio.getHeight())), (int)screenSize.getHeight()-50);
-
-        windowSize = new Dimension((int)sheetSize.getHeight(), (int)sheetSize.getHeight());
-
         allSheets = new ArrayList<CharacterSheet>();
 
         options = new OptionPanel(0,0,(int)(sheetSize.getHeight() - sheetSize.getWidth()), OPTION_PANEL_HEIGHT);
+        options.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(options);
 
-        sheetListPanel = new SheetListPanel(0, (int)options.getHeight(), (int)options.getWidth(), (int)(windowSize.getHeight() - options.getHeight()));
+        sheetListPanel = new SheetListPanel(0, options.getHeight(), options.getWidth(), (int)(windowSize.getHeight() - options.getHeight()));
+        sheetListPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(sheetListPanel);
 
-
-
-        ticks = new Timer(2, this);
-        ticks.start();
-
-
         tmpCharacter = new CharacterSheet((int)options.getWidth(), 0);
-        addSheet(tmpCharacter);
-
+        tmpCharacter.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        //addSheet(tmpCharacter);
 
         addKeyListener(this);
         addMouseListener(this);
         addMouseMotionListener(this);
+
+        ticks = new Timer(30, this);
+        ticks.start();
 
         setIconImage(getImage("src/graphics/db_logo.png"));
         setSize(windowSize);
@@ -70,10 +59,7 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     @Override
     public void paint(Graphics g){
-        super.paintComponents(g);
-        if (currentSheetIndex >= 0){
-            displayCurrentSheet(g);
-        }
+        super.paint(g);
     }
 
     public static void main(String[] args){
@@ -81,12 +67,9 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     }
 
-    public void displayCurrentSheet(Graphics g){
-
-    }
-
     public void createNewSheet(){
-        CharacterSheet newCharacter = new CharacterSheet((int)options.getWidth(), 0);
+        CharacterSheet newCharacter = new CharacterSheet(options.getWidth(), 0);
+        newCharacter.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         addSheet(newCharacter);
     }
 
@@ -99,17 +82,30 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     public void selectSheet(int index){
         //currentSheet = allSheets.get(index);
-        if (index == -1) return;
-        if (currentSheetIndex != -1)allSheets.get(currentSheetIndex).setVisible(false);
-        currentSheetIndex = index;
-        sheetListPanel.selectSheet(index);
-        allSheets.get(currentSheetIndex).setVisible(true);
+        if (allSheets.size() > 0) {
+            if (index < 0 || index >= allSheets.size()) return;
+            if (currentSheetIndex >=0 ) allSheets.get(currentSheetIndex).setVisible(false);
+            currentSheetIndex = index;
+            sheetListPanel.selectSheet(index);
+            allSheets.get(currentSheetIndex).setVisible(true);
+        }
+    }
+
+    public void deleteSheet(int index){
+        if (currentSheetIndex == index) {
+            currentSheetIndex = -1;
+        }
+        currentSheetIndex--;
+        allSheets.remove(index);
+        sheetListPanel.deleteSheet(index);
+        selectSheet(0);
     }
 
     //ActionListener function
 
     public void actionPerformed(ActionEvent evt){
         if (sheetListPanel.checkAddSheetFlag()){ createNewSheet(); }
+        if (sheetListPanel.checkSheetDeleteFlag()){ deleteSheet(sheetListPanel.getDeleteBuffer()); }
         selectSheet(sheetListPanel.getSelectedSheet());
 
         repaint();
@@ -134,15 +130,7 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     public void mouseExited(MouseEvent e) {}
 
     public void mouseClicked(MouseEvent e) {
-    }
 
-
-    public Point translateForList(Point p){
-        return new Point((int)p.getX(), (int)(p.getY()-options.getHeight()));
-    }
-
-    public Point translateForSheet(Point p){
-        return new Point((int)(p.getX()-options.getWidth()),(int)p.getY());
     }
 
     //Mouse motion listener
@@ -153,6 +141,12 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     public void mouseMoved(MouseEvent e){
 
+    }
+
+    //draws black rectangle around jcomponent
+    public static void drawBox(JComponent j, Graphics g){
+        g.setColor(Color.BLACK);
+        g.drawRect(j.getX(), j.getY(), j.getWidth(), j.getHeight());
     }
 
     //fetches image of specified path
