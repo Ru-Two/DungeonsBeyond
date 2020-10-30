@@ -7,10 +7,17 @@ import java.awt.*;
 public class DBTextComponent extends JComponent {
 
     private String text;
+    private Color col;
+    private Font font;
+    private int fontSize;
+
     public DBTextComponent(){
         super();
         setLocation(0,0);
         text = " ";
+        col = Color.BLACK;
+        fontSize = 20;
+        font = new Font("Courier Regular", Font.PLAIN, fontSize);
     }
 
     public DBTextComponent(String text){
@@ -32,8 +39,18 @@ public class DBTextComponent extends JComponent {
         this.text = text;
     }
 
+    public void setFont(Font f){
+        font = f;
+    }
+
+    public void setColor(Color col) {
+        this.col = col;
+    }
+
     @Override
     public void paintComponent(Graphics g){
+        g.setFont(font);
+        g.setColor(col);
         g.drawString(text, getX(), getY());
     }
 }
