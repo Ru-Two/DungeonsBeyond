@@ -4,9 +4,10 @@ import character.*;
 import utilities.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.awt.image.*;
 
-public class CharacterSheet extends JPanel{
+public class CharacterSheet extends JPanel implements MouseListener {
 
     private static final int FONT_SIZE = 20;
 
@@ -39,42 +40,31 @@ public class CharacterSheet extends JPanel{
         setLocation((int)(sheetSize.getHeight() - sheetSize.getWidth()), 0);
 
         //initialize all panels
-        headerPanel = new SheetComponentPanel(0,0, (int)sheetSize.getWidth()-60, 200);
-        add(headerPanel);
+        headerPanel = new SheetComponentPanel(30,30, 730,100);
 
         abilityScorePanel = new SheetComponentPanel();
-        add(abilityScorePanel);
 
         inspProfPanel = new SheetComponentPanel();
-        add(inspProfPanel);
 
         savingThrowPanel = new SheetComponentPanel();
-        add(savingThrowPanel);
 
         skillPanel = new SheetComponentPanel();
-        add(skillPanel);
 
         healthPanel = new SheetComponentPanel();
-        add(healthPanel);
 
         combatPanel = new SheetComponentPanel();
-        add(combatPanel);
 
         personalInfoPanel = new SheetComponentPanel();
-        add(personalInfoPanel);
 
         languagePanel = new SheetComponentPanel();
-        add(languagePanel);
 
         featureAndTraitPanel = new SheetComponentPanel();
-        add(featureAndTraitPanel);
 
         attackAndSpellcastingPanel = new SheetComponentPanel();
-        add(attackAndSpellcastingPanel);
 
         equipmentPanel = new SheetComponentPanel();
-        add(equipmentPanel);
 
+        addMouseListener(this);
         tmpSheet = DungeonsBeyond.getImage("src/graphics/basic_sheet.png");
     }
 
@@ -88,12 +78,34 @@ public class CharacterSheet extends JPanel{
         setLocation(x, y);
     }
 
+    public void mousePressed(MouseEvent e) {}
+
+    public void mouseReleased(MouseEvent e) {}
+
+    public void mouseEntered(MouseEvent e) {}
+
+    public void mouseExited(MouseEvent e) {}
+
+    public void mouseClicked(MouseEvent e) {
+    }
+
+    public void drawBox(JComponent j, Graphics g){
+        g.setColor(Color.BLACK);
+        g.drawRect(j.getX(), j.getY(), j.getWidth(), j.getHeight());
+    }
+
     @Override
     public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        g.drawLine(0,0, 0, getHeight());
+
         g.setFont(new Font("Courier Regular", Font.PLAIN, FONT_SIZE));
-        g.drawImage(tmpSheet, 0, 0, this);
+
+        //g.drawImage(tmpSheet, 0, 0, this);
 
         headerPanel.paintComponent(g);
+        drawBox(headerPanel, g);
+
         abilityScorePanel.paintComponent(g);
         inspProfPanel.paintComponent(g);
         savingThrowPanel.paintComponent(g);
@@ -105,5 +117,7 @@ public class CharacterSheet extends JPanel{
         featureAndTraitPanel.paintComponent(g);
         attackAndSpellcastingPanel.paintComponent(g);
         equipmentPanel.paintComponent(g);
+
+
     }
 }
