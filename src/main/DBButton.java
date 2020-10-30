@@ -13,11 +13,14 @@ public class DBButton {
     private Color selectColor;
     private Color col;
 
+    private boolean selected;
+
     public DBButton(){
         bounds = new Rectangle(0,0,100,100);
         img = null;
         selectColor = new Color(255,255,255, 20);
         col = Color.WHITE;
+        selected = false;
     }
 
     public DBButton(int x, int y, int wid, int hei){
@@ -38,15 +41,29 @@ public class DBButton {
         return bounds.contains(p);
     }
 
-    public void drawButton(Graphics g, ImageObserver imgObs){
-        g.setColor(col);
-        g.fillRect(getX(), getY(), getWidth(), getHeight());
-        g.setColor(Color.BLACK);
-        g.drawRect(getX(), getY(), getWidth(), getHeight());
-
-        if (img != null) g.drawImage(img, getX(), getY(), imgObs);
+    public void select(){
+        selected = true;
     }
 
+    public void unSelect(){
+        selected = false;
+    }
+
+    public void drawButton(Graphics g, ImageObserver imgObs){
+        if (img != null) g.drawImage(img, getX(), getY(), imgObs);
+        else {
+            g.setColor(col);
+            g.fillRect(getX(), getY(), getWidth(), getHeight());
+        }
+        if (selected){
+            g.setColor(selectColor);
+            g.fillRect(getX(), getY(), getWidth(), getHeight());
+        }
+        g.setColor(Color.BLACK);
+        g.drawRect(getX(), getY(), getWidth(), getHeight());
+    }
+
+    /*
     public void drawButtonSelected(Graphics g, ImageObserver imgObs){
         g.setColor(Color.WHITE);
         g.fillRect(getX(), getY(), getWidth(), getHeight());
@@ -58,6 +75,7 @@ public class DBButton {
         g.setColor(Color.BLACK);
         g.drawRect(getX(), getY(), getWidth(), getHeight());
     }
+    */
 
     public void setBounds(int x, int y, int wid, int hei){
         bounds.setRect(x, y, wid, hei);
