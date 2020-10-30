@@ -1,84 +1,79 @@
 package main;
 
 import character.*;
-import utilities.*;
+import characterclass.CharacterClass;
+import characterrace.CharacterRace;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.*;
+import java.util.ArrayList;
 
 import static utilities.PreloadedImages.*;
 
-public class CharacterSheet extends JPanel implements MouseListener {
+public class CharacterSheet extends JPanel implements MouseListener, KeyListener, MouseMotionListener {
 
-    private static final int FONT_SIZE = 20;
+    private int FONT_SIZE = 20;
 
     private CharacterInfo character;
-    private Dimension screenSize;
-    private Dimension sheetSize;
-    private Dimension sheetSizeRatio = new Dimension(17, 22);
 
-    private SheetComponentPanel headerPanel;
-    private SheetComponentPanel abilityScorePanel;
-    private SheetComponentPanel inspProfPanel;
-    private SheetComponentPanel savingThrowPanel;
-    private SheetComponentPanel skillPanel;
-    private SheetComponentPanel healthPanel;
-    private SheetComponentPanel combatPanel;
-    private SheetComponentPanel personalInfoPanel;
-    private SheetComponentPanel languagePanel;
-    private SheetComponentPanel featureAndTraitPanel;
-    private SheetComponentPanel attackAndSpellcastingPanel;
-    private SheetComponentPanel equipmentPanel;
+    private boolean mainSheetDisplay;
 
-    private BufferedImage tmpSheet;
+    private ArrayList<JComponent> allComponents;
 
-    // TODO: set base graphics things here
     public CharacterSheet(){
         character = new CharacterInfo();
-        screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        sheetSize = new Dimension((int)((screenSize.getHeight()-50)*(sheetSizeRatio.getWidth()/sheetSizeRatio.getHeight())), (int)screenSize.getHeight()-50);
+        allComponents = new ArrayList<JComponent>();
+
+        mainSheetDisplay = true;
+
+        FONT_SIZE = (int)(windowUnit/10);
+
+        loadAllComponents();
+
         setSize(sheetSize);
         setLocation((int)(sheetSize.getHeight() - sheetSize.getWidth()), 0);
 
-        //initialize all panels
-        headerPanel = new SheetComponentPanel(30,30, 730,100);
-
-        abilityScorePanel = new SheetComponentPanel(30, 150, 100, 500);
-
-        inspProfPanel = new SheetComponentPanel();
-
-        savingThrowPanel = new SheetComponentPanel();
-
-        skillPanel = new SheetComponentPanel();
-
-        healthPanel = new SheetComponentPanel();
-
-        combatPanel = new SheetComponentPanel();
-
-        personalInfoPanel = new SheetComponentPanel();
-
-        languagePanel = new SheetComponentPanel();
-
-        featureAndTraitPanel = new SheetComponentPanel();
-
-        attackAndSpellcastingPanel = new SheetComponentPanel();
-
-        equipmentPanel = new SheetComponentPanel();
-
         addMouseListener(this);
-        tmpSheet = basicSheet;
-    }
-
-    public CharacterSheet(String characterName){
-        this();
-        character.setCharacterName(characterName);
     }
 
     public CharacterSheet(int x, int y){
         this();
         setLocation(x, y);
     }
+
+    public CharacterSheet(CharacterRace race, CharacterClass cclass){
+        this();
+
+    }
+
+    public void loadAllComponents(){
+
+    }
+
+    public void switchScreens(){
+        mainSheetDisplay = !mainSheetDisplay;
+    }
+
+    /*
+        Takes in an x and y from a sheet image and translates it to
+        the point it will be on the window.
+     */
+    public Point getRelativePos(int x, int y){
+        int newX = (int)(((double)x/layoutSheetUnit) * windowUnit);
+        int newY = (int)(((double)y/layoutSheetUnit) * windowUnit);
+        return new Point(newX, newY);
+    }
+
+    //KeyListener
+
+    public void keyTyped(KeyEvent e) {}
+
+    public void keyPressed(KeyEvent e) {}
+
+    public void keyReleased(KeyEvent e) {}
+
+    //MouseListener
 
     public void mousePressed(MouseEvent e) {}
 
@@ -88,12 +83,21 @@ public class CharacterSheet extends JPanel implements MouseListener {
 
     public void mouseExited(MouseEvent e) {}
 
-    public void mouseClicked(MouseEvent e) {
+    public void mouseClicked(MouseEvent e) {}
+
+    //MouseMotionListener
+
+    public void mouseDragged(MouseEvent e) {}
+
+    public void mouseMoved(MouseEvent e) {}
+
+
+    public void drawMainSheet(Graphics g){
+        g.drawImage(layoutSheet, 0, 0, this);
     }
 
-    public void drawBox(JComponent j, Graphics g){
-        g.setColor(Color.BLACK);
-        g.drawRect(j.getX(), j.getY(), j.getWidth(), j.getHeight());
+    public void drawInfoSheet(Graphics g){
+
     }
 
     @Override
@@ -102,25 +106,14 @@ public class CharacterSheet extends JPanel implements MouseListener {
 
         g.setColor(Color.WHITE);
         g.fillRect(0,0,getWidth(), getHeight());
-        g.drawLine(0,0, 0, getHeight());
 
         g.setFont(new Font("Verdana", Font.PLAIN, FONT_SIZE));
 
-        //g.drawImage(tmpSheet, 0, 0, this);
-
-        headerPanel.paintComponent(g);
-        abilityScorePanel.paintComponent(g);
-        inspProfPanel.paintComponent(g);
-        savingThrowPanel.paintComponent(g);
-        skillPanel.paintComponent(g);
-        healthPanel.paintComponent(g);
-        combatPanel.paintComponent(g);
-        personalInfoPanel.paintComponent(g);
-        languagePanel.paintComponent(g);
-        featureAndTraitPanel.paintComponent(g);
-        attackAndSpellcastingPanel.paintComponent(g);
-        equipmentPanel.paintComponent(g);
-
-
+        if (mainSheetDisplay){
+            drawMainSheet(g);
+        }
+        else{
+            drawInfoSheet(g);
+        }
     }
 }
