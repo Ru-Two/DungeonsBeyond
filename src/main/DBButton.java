@@ -33,6 +33,15 @@ public class DBButton {
         bounds = new Rectangle(r);
     }
 
+    public DBButton(DBButton b){
+        this();
+        bounds = b.getBounds();
+        img = b.getImage();
+        selectColor = b.getSelectColor();
+        col = b.getColor();
+        selected = b.isSelected();
+    }
+
     public boolean contains(int x, int y){
         return bounds.contains(x, y);
     }
@@ -50,7 +59,9 @@ public class DBButton {
     }
 
     public void drawButton(Graphics g, ImageObserver imgObs){
-        if (img != null) g.drawImage(img, getX(), getY(), imgObs);
+        if (img != null) {
+            g.drawImage(img, getX(), getY(), imgObs);
+        }
         else {
             g.setColor(col);
             g.fillRect(getX(), getY(), getWidth(), getHeight());
@@ -59,8 +70,10 @@ public class DBButton {
             g.setColor(selectColor);
             g.fillRect(getX(), getY(), getWidth(), getHeight());
         }
-        g.setColor(Color.BLACK);
-        g.drawRect(getX(), getY(), getWidth(), getHeight());
+        if (img == null) {
+            g.setColor(Color.BLACK);
+            g.drawRect(getX(), getY(), getWidth(), getHeight());
+        }
     }
 
     /*
@@ -86,7 +99,7 @@ public class DBButton {
     }
 
     public void setImage(Image img){
-        this.img = img.getScaledInstance((int)bounds.getWidth(), (int)bounds.getHeight(), Image.SCALE_SMOOTH);
+        this.img = img;
     }
 
     public void setSelectColor(Color col){
@@ -121,8 +134,15 @@ public class DBButton {
         return img;
     }
 
-    public Color getColor(){
-        return selectColor;
+    public boolean isSelected() {
+        return selected;
     }
 
+    public Color getColor(){
+        return col;
+    }
+
+    public Color getSelectColor() {
+        return selectColor;
+    }
 }
