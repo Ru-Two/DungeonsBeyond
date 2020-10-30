@@ -55,8 +55,10 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
         tmpCharacter = new CharacterSheet((int)options.getWidth(), 0);
         addSheet(tmpCharacter);
 
+
         addKeyListener(this);
         addMouseListener(this);
+        addMouseMotionListener(this);
 
         setIconImage(getImage("src/graphics/db_logo.png"));
         setSize(windowSize);
@@ -97,7 +99,8 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     public void selectSheet(int index){
         //currentSheet = allSheets.get(index);
-        if (currentSheetIndex != -1) allSheets.get(currentSheetIndex).setVisible(false);
+        if (index == -1) return;
+        if (currentSheetIndex != -1)allSheets.get(currentSheetIndex).setVisible(false);
         currentSheetIndex = index;
         sheetListPanel.selectSheet(index);
         allSheets.get(currentSheetIndex).setVisible(true);
@@ -106,11 +109,10 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     //ActionListener function
 
     public void actionPerformed(ActionEvent evt){
+        if (sheetListPanel.checkAddSheetFlag()){ createNewSheet(); }
+        selectSheet(sheetListPanel.getSelectedSheet());
+
         repaint();
-        /*if (tmpCharacter != null){
-            tmpCharacter.revalidate();
-            tmpCharacter.repaint();
-        }*/
     }
 
     //KeyListener functions
@@ -132,17 +134,6 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     public void mouseExited(MouseEvent e) {}
 
     public void mouseClicked(MouseEvent e) {
-        if (e.getButton() == MouseEvent.BUTTON1){
-
-            if (sheetListPanel.newSheetButtonIsClicked(translateForList(e.getPoint()))) {
-                createNewSheet();
-            }
-            int tmpIndex = sheetListPanel.selectSheet(translateForList(e.getPoint()));
-            if (tmpIndex != -1){
-                selectSheet(tmpIndex);
-                System.out.println("Sheet " +tmpIndex+ " selected");
-            }
-        }
     }
 
 
