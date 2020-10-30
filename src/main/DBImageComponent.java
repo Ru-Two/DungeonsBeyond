@@ -23,7 +23,7 @@ public class DBImageComponent extends JComponent{
         this();
         setSize(width, height);
         setLocation(x, y);
-        this.img = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        this.img = img.getScaledInstance(width, height, Image.SCALE_FAST);
     }
 
     public DBImageComponent(String path){
@@ -36,7 +36,7 @@ public class DBImageComponent extends JComponent{
         this();
         setSize(width, height);
         setLocation(x, y);
-        img = DungeonsBeyond.getImage(path).getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        img = DungeonsBeyond.getImage(path).getScaledInstance(width, height, Image.SCALE_FAST);
     }
 
     public int getImageWidth(){

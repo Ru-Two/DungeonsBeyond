@@ -17,7 +17,7 @@ public class DBTextComponent extends JComponent {
         text = " ";
         col = Color.BLACK;
         fontSize = 20;
-        font = new Font("Courier Regular", Font.PLAIN, fontSize);
+        font = new Font("Verdana", Font.PLAIN, fontSize);
     }
 
     public DBTextComponent(String text){

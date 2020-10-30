@@ -7,6 +7,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
 
+import static utilities.PreloadedImages.*;
+
 public class CharacterSheet extends JPanel implements MouseListener {
 
     private static final int FONT_SIZE = 20;
@@ -42,7 +44,7 @@ public class CharacterSheet extends JPanel implements MouseListener {
         //initialize all panels
         headerPanel = new SheetComponentPanel(30,30, 730,100);
 
-        abilityScorePanel = new SheetComponentPanel();
+        abilityScorePanel = new SheetComponentPanel(30, 150, 100, 500);
 
         inspProfPanel = new SheetComponentPanel();
 
@@ -65,7 +67,7 @@ public class CharacterSheet extends JPanel implements MouseListener {
         equipmentPanel = new SheetComponentPanel();
 
         addMouseListener(this);
-        tmpSheet = DungeonsBeyond.getImage("src/graphics/basic_sheet.png");
+        tmpSheet = basicSheet;
     }
 
     public CharacterSheet(String characterName){
@@ -97,15 +99,16 @@ public class CharacterSheet extends JPanel implements MouseListener {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
+
+        g.setColor(Color.WHITE);
+        g.fillRect(0,0,getWidth(), getHeight());
         g.drawLine(0,0, 0, getHeight());
 
-        g.setFont(new Font("Courier Regular", Font.PLAIN, FONT_SIZE));
+        g.setFont(new Font("Verdana", Font.PLAIN, FONT_SIZE));
 
         //g.drawImage(tmpSheet, 0, 0, this);
 
         headerPanel.paintComponent(g);
-        drawBox(headerPanel, g);
-
         abilityScorePanel.paintComponent(g);
         inspProfPanel.paintComponent(g);
         savingThrowPanel.paintComponent(g);
