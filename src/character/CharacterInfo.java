@@ -120,6 +120,18 @@ public class CharacterInfo {
         initiative = getMod(DEX);
     }
 
+    private void setRaceAndClass(CharacterRace r, CharacterClass c){
+        race = r;
+        cclass = c;
+
+        mergeRace();
+        mergeClass();
+    }
+
+    public void refresh(){
+
+    }
+
     // Pulls information from current race in class and merges the info over to character
     private void mergeRace(){
         for(int rs:race.getSkillsAsArray()){
@@ -225,6 +237,24 @@ public class CharacterInfo {
             }
         }
         return tmpScores;
+    }
+
+    public void setBaseAbilityScores(int str, int dex, int con, int int_, int wis, int cha){
+        abilityScores[STR].setBase(str);
+        abilityScores[DEX].setBase(dex);
+        abilityScores[CON].setBase(con);
+        abilityScores[INT].setBase(int_);
+        abilityScores[WIS].setBase(wis);
+        abilityScores[CHA].setBase(cha);
+    }
+
+    public void setBaseAbilityScores(int [] scores){
+        abilityScores[STR].setBase(scores[STR]);
+        abilityScores[DEX].setBase(scores[DEX]);
+        abilityScores[CON].setBase(scores[CON]);
+        abilityScores[INT].setBase(scores[INT]);
+        abilityScores[WIS].setBase(scores[WIS]);
+        abilityScores[CHA].setBase(scores[CHA]);
     }
 
     public void setPlayerName(String playerName) {
