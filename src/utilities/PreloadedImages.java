@@ -26,6 +26,7 @@ public final class PreloadedImages {
     public static final Rectangle alignment_position  = new Rectangle(1046,177,264,50);
     public static final Rectangle exp_points_position = new Rectangle(1314,177,243,50);
     public static final Rectangle proficiency_bonus_position = new Rectangle(124,371,76,43);
+
     public static final Point inspiration_position = new Point(123,447);
     public static final Point strength_saving_throws_position = new Point(274, 534);
     public static final Point athletics_position = new Point(274, 561);
@@ -51,6 +52,7 @@ public final class PreloadedImages {
     public static final Point intimidation_position = new Point(274, 1534);
     public static final Point performance_position = new Point(274, 1560);
     public static final Point persuasion_position = new Point(274, 1586);
+
     public static final Rectangle strength_as_position = new Rectangle(117,586,85,62);
     public static final Rectangle dexterity_as_position = new Rectangle(117,776,85,62);
     public static final Rectangle constitution_as_position = new Rectangle(117,964,85,62);
