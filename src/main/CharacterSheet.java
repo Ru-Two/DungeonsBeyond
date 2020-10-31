@@ -17,11 +17,11 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     private boolean mainSheetDisplay;
 
-    private ArrayList<DBTextAreaComponent> allComponents;
+    private ArrayList<JComponent> allComponents;
 
     public CharacterSheet(){
         character = new CharacterInfo();
-        allComponents = new ArrayList<DBTextAreaComponent>();
+        allComponents = new ArrayList<JComponent>();
 
         mainSheetDisplay = true;
 
@@ -49,7 +49,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     private void loadAllComponents(){
         DBTextAreaComponent tmp = new DBTextAreaComponent(getRelativeBounds(player_name_position));
-        tmp.setRows(1);
+        //tmp.setRows(1);
         tmp.setFont(player_name_font);
         allComponents.add(tmp);
 
@@ -67,7 +67,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     }
 
 
-    public ArrayList<DBTextAreaComponent> getAllComponents() {
+    public ArrayList<JComponent> getAllComponents() {
         return allComponents;
     }
 
@@ -138,7 +138,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     public void drawMainSheet(Graphics g){
         g.drawImage(layoutSheet, 0, 0, this);
-        for (DBTextAreaComponent j:allComponents){
+        for (JComponent j:allComponents){
             DungeonsBeyond.drawUnderline(j, g);
         }
     }
