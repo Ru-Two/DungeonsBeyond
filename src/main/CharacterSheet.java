@@ -3,38 +3,38 @@ package main;
 import character.*;
 import characterclass.CharacterClass;
 import characterrace.CharacterRace;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+import static java.awt.event.KeyEvent.*;
 import static utilities.PreloadedImages.*;
 
-public class CharacterSheet extends JPanel implements MouseListener, KeyListener, MouseMotionListener {
-
-    private int FONT_SIZE = 20;
+public class CharacterSheet extends JPanel implements MouseListener, KeyListener, MouseMotionListener{
 
     private CharacterInfo character;
 
     private boolean mainSheetDisplay;
 
-    private ArrayList<JComponent> allComponents;
+    private ArrayList<DBTextAreaComponent> allComponents;
 
     public CharacterSheet(){
         character = new CharacterInfo();
-        allComponents = new ArrayList<JComponent>();
+        allComponents = new ArrayList<DBTextAreaComponent>();
 
         mainSheetDisplay = true;
 
-        FONT_SIZE = (int)(windowUnit/10);
-
         loadAllComponents();
+        validate();
+
+        addMouseListener(this);
+        addKeyListener(this);
+        addMouseMotionListener(this);
 
         setSize(sheetSize);
         setLocation((int)(sheetSize.getHeight() - sheetSize.getWidth()), 0);
-
-        addMouseListener(this);
+        setLayout(null);
     }
 
     public CharacterSheet(int x, int y){
@@ -44,30 +44,74 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     public CharacterSheet(CharacterRace race, CharacterClass cclass){
         this();
-
+        character.setRaceAndClass(race, cclass);
     }
 
-    public void loadAllComponents(){
+    private void loadAllComponents(){
+        DBTextAreaComponent tmp = new DBTextAreaComponent(getRelativeBounds(player_name_position));
+        tmp.setRows(1);
+        tmp.setFont(player_name_font);
+        allComponents.add(tmp);
 
+
+        for (int i = 0; i < allComponents.size(); i++) add(allComponents.get(i));
     }
 
     public void switchScreens(){
         mainSheetDisplay = !mainSheetDisplay;
     }
 
+
+    public void refresh(){
+
+    }
+
+
+    public ArrayList<DBTextAreaComponent> getAllComponents() {
+        return allComponents;
+    }
+
     /*
         Takes in an x and y from a sheet image and translates it to
         the point it will be on the window.
      */
-    public Point getRelativePos(int x, int y){
-        int newX = (int)(((double)x/layoutSheetUnit) * windowUnit);
-        int newY = (int)(((double)y/layoutSheetUnit) * windowUnit);
-        return new Point(newX, newY);
+    public static Point getRelativePos(int x, int y){
+        return new Point(shiftInt(x), shiftInt(y));
+    }
+
+    public static Point getRelativePos(Point p){
+        return new Point(shiftInt(p.getX()), shiftInt(p.getY()));
+    }
+
+    public static Rectangle getRelativeBounds(int x, int y, int wid, int hei){
+        return new Rectangle(shiftInt(x), shiftInt(y), shiftInt(wid), shiftInt(hei));
+    }
+
+    public static Rectangle getRelativeBounds(Rectangle r){
+        return new Rectangle(shiftInt(r.getX()), shiftInt(r.getY()), shiftInt(r.getWidth()), shiftInt(r.getHeight()));
+    }
+
+    private static int shiftInt(int s){
+        return (int)(((double)s/layoutSheetUnit) * windowUnit);
+    }
+
+    private static int shiftInt(double s){
+        return (int)((s/layoutSheetUnit) * windowUnit);
     }
 
     //KeyListener
 
-    public void keyTyped(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {
+        int k = e.getKeyCode();
+
+        switch(k) {
+            case VK_ENTER:
+                refresh();
+                break;
+            default:
+                break;
+        }
+    }
 
     public void keyPressed(KeyEvent e) {}
 
@@ -94,6 +138,9 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     public void drawMainSheet(Graphics g){
         g.drawImage(layoutSheet, 0, 0, this);
+        for (DBTextAreaComponent j:allComponents){
+            DungeonsBeyond.drawUnderline(j, g);
+        }
     }
 
     public void drawInfoSheet(Graphics g){
@@ -107,7 +154,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         g.setColor(Color.WHITE);
         g.fillRect(0,0,getWidth(), getHeight());
 
-        g.setFont(new Font("Verdana", Font.PLAIN, FONT_SIZE));
+        //g.setFont(new Font("Verdana", Font.PLAIN, FONT_SIZE));
 
         if (mainSheetDisplay){
             drawMainSheet(g);
