@@ -13,17 +13,17 @@ import static utilities.PreloadedImages.*;
 
 public class DungeonsBeyond extends JFrame implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
 
-    static final int OPTION_PANEL_HEIGHT = 160;
+    public static final int OPTION_PANEL_HEIGHT = 160;
 
-    ArrayList<CharacterSheet> allSheets;
-    CharacterSheet tmpCharacter = null;
-    int currentSheetIndex = -1;
+    private ArrayList<CharacterSheet> allSheets;
+    private CharacterSheet tmpCharacter = null;
+    private int currentSheetIndex = -1;
 
-    OptionPanel options;
+    private OptionPanel options;
 
-    SheetListPanel sheetListPanel;
+    private SheetListPanel sheetListPanel;
 
-    Timer ticks;
+    private Timer ticks;
 
     public DungeonsBeyond(){
         super("Dungeons Beyond");
@@ -64,6 +64,11 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     }
 
     public void createNewSheet(){
+
+        CharacterCreator cc = new CharacterCreator();
+        while (cc.isRunning()){}
+        String info = cc.getInformation();
+
         CharacterSheet newCharacter = new CharacterSheet(options.getWidth(), 0);
         newCharacter.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         addSheet(newCharacter);
