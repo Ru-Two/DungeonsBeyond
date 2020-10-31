@@ -64,19 +64,18 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         DBTextAreaComponent race_name = new DBTextAreaComponent(getRelativeBounds(race_position));
         allComponents.add(race_name);
 
-        DBTextAreaComponent alignment_name = new DBTextAreaComponent(getRelativeBounds(alignment_position));
-        allComponents.add(alignment_name);
+        DBTextAreaComponent alignment = new DBTextAreaComponent(getRelativeBounds(alignment_position));
+        allComponents.add(alignment);
 
-        DBTextAreaComponent exp_point_name = new DBTextAreaComponent(getRelativeBounds(exp_points_position));
-        allComponents.add(exp_point_name);
+        DBTextAreaComponent exp_point = new DBTextAreaComponent(getRelativeBounds(exp_points_position));
+        allComponents.add(exp_point);
 
-        DBTextAreaComponent proficiency_bonus_name = new DBTextAreaComponent(getRelativeBounds(proficiency_bonus_position));
-        allComponents.add(proficiency_bonus_name);
+        DBTextAreaComponent proficiency_bonus = new DBTextAreaComponent(getRelativeBounds(proficiency_bonus_position));
+        allComponents.add(proficiency_bonus);
 
         //ADD INSPIRATION POINT AND OTHER POINTS
 
-        DBTextAreaComponent player_name = new DBTextAreaComponent(getRelativeBounds(player_name_position));
-        allComponents.add(player_name);
+
 
         
         for (int i = 0; i < allComponents.size(); i++) add(allComponents.get(i));
