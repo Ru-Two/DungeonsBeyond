@@ -23,6 +23,7 @@ public class SheetListPanel extends JPanel implements MouseListener {
 
     private boolean addSheetFlag;
     private boolean sheetDeleteFlag;
+    private boolean sheetChangeFlag;
     private int deleteBuffer;
 
     private boolean mPress = false;
@@ -41,6 +42,7 @@ public class SheetListPanel extends JPanel implements MouseListener {
 
         addSheetFlag = false;
         sheetDeleteFlag = false;
+        sheetChangeFlag = false;
         deleteBuffer = -1;
 
         addMouseListener(this);
@@ -205,6 +207,14 @@ public class SheetListPanel extends JPanel implements MouseListener {
         return false;
     }
 
+    public boolean checkSheetChangeFlag(){
+        if (sheetChangeFlag){
+            sheetChangeFlag = false;
+            return true;
+        }
+        return false;
+    }
+
     //MouseListener
 
     public void mousePressed(MouseEvent e) {
@@ -233,12 +243,11 @@ public class SheetListPanel extends JPanel implements MouseListener {
             int tmpIndex = selectSheet(e.getPoint());
             if (tmpIndex != -1){
                 selectSheet(tmpIndex);
+                sheetChangeFlag = true;
             }
 
             deleteSheetCheck(e.getPoint());
-            /*if (tmpIndex != -1){
-                deleteSheet(tmpIndex);
-            }*/
+
         }
     }
 
