@@ -120,7 +120,7 @@ public class CharacterInfo {
         initiative = getMod(DEX);
     }
 
-    private void setRaceAndClass(CharacterRace r, CharacterClass c){
+    public void setRaceAndClass(CharacterRace r, CharacterClass c){
         race = r;
         cclass = c;
 
