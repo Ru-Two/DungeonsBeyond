@@ -38,10 +38,6 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
         sheetListPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(sheetListPanel);
 
-        tmpCharacter = new CharacterSheet((int)options.getWidth(), 0);
-        tmpCharacter.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        //addSheet(tmpCharacter);
-
         addKeyListener(this);
         addMouseListener(this);
         addMouseMotionListener(this);
@@ -88,10 +84,12 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
             currentSheetIndex = index;
             sheetListPanel.selectSheet(index);
             allSheets.get(currentSheetIndex).setVisible(true);
+            //allSheets.get(currentSheetIndex).transferFocus();
         }
     }
 
     public void deleteSheet(int index){
+        allSheets.get(currentSheetIndex).setVisible(false);
         if (currentSheetIndex == index) {
             currentSheetIndex = -1;
         }
@@ -106,7 +104,7 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     public void actionPerformed(ActionEvent evt){
         if (sheetListPanel.checkAddSheetFlag()){ createNewSheet(); }
         if (sheetListPanel.checkSheetDeleteFlag()){ deleteSheet(sheetListPanel.getDeleteBuffer()); }
-        selectSheet(sheetListPanel.getSelectedSheet());
+        if (sheetListPanel.checkSheetChangeFlag()){ selectSheet(sheetListPanel.getSelectedSheet()); }
 
         repaint();
     }
@@ -147,6 +145,11 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     public static void drawBox(JComponent j, Graphics g){
         g.setColor(Color.BLACK);
         g.drawRect(j.getX(), j.getY(), j.getWidth(), j.getHeight());
+    }
+
+    public static void drawUnderline(JComponent j, Graphics g){
+        g.setColor(Color.BLACK);
+        g.drawLine(j.getX(), j.getY() + j.getHeight(), j.getX() + j.getWidth(), j.getY() + j.getHeight());
     }
 
     //fetches image of specified path
