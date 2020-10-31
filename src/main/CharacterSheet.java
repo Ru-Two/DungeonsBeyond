@@ -48,12 +48,37 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     }
 
     private void loadAllComponents(){
-        DBTextAreaComponent tmp = new DBTextAreaComponent(getRelativeBounds(player_name_position));
-        //tmp.setRows(1);
-        tmp.setFont(player_name_font);
-        allComponents.add(tmp);
+        DBTextAreaComponent character_name = new DBTextAreaComponent(getRelativeBounds(character_name_position));
+        character_name.setFont(player_name_font);
+        allComponents.add(character_name);
 
+        DBTextAreaComponent class_level = new DBTextAreaComponent(getRelativeBounds(class_level_position));
+        allComponents.add(class_level);
 
+        DBTextAreaComponent background = new DBTextAreaComponent(getRelativeBounds(background_position));
+        allComponents.add(background);
+
+        DBTextAreaComponent player_name = new DBTextAreaComponent(getRelativeBounds(player_name_position));
+        allComponents.add(player_name);
+
+        DBTextAreaComponent race_name = new DBTextAreaComponent(getRelativeBounds(race_position));
+        allComponents.add(race_name);
+
+        DBTextAreaComponent alignment_name = new DBTextAreaComponent(getRelativeBounds(alignment_position));
+        allComponents.add(alignment_name);
+
+        DBTextAreaComponent exp_point_name = new DBTextAreaComponent(getRelativeBounds(exp_points_position));
+        allComponents.add(exp_point_name);
+
+        DBTextAreaComponent proficiency_bonus_name = new DBTextAreaComponent(getRelativeBounds(proficiency_bonus_position));
+        allComponents.add(proficiency_bonus_name);
+
+        //ADD INSPIRATION POINT AND OTHER POINTS
+
+        DBTextAreaComponent player_name = new DBTextAreaComponent(getRelativeBounds(player_name_position));
+        allComponents.add(player_name);
+
+        
         for (int i = 0; i < allComponents.size(); i++) add(allComponents.get(i));
     }
 
