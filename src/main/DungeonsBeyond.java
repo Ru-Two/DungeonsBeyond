@@ -25,8 +25,12 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     private Timer ticks;
 
+    private CharacterCreator cc;
+
     public DungeonsBeyond(){
         super("Dungeons Beyond");
+        cc = new CharacterCreator();
+        add(cc);
 
         allSheets = new ArrayList<CharacterSheet>();
 
@@ -60,15 +64,14 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     public static void main(String[] args){
         DungeonsBeyond sheetManager = new DungeonsBeyond();
-
     }
 
-    public void createNewSheet(){
+    public void startSheetSelector(){
+        cc.start();
+    }
 
-        CharacterCreator cc = new CharacterCreator();
-        while (cc.isRunning()){}
-        String info = cc.getInformation();
-
+    public void createNewSheet(String info){
+        System.out.println(info);
         CharacterSheet newCharacter = new CharacterSheet(options.getWidth(), 0);
         newCharacter.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         addSheet(newCharacter);
@@ -105,10 +108,22 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     //ActionListener function
 
     public void actionPerformed(ActionEvent evt){
-        if (sheetListPanel.checkAddSheetFlag()){ createNewSheet(); }
-        if (sheetListPanel.checkSheetDeleteFlag()){ deleteSheet(sheetListPanel.getDeleteBuffer()); }
-        if (sheetListPanel.checkSheetChangeFlag()){ selectSheet(sheetListPanel.getSelectedSheet()); }
-
+        if (!cc.isRunning()) {
+            if (sheetListPanel.checkAddSheetFlag()) {
+                startSheetSelector();
+            }
+            if (sheetListPanel.checkSheetDeleteFlag()) {
+                deleteSheet(sheetListPanel.getDeleteBuffer());
+            }
+            if (sheetListPanel.checkSheetChangeFlag()) {
+                selectSheet(sheetListPanel.getSelectedSheet());
+            }
+        }
+        if (cc.isReady()){
+            String info = cc.getInformation();
+            cc.finish();
+            createNewSheet(info);
+        }
         repaint();
     }
 
@@ -146,8 +161,12 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
 
     //draws black rectangle around jcomponent
     public static void drawBox(JComponent j, Graphics g){
+        drawBox(j.getBounds(), g);
+    }
+
+    public static void drawBox(Rectangle rect, Graphics g){
         g.setColor(Color.BLACK);
-        g.drawRect(j.getX(), j.getY(), j.getWidth(), j.getHeight());
+        g.drawRect((int)rect.getX()-1, (int)rect.getY()-1, (int)rect.getWidth()+1, (int)rect.getHeight()+1);
     }
 
     public static void drawUnderline(JComponent j, Graphics g){
