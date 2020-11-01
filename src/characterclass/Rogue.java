@@ -3,7 +3,7 @@ package characterclass;
 import static utilities.Utilities.*;
 
 public class Rogue extends CharacterClass{
-    Rogue(){
+    public Rogue(){
         super("Rogue", 8);
         //spellcasterAbility = INT; only applicable when rogue archetype is "Arcane Trickster"
         

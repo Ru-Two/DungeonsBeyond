@@ -3,7 +3,7 @@ package characterclass;
 import static utilities.Utilities.*;
 
 public class Warlock extends CharacterClass{
-	Warlock(){
+    public Warlock(){
         super("Warlock", 8);
         spellcasterAbility = CHA;
 		

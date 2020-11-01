@@ -4,7 +4,7 @@ import static utilities.Utilities.*;
 
 public class Fighter extends CharacterClass {
 
-        Fighter(){
+    public Fighter(){
             super("Fighter", 10);
 
             features.get(fightingStyle.getLevel()).add(fightingStyle);

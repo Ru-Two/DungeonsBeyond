@@ -2,7 +2,7 @@ package characterclass;
 
 import static utilities.Utilities.*;
 public class Bard extends CharacterClass{
-    Bard(){
+    public Bard(){
         super("Bard", 8);
         spellcasterAbility = CHA;
 

@@ -4,7 +4,7 @@ import static utilities.Utilities.*;
 
 public class Barbarian extends CharacterClass {
 
-    Barbarian(){
+    public Barbarian(){
         super("Barbarian", 12);
 
         features.get(abilityScoreImprovement.getLevel()).add(abilityScoreImprovement);

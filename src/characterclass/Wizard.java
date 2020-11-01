@@ -3,7 +3,7 @@ package characterclass;
 import static utilities.Utilities.*;
 
 public class Wizard extends CharacterClass {
-	Wizard(){
+    public Wizard(){
         super("Wizard", 8);
         spellcasterAbility = INT;
         

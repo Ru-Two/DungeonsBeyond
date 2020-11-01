@@ -4,7 +4,7 @@ import static utilities.Utilities.*;
 
 public class Monk extends CharacterClass{
 
-    Monk(){
+    public Monk(){
         super("Monk", 8);
 
         features.get(unarmoredDefense.getLevel()).add(unarmoredDefense);

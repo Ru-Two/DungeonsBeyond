@@ -2,7 +2,7 @@ package characterclass;
 
 import static utilities.Utilities.*;
 public class Cleric extends CharacterClass{
-    Cleric() {
+    public Cleric() {
         super("Cleric", 8);
         spellcasterAbility = WIS;
 

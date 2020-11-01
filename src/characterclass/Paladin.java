@@ -4,7 +4,7 @@ import static utilities.Utilities.*;
 
 public class Paladin extends CharacterClass{
 
-    Paladin(){
+    public Paladin(){
         super("Paladin", 10);
         spellcasterAbility = CHA;
 

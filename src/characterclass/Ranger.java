@@ -4,7 +4,7 @@ import static utilities.Utilities.*;
 
 public class Ranger extends CharacterClass{
 
-    Ranger(){
+    public Ranger(){
         super("Ranger", 10 );
         spellcasterAbility = WIS;
 
