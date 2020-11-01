@@ -60,6 +60,43 @@ public final class Utilities {
     public static final int SHIELD = 3;
     public static final int NO_ARMOUR = 4;
 
+
+    //races
+    public static final String[] RACE_OPTIONS = {"Hill Dwarf", "Mountain Dwarf", "High Elf", "Wood Elf", "Dark Elf (Drow)",
+                                                 "Lightfoot Halfling", "Stout Halfling", "Human", "Dragonborn",
+                                                 "Forest Gnome", "Rock Gnome", "Half-Elf", "Half-Orc", "Tiefling"};
+
+    public static final int HILL_DWARF = 0;
+    public static final int MOUNTAIN_DWARF = 1;
+    public static final int HIGH_ELF = 2;
+    public static final int WOOD_ELF = 3;
+    public static final int DARK_ELF = 4;
+    public static final int LIGHTFOOT_HALFING = 5;
+    public static final int STOUT_HALFLING = 6;
+    public static final int HUMAN = 7;
+    public static final int DRAGONBORN = 8;
+    public static final int FOREST_GNOME = 9;
+    public static final int ROCK_GNOME = 10;
+    public static final int HALF_ELF = 11;
+    public static final int HALF_ORC = 12;
+    public static final int TIEFLING = 13;
+
+    //classes
+    public static final String[] CLASS_OPTIONS = {"Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"};
+
+    public static final int BARBARIAN = 0;
+    public static final int BARD = 1;
+    public static final int CLERIC = 2;
+    public static final int DRUID = 3;
+    public static final int FIGHTER = 4;
+    public static final int MONK = 5;
+    public static final int PALADIN = 6;
+    public static final int RANGER = 7;
+    public static final int ROGUE = 8;
+    public static final int SORCERER = 9;
+    public static final int WARLOCK = 10;
+    public static final int WIZARD = 11;
+
     //universal traits
     public static final Trait darkvision = new Trait("Darkvision", "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.");
 
