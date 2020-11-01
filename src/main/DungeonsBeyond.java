@@ -1,5 +1,8 @@
 package main;
 
+import characterclass.*;
+import characterrace.*;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.Timer;
@@ -10,6 +13,7 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 import static utilities.PreloadedImages.*;
+import static utilities.Utilities.*;
 
 public class DungeonsBeyond extends JFrame implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
 
@@ -71,8 +75,99 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
     }
 
     public void createNewSheet(String info){
-        System.out.println(info);
-        CharacterSheet newCharacter = new CharacterSheet(options.getWidth(), 0);
+        String[] splitInfo = info.split(CharacterCreator.DELIMITER);
+        int race_const = Integer.parseInt(splitInfo[2]);
+        int class_const = Integer.parseInt(splitInfo[3]);
+        int as_choice_const = Integer.parseInt(splitInfo[4]);
+
+        CharacterRace r = null;
+        CharacterClass c = null;
+
+        switch (race_const){
+            case HILL_DWARF:
+                r = new DwarfHill();
+                break;
+            case MOUNTAIN_DWARF:
+                r = new DwarfMountain();
+                break;
+            case HIGH_ELF:
+                r = new ElfHigh();
+                break;
+            case WOOD_ELF:
+                r = new ElfWood();
+                break;
+            case DARK_ELF:
+                r = new ElfDark();
+                break;
+            case LIGHTFOOT_HALFING:
+                r = new HalflingLightfoot();
+                break;
+            case STOUT_HALFLING:
+                r = new HalflingStout();
+                break;
+            case HUMAN:
+                r = new Human();
+                break;
+            case DRAGONBORN:
+                r = new Dragonborn();
+                break;
+            case FOREST_GNOME:
+                r = new GnomeForest();
+                break;
+            case ROCK_GNOME:
+                r = new GnomeRock();
+                break;
+            case HALF_ELF:
+                r = new HalfElf();
+                break;
+            case HALF_ORC:
+                r = new HalfOrc();
+                break;
+            case TIEFLING:
+                r = new Tiefling();
+                break;
+        }
+
+        switch(class_const){
+            case BARBARIAN:
+                c = new Barbarian();
+                break;
+            case BARD:
+                c = new Bard();
+                break;
+            case CLERIC:
+                c = new Cleric();
+                break;
+            case DRUID:
+                c = new Druid();
+                break;
+            case FIGHTER:
+                c = new Fighter();
+                break;
+            case MONK:
+                c = new Monk();
+                break;
+            case PALADIN:
+                c = new Paladin();
+                break;
+            case RANGER:
+                c = new Ranger();
+                break;
+            case ROGUE:
+                c = new Rogue();
+                break;
+            case SORCERER:
+                c = new Sorcerer();
+                break;
+            case WARLOCK:
+                c = new Warlock();
+                break;
+            case WIZARD:
+                c = new Wizard();
+                break;
+        }
+
+        CharacterSheet newCharacter = new CharacterSheet(splitInfo[0], splitInfo[1], r, c, as_choice_const, options.getWidth(), 0);
         newCharacter.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         addSheet(newCharacter);
     }
@@ -81,6 +176,7 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
         allSheets.add(cs);
         sheetListPanel.addSheet();
         add(allSheets.get(allSheets.size()-1));
+        allSheets.get(allSheets.size()-1).pullFromSheet();
         selectSheet(allSheets.size()-1);
     }
 
