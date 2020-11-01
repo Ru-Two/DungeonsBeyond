@@ -37,9 +37,19 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         setLayout(null);
     }
 
-    public CharacterSheet(int x, int y){
+    public CharacterSheet(String playerName, String characterName, CharacterRace r, CharacterClass c, int as_choice, int x, int y){
         this();
         setLocation(x, y);
+
+        character.setPlayerName(playerName);
+        character.setCharacterName(characterName);
+
+        if (as_choice == 0){
+            int[] scores = CharacterInfo.rollAbilityScores();
+            character.setBaseAbilityScores(scores);
+        }
+
+        character.setRaceAndClass(r, c);
     }
 
     public CharacterSheet(CharacterRace race, CharacterClass cclass){
@@ -86,7 +96,11 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     }
 
 
-    public void refresh(){
+    public void pullFromSheet(){
+
+    }
+
+    public void pushToSheet(){
 
     }
 
@@ -130,7 +144,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
         switch(k) {
             case VK_ENTER:
-                refresh();
+                pushToSheet();
                 break;
             default:
                 break;
