@@ -14,6 +14,8 @@ public class CharacterCreator extends JPanel implements MouseListener, ActionLis
 
     private static final String[] ABILITY_SCORE_METHOD_OPTIONS = {"Roll Ability Scores for me", "Manually Input Ability Scores"};
 
+    public static final String DELIMITER = "`";
+
     private static final Font TITLE_FONT = new Font("Verdana", Font.PLAIN, 30);
     private static final Font TEXT_FONT = new Font("Verdana", Font.PLAIN, 20);
 
@@ -120,6 +122,9 @@ public class CharacterCreator extends JPanel implements MouseListener, ActionLis
     public void pullInfo(){
         player_name = player_name_tf.getText();
         character_name = character_name_tf.getText();
+        race = "" + race_selection.getSelectedIndex();
+        cclass = "" + class_selection.getSelectedIndex();
+        ability_score_method = "" + ability_score_method_selection.getSelectedIndex();
     }
 
     public boolean isRunning() {
@@ -131,7 +136,7 @@ public class CharacterCreator extends JPanel implements MouseListener, ActionLis
     }
 
     public String getInformation(){
-        return player_name + "." + character_name + "." + race + "." + cclass + "." + ability_score_method;
+        return player_name + DELIMITER + character_name + DELIMITER + race + DELIMITER + cclass + DELIMITER + ability_score_method;
     }
 
     public void paintComponent(Graphics g){
