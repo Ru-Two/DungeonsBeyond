@@ -99,6 +99,7 @@ public class CharacterInfo {
         //character info, other proficiencies
         traits = new ArrayList<Trait>();
         features = new ArrayList<ArrayList<Feature>>();
+        currentFeatures = new ArrayList<Feature>();
         weaponProficiencies = new ArrayList<Integer>();
         armourProficiencies = new ArrayList<Integer>();
     }
