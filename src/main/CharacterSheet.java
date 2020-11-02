@@ -83,6 +83,11 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         DBTextAreaComponent proficiency_bonus = new DBTextAreaComponent(getRelativeBounds(proficiency_bonus_position));
         allComponents.add(proficiency_bonus);
 
+        DBTextAreaComponent strength = new DBTextAreaComponent(getRelativeBounds(strength_as_position));
+        allComponents.add(strength);
+
+
+
         //ADD INSPIRATION POINT AND OTHER POINTS
 
 
