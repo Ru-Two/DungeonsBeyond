@@ -85,8 +85,61 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
         DBTextAreaComponent strength = new DBTextAreaComponent(getRelativeBounds(strength_as_position));
         allComponents.add(strength);
-
-
+        
+        // ------------------------------------
+        DBTextAreaComponent dexterity = new DBTextAreaComponent(getRelativeBounds(dexterity_as_position));
+        allComponents.add(dexterity);
+        
+         DBTextAreaComponent constitution = new DBTextAreaComponent(getRelativeBounds(constitution_as_position));
+        allComponents.add(constitution);
+        
+         DBTextAreaComponent intelligence = new DBTextAreaComponent(getRelativeBounds(intelligence_as_position));
+        allComponents.add(intelligence);
+        
+         DBTextAreaComponent wisdom = new DBTextAreaComponent(getRelativeBounds(wisdom_as_position));
+        allComponents.add(wisdom);
+        
+        DBTextAreaComponent charisma = new DBTextAreaComponent(getRelativeBounds(charisma_as_position));
+        allComponents.add(charisma);
+        
+        DBTextAreaComponent strength_bonus = new DBTextAreaComponent(getRelativeBounds(strength_as_position_bonus_position));
+        allComponents.add(strength_bonus);
+        
+        DBTextAreaComponent dexterity_bonus = new DBTextAreaComponent(getRelativeBounds(dexterity_as_position_bonus_position));
+        allComponents.add(dexterity_bonus);
+        
+        DBTextAreaComponent constitution_bonus = new DBTextAreaComponent(getRelativeBounds(constitution_as_position_bonus_position));
+        allComponents.add(constitution_bonus);
+        
+        DBTextAreaComponent intelligence_bonus = new DBTextAreaComponent(getRelativeBounds(intelligence_as_position_bonus_position));
+        allComponents.add(intelligence_bonus);
+        
+        DBTextAreaComponent wisdom_bonus = new DBTextAreaComponent(getRelativeBounds(wisdom_as_position_bonus_position));
+        allComponents.add(wisdom_bonus);
+        
+        DBTextAreaComponent charisma_bonus = new DBTextAreaComponent(getRelativeBounds(charisma_as_position_bonus_position));
+        allComponents.add(charisma_bonus);
+        
+        DBTextAreaComponent strength_save = new DBTextAreaComponent(getRelativeBounds(strength_save_num_position));
+        allComponents.add(strength_save);
+        
+        DBTextAreaComponent strength_athletics = new DBTextAreaComponent(getRelativeBounds(strength_athletics_position));
+        allComponents.add(strength_athletics);
+        
+        DBTextAreaComponent dexterity_save = new DBTextAreaComponent(getRelativeBounds(dexterity_save_num_position));
+        allComponents.add(dexterity_save);
+        
+        DBTextAreaComponent acrobatics = new DBTextAreaComponent(getRelativeBounds(acrobatics_num_position));
+        allComponents.add(acrobatics);
+        
+        DBTextAreaComponent sleightofhand = new DBTextAreaComponent(getRelativeBounds(sleightofhand_num_position));
+        allComponents.add(sleightofhand);
+        
+        DBTextAreaComponent stealth = new DBTextAreaComponent(getRelativeBounds(stealth_num_position));
+        allComponents.add(stealth);
+        
+        
+        
 
         //ADD INSPIRATION POINT AND OTHER POINTS
 
