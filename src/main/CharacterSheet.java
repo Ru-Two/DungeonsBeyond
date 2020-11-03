@@ -17,11 +17,99 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     private boolean mainSheetDisplay;
 
-    private ArrayList<JComponent> allComponents;
+    private DBTextAreaComponent character_name;
+    private DBTextAreaComponent class_level;
+    private DBTextAreaComponent background;
+    private DBTextAreaComponent player_name;
+    private DBTextAreaComponent race_name;
+    private DBTextAreaComponent alignment;
+    private DBTextAreaComponent exp_points;
+    private DBTextAreaComponent proficiency_bonus;
+
+    private DBTextAreaComponent strength_as;
+    private DBTextAreaComponent dexterity_as;
+    private DBTextAreaComponent constitution_as;
+    private DBTextAreaComponent intelligence_as;
+    private DBTextAreaComponent wisdom_as;
+    private DBTextAreaComponent charisma_as;
+
+    private DBTextAreaComponent strength_as_bonus;
+    private DBTextAreaComponent dexterity_as_bonus;
+    private DBTextAreaComponent constitution_as_bonus;
+    private DBTextAreaComponent intelligence_as_bonus;
+    private DBTextAreaComponent wisdom_as_bonus;
+    private DBTextAreaComponent charisma_as_bonus;
+
+    private JCheckBox strength_save_checkbox;
+    private JCheckBox dexterity_save_checkbox;
+    private JCheckBox constitution_save_checkbox;
+    private JCheckBox intelligence_save_checkbox;
+    private JCheckBox wisdom_save_checkbox;
+    private JCheckBox charisma_save_checkbox;
+
+    private DBTextAreaComponent strength_save_num;
+    private DBTextAreaComponent dexterity_save_num;
+    private DBTextAreaComponent constitution_save_num;
+    private DBTextAreaComponent intelligence_save_num;
+    private DBTextAreaComponent wisdom_save_num;
+    private DBTextAreaComponent charisma_save_num;
+
+    private JCheckBox athletics_checkbox;
+    private JCheckBox acrobatics_checkbox;
+    private JCheckBox sleightofhand_checkbox;
+    private JCheckBox stealth_checkbox;
+    private JCheckBox arcana_checkbox;
+    private JCheckBox history_checkbox;
+    private JCheckBox investigation_checkbox;
+    private JCheckBox nature_checkbox;
+    private JCheckBox religion_checkbox;
+    private JCheckBox animalhandling_checkbox;
+    private JCheckBox insight_checkbox;
+    private JCheckBox medicine_checkbox;
+    private JCheckBox perception_checkbox;
+    private JCheckBox survival_checkbox;
+    private JCheckBox deception_checkbox;
+    private JCheckBox intimidation_checkbox;
+    private JCheckBox performance_checkbox;
+    private JCheckBox persuasion_checkbox;
+
+    private DBTextAreaComponent athletics_num;
+    private DBTextAreaComponent acrobatics_num;
+    private DBTextAreaComponent sleightofhand_num;
+    private DBTextAreaComponent stealth_num;
+    private DBTextAreaComponent arcana_num;
+    private DBTextAreaComponent history_num;
+    private DBTextAreaComponent investigation_num;
+    private DBTextAreaComponent nature_num;
+    private DBTextAreaComponent religion_num;
+    private DBTextAreaComponent animalhandling_num;
+    private DBTextAreaComponent insight_num;
+    private DBTextAreaComponent medicine_num;
+    private DBTextAreaComponent perception_num;
+    private DBTextAreaComponent survival_num;
+    private DBTextAreaComponent deception_num;
+    private DBTextAreaComponent intimidation_num;
+    private DBTextAreaComponent performance_num;
+    private DBTextAreaComponent persuasion_num;
+
+    private DBTextAreaComponent other_proficiencies_languages;
+    private DBTextAreaComponent attacks_spellcasting;
+    private DBTextAreaComponent features_traits;
+    private DBTextAreaComponent equipment;
+
+    private DBTextAreaComponent armor_class;
+    private DBTextAreaComponent initiative;
+    private DBTextAreaComponent speed;
+    private DBTextAreaComponent current_hit_points;
+    private DBTextAreaComponent temp_hit_points;
+    private DBTextAreaComponent current_hit_point_max;
+    private DBTextAreaComponent total_hit_dice;
+    private DBTextAreaComponent hit_dice;
+    private DBTextAreaComponent death_saves;
+
 
     public CharacterSheet(){
         character = new CharacterInfo();
-        allComponents = new ArrayList<JComponent>();
 
         mainSheetDisplay = true;
 
@@ -58,189 +146,210 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     }
 
     private void loadAllComponents(){
-        DBTextAreaComponent character_name = new DBTextAreaComponent(getRelativeBounds(character_name_position));
+        character_name = new DBTextAreaComponent(getRelativeBounds(character_name_position));
         character_name.setFont(player_name_font);
-        allComponents.add(character_name);
+        add(character_name);
 
-        DBTextAreaComponent class_level = new DBTextAreaComponent(getRelativeBounds(class_level_position));
-        allComponents.add(class_level);
+        class_level = new DBTextAreaComponent(getRelativeBounds(class_level_position));
+        add(class_level);
 
-        DBTextAreaComponent background = new DBTextAreaComponent(getRelativeBounds(background_position));
-        allComponents.add(background);
+        background = new DBTextAreaComponent(getRelativeBounds(background_position));
+        add(background);
 
-        DBTextAreaComponent player_name = new DBTextAreaComponent(getRelativeBounds(player_name_position));
-        allComponents.add(player_name);
+        player_name = new DBTextAreaComponent(getRelativeBounds(player_name_position));
+        add(player_name);
 
-        DBTextAreaComponent race_name = new DBTextAreaComponent(getRelativeBounds(race_position));
-        allComponents.add(race_name);
+        race_name = new DBTextAreaComponent(getRelativeBounds(race_position));
+        add(race_name);
 
-        DBTextAreaComponent alignment = new DBTextAreaComponent(getRelativeBounds(alignment_position));
-        allComponents.add(alignment);
+        alignment = new DBTextAreaComponent(getRelativeBounds(alignment_position));
+        add(alignment);
 
-        DBTextAreaComponent exp_point = new DBTextAreaComponent(getRelativeBounds(exp_points_position));
-        allComponents.add(exp_point);
+        exp_points = new DBTextAreaComponent(getRelativeBounds(exp_points_position));
+        add(exp_points);
 
-        DBTextAreaComponent proficiency_bonus = new DBTextAreaComponent(getRelativeBounds(proficiency_bonus_position));
-        allComponents.add(proficiency_bonus);
+        proficiency_bonus = new DBTextAreaComponent(getRelativeBounds(proficiency_bonus_position));
+        add(proficiency_bonus);
 
-        DBTextAreaComponent strength = new DBTextAreaComponent(getRelativeBounds(strength_as_position));
-        allComponents.add(strength);
+        //Ability Scores
+
+        strength_as = new DBTextAreaComponent(getRelativeBounds(strength_as_position));
+        add(strength_as);
+
+        dexterity_as = new DBTextAreaComponent(getRelativeBounds(dexterity_as_position));
+        add(dexterity_as);
         
-        DBTextAreaComponent dexterity = new DBTextAreaComponent(getRelativeBounds(dexterity_as_position));
-        allComponents.add(dexterity);
+        constitution_as = new DBTextAreaComponent(getRelativeBounds(constitution_as_position));
+        add(constitution_as);
         
-        DBTextAreaComponent constitution = new DBTextAreaComponent(getRelativeBounds(constitution_as_position));
-        allComponents.add(constitution);
+        intelligence_as = new DBTextAreaComponent(getRelativeBounds(intelligence_as_position));
+        add(intelligence_as);
+
+        wisdom_as = new DBTextAreaComponent(getRelativeBounds(wisdom_as_position));
+        add(wisdom_as);
         
-        DBTextAreaComponent intelligence = new DBTextAreaComponent(getRelativeBounds(intelligence_as_position));
-        allComponents.add(intelligence);
+        charisma_as = new DBTextAreaComponent(getRelativeBounds(charisma_as_position));
+        add(charisma_as);
+
+        //Ability Score Bonuses
+
+        strength_as_bonus = new DBTextAreaComponent(getRelativeBounds(strength_as_bonus_position));
+        add(strength_as_bonus);
         
-        DBTextAreaComponent wisdom = new DBTextAreaComponent(getRelativeBounds(wisdom_as_position));
-        allComponents.add(wisdom);
+        dexterity_as_bonus = new DBTextAreaComponent(getRelativeBounds(dexterity_as_bonus_position));
+        add(dexterity_as_bonus);
         
-        DBTextAreaComponent charisma = new DBTextAreaComponent(getRelativeBounds(charisma_as_position));
-        allComponents.add(charisma);
+        constitution_as_bonus = new DBTextAreaComponent(getRelativeBounds(constitution_as_bonus_position));
+        add(constitution_as_bonus);
         
-        DBTextAreaComponent strength_bonus = new DBTextAreaComponent(getRelativeBounds(strength_as_position_bonus_position));
-        allComponents.add(strength_bonus);
+        intelligence_as_bonus = new DBTextAreaComponent(getRelativeBounds(intelligence_as_bonus_position));
+        add(intelligence_as_bonus);
         
-        DBTextAreaComponent dexterity_bonus = new DBTextAreaComponent(getRelativeBounds(dexterity_as_position_bonus_position));
-        allComponents.add(dexterity_bonus);
+        wisdom_as_bonus = new DBTextAreaComponent(getRelativeBounds(wisdom_as_bonus_position));
+        add(wisdom_as_bonus);
         
-        DBTextAreaComponent constitution_bonus = new DBTextAreaComponent(getRelativeBounds(constitution_as_position_bonus_position));
-        allComponents.add(constitution_bonus);
+        charisma_as_bonus = new DBTextAreaComponent(getRelativeBounds(charisma_as_bonus_position));
+        add(charisma_as_bonus);
+
+        //Saves
+
+        strength_save_num = new DBTextAreaComponent(getRelativeBounds(strength_save_num_position));
+        add(strength_save_num);
+
+        dexterity_save_num = new DBTextAreaComponent(getRelativeBounds(dexterity_save_num_position));
+        add(dexterity_save_num);
+
+        constitution_save_num = new DBTextAreaComponent(getRelativeBounds(constitution_save_num_position));
+        add(constitution_save_num);
+
+        intelligence_save_num = new DBTextAreaComponent(getRelativeBounds(intelligence_save_num_position));
+        add(intelligence_save_num);
+
+        wisdom_save_num = new DBTextAreaComponent(getRelativeBounds(wisdom_save_num_position));
+        add(wisdom_save_num);
+
+        charisma_save_num = new DBTextAreaComponent(getRelativeBounds(charisma_save_num_position));
+        add(charisma_save_num);
+
+        strength_save_checkbox = buildCheckBox(getRelativePos(strength_save_checkbox_position));
+        add(strength_save_checkbox);
+
+        dexterity_save_checkbox = buildCheckBox(getRelativePos(dexterity_save_checkbox_position));
+        add(dexterity_save_checkbox);
+
+        constitution_save_checkbox = buildCheckBox(getRelativePos(constitution_save_checkbox_position));
+        add(constitution_save_checkbox);
+
+        intelligence_save_checkbox = buildCheckBox(getRelativePos(intelligence_save_checkbox_position));
+        add(intelligence_save_checkbox);
+
+        wisdom_save_checkbox = buildCheckBox(getRelativePos(wisdom_save_checkbox_position));
+        add(wisdom_save_checkbox);
+
+        charisma_save_checkbox = buildCheckBox(getRelativePos(charisma_save_checkbox_position));
+        add(charisma_save_checkbox);
+
+        //Skills
+
+        athletics_num = new DBTextAreaComponent(getRelativeBounds(athletics_num_position));
+        add(athletics_num);
         
-        DBTextAreaComponent intelligence_bonus = new DBTextAreaComponent(getRelativeBounds(intelligence_as_position_bonus_position));
-        allComponents.add(intelligence_bonus);
+        acrobatics_num = new DBTextAreaComponent(getRelativeBounds(acrobatics_num_position));
+        add(acrobatics_num);
         
-        DBTextAreaComponent wisdom_bonus = new DBTextAreaComponent(getRelativeBounds(wisdom_as_position_bonus_position));
-        allComponents.add(wisdom_bonus);
+        sleightofhand_num = new DBTextAreaComponent(getRelativeBounds(sleightofhand_num_position));
+        add(sleightofhand_num);
         
-        DBTextAreaComponent charisma_bonus = new DBTextAreaComponent(getRelativeBounds(charisma_as_position_bonus_position));
-        allComponents.add(charisma_bonus);
+        stealth_num = new DBTextAreaComponent(getRelativeBounds(stealth_num_position));
+        add(stealth_num);
+
+        arcana_num = new DBTextAreaComponent(getRelativeBounds(arcana_num_position));
+        add(arcana_num);
         
-        DBTextAreaComponent strength_save = new DBTextAreaComponent(getRelativeBounds(strength_save_num_position));
-        allComponents.add(strength_save);
+        history_num = new DBTextAreaComponent(getRelativeBounds(history_num_position));
+        add(history_num);
         
-        DBTextAreaComponent strength_athletics = new DBTextAreaComponent(getRelativeBounds(strength_athletics_position));
-        allComponents.add(strength_athletics);
+        investigation_num = new DBTextAreaComponent(getRelativeBounds(investigation_num_position));
+        add(investigation_num);
         
-        DBTextAreaComponent dexterity_save = new DBTextAreaComponent(getRelativeBounds(dexterity_save_num_position));
-        allComponents.add(dexterity_save);
+        nature_num = new DBTextAreaComponent(getRelativeBounds(nature_num_position));
+        add(nature_num);
         
-        DBTextAreaComponent acrobatics = new DBTextAreaComponent(getRelativeBounds(acrobatics_num_position));
-        allComponents.add(acrobatics);
+        religion_num = new DBTextAreaComponent(getRelativeBounds(religion_num_position));
+        add(religion_num);
+
+        animalhandling_num = new DBTextAreaComponent(getRelativeBounds(animalhandling_num_position));
+        add(animalhandling_num);
         
-        DBTextAreaComponent sleightofhand = new DBTextAreaComponent(getRelativeBounds(sleightofhand_num_position));
-        allComponents.add(sleightofhand);
+        insight_num = new DBTextAreaComponent(getRelativeBounds(insight_num_position));
+        add(insight_num);
         
-        DBTextAreaComponent stealth = new DBTextAreaComponent(getRelativeBounds(stealth_num_position));
-        allComponents.add(stealth);
+        medicine_num = new DBTextAreaComponent(getRelativeBounds(medicine_num_position));
+        add(medicine_num);
         
-        DBTextAreaComponent constitution_save = new DBTextAreaComponent(getRelativeBounds(constitution_save_num_position));
-        allComponents.add(constitution_save);
+        perception_num = new DBTextAreaComponent(getRelativeBounds(perception_num_position));
+        add(perception_num);
         
-        DBTextAreaComponent intelligence_save = new DBTextAreaComponent(getRelativeBounds(intelligence_save_num_position));
-        allComponents.add(intelligence_save);
+        survival_num = new DBTextAreaComponent(getRelativeBounds(survival_num_position));
+        add(survival_num);
         
-        DBTextAreaComponent arcana = new DBTextAreaComponent(getRelativeBounds(arcana_num_position));
-        allComponents.add(arcana);
+        deception_num = new DBTextAreaComponent(getRelativeBounds(deception_num_position));
+        add(deception_num);
         
-        DBTextAreaComponent history = new DBTextAreaComponent(getRelativeBounds(history_num_position));
-        allComponents.add(history);
+        intimidation_num = new DBTextAreaComponent(getRelativeBounds(intimidation_num_position));
+        add(intimidation_num);
         
-        DBTextAreaComponent investigation = new DBTextAreaComponent(getRelativeBounds(investigation_num_position));
-        allComponents.add(investigation);
+        performance_num = new DBTextAreaComponent(getRelativeBounds(performance_num_position));
+        add(performance_num);
         
-        DBTextAreaComponent nature = new DBTextAreaComponent(getRelativeBounds(nature_num_position));
-        allComponents.add(nature);
+        persuasion_num = new DBTextAreaComponent(getRelativeBounds(persuasion_num_position));
+        add(persuasion_num);
+
+        //Text Boxes
+
+        other_proficiencies_languages = new DBTextAreaComponent(getRelativeBounds(other_proficiencies_languages_position));
+        add(other_proficiencies_languages);
         
-        DBTextAreaComponent religion = new DBTextAreaComponent(getRelativeBounds(religion_num_position));
-        allComponents.add(religion);
-          
-        DBTextAreaComponent wisdom_save = new DBTextAreaComponent(getRelativeBounds(wisdom_save_num_position));
-        allComponents.add(wisdom_save);
+        attacks_spellcasting = new DBTextAreaComponent(getRelativeBounds(attacks_spellcasting_position));
+        add(attacks_spellcasting);
         
-        DBTextAreaComponent animalhandling = new DBTextAreaComponent(getRelativeBounds(animalhandling_num));
-        allComponents.add(animalhandling);
+        features_traits = new DBTextAreaComponent(getRelativeBounds(features_traits_position));
+        add(features_traits);
         
-        DBTextAreaComponent insight = new DBTextAreaComponent(getRelativeBounds(insight_num_position));
-        allComponents.add(insight);
+        equipment = new DBTextAreaComponent(getRelativeBounds(equipment_position));
+        add(equipment);
+
+        //Character Information
+
+        armor_class = new DBTextAreaComponent(getRelativeBounds(armor_class_position));
+        add(armor_class);
         
-        DBTextAreaComponent medicine = new DBTextAreaComponent(getRelativeBounds(medicine_num_position));
-        allComponents.add(medicine);
+        initiative = new DBTextAreaComponent(getRelativeBounds(initiative_position));
+        add(initiative);
         
-        DBTextAreaComponent perception = new DBTextAreaComponent(getRelativeBounds(perception_num_position));
-        allComponents.add(perception);
+        speed = new DBTextAreaComponent(getRelativeBounds(speed_position));
+        add(speed);
         
-        DBTextAreaComponent survival = new DBTextAreaComponent(getRelativeBounds(survival_num_position));
-        allComponents.add(survival);
+        current_hit_points = new DBTextAreaComponent(getRelativeBounds(current_hit_points_position));
+        add(current_hit_points);
         
-        DBTextAreaComponent charisma_save = new DBTextAreaComponent(getRelativeBounds(charisma_save_num_position));
-        allComponents.add(charisma_save);
+        temp_hit_points = new DBTextAreaComponent(getRelativeBounds(temp_hit_points_position));
+        add(temp_hit_points);
         
-        DBTextAreaComponent deception = new DBTextAreaComponent(getRelativeBounds(deception_num_position));
-        allComponents.add(deception);
+        current_hit_point_max = new DBTextAreaComponent(getRelativeBounds(current_hit_point_max_position));
+        add(current_hit_point_max);
         
-        DBTextAreaComponent intimidation = new DBTextAreaComponent(getRelativeBounds(intimidation_num_position));
-        allComponents.add(intimidation);
+        total_hit_dice = new DBTextAreaComponent(getRelativeBounds(total_hit_dice_position));
+        add(total_hit_dice);
         
-        DBTextAreaComponent performance = new DBTextAreaComponent(getRelativeBounds(performance_num_position));
-        allComponents.add(performance);
+        hit_dice = new DBTextAreaComponent(getRelativeBounds(hit_dice_position));
+        add(hit_dice);
         
-        DBTextAreaComponent persuasion = new DBTextAreaComponent(getRelativeBounds(persuasion_num_position));
-        allComponents.add(persuasion);
-         
-        DBTextAreaComponent other_proficiencies = new DBTextAreaComponent(getRelativeBounds(other_proficiencies_languages_position));
-        allComponents.add(other_proficiencies);
-        
-        DBTextAreaComponent attacks = new DBTextAreaComponent(getRelativeBounds(attacks_spellcasting_position));
-        allComponents.add(attacks);
-        
-        DBTextAreaComponent features = new DBTextAreaComponent(getRelativeBounds(features_traits_position));
-        allComponents.add(features);
-        
-        DBTextAreaComponent features = new DBTextAreaComponent(getRelativeBounds(features_traits_position));
-        allComponents.add(features);
-        
-        DBTextAreaComponent equipment = new DBTextAreaComponent(getRelativeBounds(equipment_position));
-        allComponents.add(equipment);
-        
-        DBTextAreaComponent armor = new DBTextAreaComponent(getRelativeBounds(armor_class_position));
-        allComponents.add(armor);
-        
-        DBTextAreaComponent initiative = new DBTextAreaComponent(getRelativeBounds(initiative_position));
-        allComponents.add(initiative);
-        
-        DBTextAreaComponent speed = new DBTextAreaComponent(getRelativeBounds(speed_num_position));
-        allComponents.add(speed);
-        
-        DBTextAreaComponent current_hit = new DBTextAreaComponent(getRelativeBounds(current_hit_point_position));
-        allComponents.add(current_hit);
-        
-        DBTextAreaComponent temp_hit = new DBTextAreaComponent(getRelativeBounds(temp_hit_point_position));
-        allComponents.add(temp_hit);
-        
-        DBTextAreaComponent current_hit_max = new DBTextAreaComponent(getRelativeBounds(current_hit_point_max_position));
-        allComponents.add(current_hit_max);
-        
-        DBTextAreaComponent total_hit = new DBTextAreaComponent(getRelativeBounds(total_hit_dice_position));
-        allComponents.add(total_hit);
-        
-        DBTextAreaComponent hit_dice = new DBTextAreaComponent(getRelativeBounds(hit_dice_position));
-        allComponents.add(hit_dice);
-        
-        DBTextAreaComponent death = new DBTextAreaComponent(getRelativeBounds(death_saves_position));
-        allComponents.add(death);
-        
-        
+        death_saves = new DBTextAreaComponent(getRelativeBounds(death_saves_position));
+        add(death_saves);
 
         //ADD INSPIRATION POINT AND OTHER POINTS
 
-
-
-        
-        for (int i = 0; i < allComponents.size(); i++) add(allComponents.get(i));
     }
 
     public void switchScreens(){
@@ -254,11 +363,6 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     public void pushToSheet(){
 
-    }
-
-
-    public ArrayList<JComponent> getAllComponents() {
-        return allComponents;
     }
 
     /*
@@ -287,6 +391,14 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     private static int shiftInt(double s){
         return (int)((s/layoutSheetUnit) * windowUnit);
+    }
+
+    private static JCheckBox buildCheckBox(Point pos){
+        JCheckBox ret = new JCheckBox();
+        ret.setLocation((int)pos.getX(), (int)pos.getY());
+        ret.setSize(17,13);
+
+        return ret;
     }
 
     //KeyListener
@@ -328,9 +440,9 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     public void drawMainSheet(Graphics g){
         g.drawImage(layoutSheet, 0, 0, this);
-        for (JComponent j:allComponents){
-            DungeonsBeyond.drawUnderline(j, g);
-        }
+
+
+        // DungeonsBeyond.drawBox(strength_save_checkbox, g);
     }
 
     public void drawInfoSheet(Graphics g){
