@@ -39,12 +39,12 @@ public final class PreloadedImages {
     public static final Point wisdom_save_checkbox_position = new Point(256, 1285);
     public static final Point charisma_save_checkbox_position = new Point(256, 1475);
 
-    public static final Rectangle strength_save_num_position = new Rectangle(300,532,31,23);
-    public static final Rectangle dexterity_save_num_position = new Rectangle(300,722,31,23);
-    public static final Rectangle constitution_save_num_position = new Rectangle(300,910,31,23);
-    public static final Rectangle intelligence_save_num_position = new Rectangle(300,1100,31,23);
-    public static final Rectangle wisdom_save_num_position = new Rectangle(300,1289,31,23);
-    public static final Rectangle charisma_save_num_position = new Rectangle(300,1479,31,23);
+    public static final Rectangle strength_save_num_position = new Rectangle(302,530,29,24);
+    public static final Rectangle dexterity_save_num_position = new Rectangle(302,719,29,24);
+    public static final Rectangle constitution_save_num_position = new Rectangle(302,908,29,24);
+    public static final Rectangle intelligence_save_num_position = new Rectangle(302,1098,29,24);
+    public static final Rectangle wisdom_save_num_position = new Rectangle(302,1287,29,24);
+    public static final Rectangle charisma_save_num_position = new Rectangle(302,1477,29,24);
 
     public static final Rectangle strength_as_position = new Rectangle(117,586,85,62);
     public static final Rectangle dexterity_as_position = new Rectangle(117,776,85,62);
@@ -79,24 +79,24 @@ public final class PreloadedImages {
     public static final Point performance_checkbox_position = new Point(274, 1560);
     public static final Point persuasion_checkbox_position = new Point(274, 1586);
 
-    public static final Rectangle athletics_num_position = new Rectangle(300,562,31,23);
-    public static final Rectangle acrobatics_num_position = new Rectangle(300,747,31,23);
-    public static final Rectangle sleightofhand_num_position = new Rectangle(300,774,31,23);
-    public static final Rectangle stealth_num_position = new Rectangle(300,800,31,23);
-    public static final Rectangle arcana_num_position = new Rectangle(300,1126,31,23);
-    public static final Rectangle history_num_position = new Rectangle(300,1152,31,23);
-    public static final Rectangle investigation_num_position = new Rectangle(300,1179,31,23);
-    public static final Rectangle nature_num_position = new Rectangle(300,1205,31,23);
-    public static final Rectangle religion_num_position = new Rectangle(300,1232,31,23);
-    public static final Rectangle animalhandling_num_position = new Rectangle(300,1316,31,23);
-    public static final Rectangle insight_num_position = new Rectangle(300,1343,31,23);
-    public static final Rectangle medicine_num_position = new Rectangle(300,1370,31,23);
-    public static final Rectangle perception_num_position = new Rectangle(300,1395,31,23);
-    public static final Rectangle survival_num_position = new Rectangle(300,1422,31,23);
-    public static final Rectangle deception_num_position = new Rectangle(300,1506,31,23);
-    public static final Rectangle intimidation_num_position = new Rectangle(300,1531,31,23);
-    public static final Rectangle performance_num_position = new Rectangle(300,1557,31,23);
-    public static final Rectangle persuasion_num_position = new Rectangle(300,1585,31,23);
+    public static final Rectangle athletics_num_position = new Rectangle(302,557,29,24);
+    public static final Rectangle acrobatics_num_position = new Rectangle(302,746,29,24);
+    public static final Rectangle sleightofhand_num_position = new Rectangle(302,772,29,24);
+    public static final Rectangle stealth_num_position = new Rectangle(302,799,29,24);
+    public static final Rectangle arcana_num_position = new Rectangle(302,1125,29,24);
+    public static final Rectangle history_num_position = new Rectangle(302,1151,29,24);
+    public static final Rectangle investigation_num_position = new Rectangle(302,1178,29,24);
+    public static final Rectangle nature_num_position = new Rectangle(302,1204,29,24);
+    public static final Rectangle religion_num_position = new Rectangle(302,1230,29,24);
+    public static final Rectangle animalhandling_num_position = new Rectangle(302,1314,29,24);
+    public static final Rectangle insight_num_position = new Rectangle(302,1341,29,24);
+    public static final Rectangle medicine_num_position = new Rectangle(302,1367,29,24);
+    public static final Rectangle perception_num_position = new Rectangle(302,1393,29,24);
+    public static final Rectangle survival_num_position = new Rectangle(302,1420,29,24);
+    public static final Rectangle deception_num_position = new Rectangle(302,1504,29,24);
+    public static final Rectangle intimidation_num_position = new Rectangle(302,1530,29,24);
+    public static final Rectangle performance_num_position = new Rectangle(302,1556,29,24);
+    public static final Rectangle persuasion_num_position = new Rectangle(302,1583,29,24);
 
     public static final Rectangle other_proficiencies_languages_position = new Rectangle(83,1692,455,389);
     public static final Rectangle attacks_spellcasting_position = new Rectangle(607,1050,461,1027);
@@ -113,7 +113,10 @@ public final class PreloadedImages {
     public static final Rectangle death_saves_position = new Rectangle(864,866,185,97);
 
     //Different font styles for different fields
+
     public static final Font player_name_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/4.2));
+    public static final Font header_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/5.5));
+
 
     public static final BufferedImage abilityScores_png = DungeonsBeyond.getImage("src/graphics/abilityScores2.png");
     public static final BufferedImage basicSheet = DungeonsBeyond.getImage("src/graphics/basic_sheet.png");
