@@ -6,7 +6,6 @@ import characterrace.CharacterRace;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 import static java.awt.event.KeyEvent.*;
 import static utilities.PreloadedImages.*;
@@ -146,206 +145,151 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     }
 
     private void loadAllComponents(){
-        character_name = new DBTextAreaComponent(getRelativeBounds(character_name_position));
-        character_name.setFont(player_name_font);
+        character_name = buildTextArea(getRelativeBounds(character_name_position), player_name_font);
         add(character_name);
-
-        class_level = new DBTextAreaComponent(getRelativeBounds(class_level_position));
+        class_level = buildTextArea(getRelativeBounds(class_level_position), header_font);
         add(class_level);
-
-        background = new DBTextAreaComponent(getRelativeBounds(background_position));
+        background = buildTextArea(getRelativeBounds(background_position), header_font);
         add(background);
-
-        player_name = new DBTextAreaComponent(getRelativeBounds(player_name_position));
+        player_name = buildTextArea(getRelativeBounds(player_name_position), header_font);
         add(player_name);
-
-        race_name = new DBTextAreaComponent(getRelativeBounds(race_position));
+        race_name = buildTextArea(getRelativeBounds(race_position), header_font);
         add(race_name);
-
-        alignment = new DBTextAreaComponent(getRelativeBounds(alignment_position));
+        alignment = buildTextArea(getRelativeBounds(alignment_position), header_font);
         add(alignment);
-
-        exp_points = new DBTextAreaComponent(getRelativeBounds(exp_points_position));
+        exp_points = buildTextArea(getRelativeBounds(exp_points_position), header_font);
         add(exp_points);
-
-        proficiency_bonus = new DBTextAreaComponent(getRelativeBounds(proficiency_bonus_position));
+        proficiency_bonus = buildTextArea(getRelativeBounds(proficiency_bonus_position), null);
+        proficiency_bonus.setEditable(false);
         add(proficiency_bonus);
 
         //Ability Scores
 
-        strength_as = new DBTextAreaComponent(getRelativeBounds(strength_as_position));
+        strength_as = buildTextArea(getRelativeBounds(strength_as_position), null);
         add(strength_as);
-
-        dexterity_as = new DBTextAreaComponent(getRelativeBounds(dexterity_as_position));
+        dexterity_as = buildTextArea(getRelativeBounds(dexterity_as_position), null);
         add(dexterity_as);
-        
-        constitution_as = new DBTextAreaComponent(getRelativeBounds(constitution_as_position));
+        constitution_as = buildTextArea(getRelativeBounds(constitution_as_position), null);
         add(constitution_as);
-        
-        intelligence_as = new DBTextAreaComponent(getRelativeBounds(intelligence_as_position));
+        intelligence_as = buildTextArea(getRelativeBounds(intelligence_as_position), null);
         add(intelligence_as);
-
-        wisdom_as = new DBTextAreaComponent(getRelativeBounds(wisdom_as_position));
+        wisdom_as = buildTextArea(getRelativeBounds(wisdom_as_position), null);
         add(wisdom_as);
-        
-        charisma_as = new DBTextAreaComponent(getRelativeBounds(charisma_as_position));
+        charisma_as = buildTextArea(getRelativeBounds(charisma_as_position), null);
         add(charisma_as);
 
         //Ability Score Bonuses
 
-        strength_as_bonus = new DBTextAreaComponent(getRelativeBounds(strength_as_bonus_position));
+        strength_as_bonus = buildTextArea(getRelativeBounds(strength_as_bonus_position), null);
         add(strength_as_bonus);
-        
-        dexterity_as_bonus = new DBTextAreaComponent(getRelativeBounds(dexterity_as_bonus_position));
+        dexterity_as_bonus = buildTextArea(getRelativeBounds(dexterity_as_bonus_position), null);
         add(dexterity_as_bonus);
-        
-        constitution_as_bonus = new DBTextAreaComponent(getRelativeBounds(constitution_as_bonus_position));
+        constitution_as_bonus = buildTextArea(getRelativeBounds(constitution_as_bonus_position), null);
         add(constitution_as_bonus);
-        
-        intelligence_as_bonus = new DBTextAreaComponent(getRelativeBounds(intelligence_as_bonus_position));
+        intelligence_as_bonus = buildTextArea(getRelativeBounds(intelligence_as_bonus_position), null);
         add(intelligence_as_bonus);
-        
-        wisdom_as_bonus = new DBTextAreaComponent(getRelativeBounds(wisdom_as_bonus_position));
+        wisdom_as_bonus = buildTextArea(getRelativeBounds(wisdom_as_bonus_position), null);
         add(wisdom_as_bonus);
-        
-        charisma_as_bonus = new DBTextAreaComponent(getRelativeBounds(charisma_as_bonus_position));
+        charisma_as_bonus = buildTextArea(getRelativeBounds(charisma_as_bonus_position), null);
         add(charisma_as_bonus);
 
         //Saves
 
-        strength_save_num = new DBTextAreaComponent(getRelativeBounds(strength_save_num_position));
+        strength_save_num = buildTextArea(getRelativeBounds(strength_save_num_position), null);
         add(strength_save_num);
-
-        dexterity_save_num = new DBTextAreaComponent(getRelativeBounds(dexterity_save_num_position));
+        dexterity_save_num = buildTextArea(getRelativeBounds(dexterity_save_num_position), null);
         add(dexterity_save_num);
-
-        constitution_save_num = new DBTextAreaComponent(getRelativeBounds(constitution_save_num_position));
+        constitution_save_num = buildTextArea(getRelativeBounds(constitution_save_num_position), null);
         add(constitution_save_num);
-
-        intelligence_save_num = new DBTextAreaComponent(getRelativeBounds(intelligence_save_num_position));
+        intelligence_save_num = buildTextArea(getRelativeBounds(intelligence_save_num_position), null);
         add(intelligence_save_num);
-
-        wisdom_save_num = new DBTextAreaComponent(getRelativeBounds(wisdom_save_num_position));
+        wisdom_save_num = buildTextArea(getRelativeBounds(wisdom_save_num_position), null);
         add(wisdom_save_num);
-
-        charisma_save_num = new DBTextAreaComponent(getRelativeBounds(charisma_save_num_position));
+        charisma_save_num = buildTextArea(getRelativeBounds(charisma_save_num_position), null);
         add(charisma_save_num);
 
         strength_save_checkbox = buildCheckBox(getRelativePos(strength_save_checkbox_position));
         add(strength_save_checkbox);
-
         dexterity_save_checkbox = buildCheckBox(getRelativePos(dexterity_save_checkbox_position));
         add(dexterity_save_checkbox);
-
         constitution_save_checkbox = buildCheckBox(getRelativePos(constitution_save_checkbox_position));
         add(constitution_save_checkbox);
-
         intelligence_save_checkbox = buildCheckBox(getRelativePos(intelligence_save_checkbox_position));
         add(intelligence_save_checkbox);
-
         wisdom_save_checkbox = buildCheckBox(getRelativePos(wisdom_save_checkbox_position));
         add(wisdom_save_checkbox);
-
         charisma_save_checkbox = buildCheckBox(getRelativePos(charisma_save_checkbox_position));
         add(charisma_save_checkbox);
 
         //Skills
 
-        athletics_num = new DBTextAreaComponent(getRelativeBounds(athletics_num_position));
+        athletics_num = buildTextArea(getRelativeBounds(athletics_num_position), null);
         add(athletics_num);
-        
-        acrobatics_num = new DBTextAreaComponent(getRelativeBounds(acrobatics_num_position));
+        acrobatics_num = buildTextArea(getRelativeBounds(acrobatics_num_position), null);
         add(acrobatics_num);
-        
-        sleightofhand_num = new DBTextAreaComponent(getRelativeBounds(sleightofhand_num_position));
+        sleightofhand_num = buildTextArea(getRelativeBounds(sleightofhand_num_position), null);
         add(sleightofhand_num);
-        
-        stealth_num = new DBTextAreaComponent(getRelativeBounds(stealth_num_position));
+        stealth_num = buildTextArea(getRelativeBounds(stealth_num_position), null);
         add(stealth_num);
-
-        arcana_num = new DBTextAreaComponent(getRelativeBounds(arcana_num_position));
+        arcana_num = buildTextArea(getRelativeBounds(arcana_num_position), null);
         add(arcana_num);
-        
-        history_num = new DBTextAreaComponent(getRelativeBounds(history_num_position));
+        history_num = buildTextArea(getRelativeBounds(history_num_position), null);
         add(history_num);
-        
-        investigation_num = new DBTextAreaComponent(getRelativeBounds(investigation_num_position));
+        investigation_num = buildTextArea(getRelativeBounds(investigation_num_position), null);
         add(investigation_num);
-        
-        nature_num = new DBTextAreaComponent(getRelativeBounds(nature_num_position));
+        nature_num = buildTextArea(getRelativeBounds(nature_num_position), null);
         add(nature_num);
-        
-        religion_num = new DBTextAreaComponent(getRelativeBounds(religion_num_position));
+        religion_num = buildTextArea(getRelativeBounds(religion_num_position), null);
         add(religion_num);
-
-        animalhandling_num = new DBTextAreaComponent(getRelativeBounds(animalhandling_num_position));
+        animalhandling_num = buildTextArea(getRelativeBounds(animalhandling_num_position), null);
         add(animalhandling_num);
-        
-        insight_num = new DBTextAreaComponent(getRelativeBounds(insight_num_position));
+        insight_num = buildTextArea(getRelativeBounds(insight_num_position), null);
         add(insight_num);
-        
-        medicine_num = new DBTextAreaComponent(getRelativeBounds(medicine_num_position));
+        medicine_num = buildTextArea(getRelativeBounds(medicine_num_position), null);
         add(medicine_num);
-        
-        perception_num = new DBTextAreaComponent(getRelativeBounds(perception_num_position));
+        perception_num = buildTextArea(getRelativeBounds(perception_num_position), null);
         add(perception_num);
-        
-        survival_num = new DBTextAreaComponent(getRelativeBounds(survival_num_position));
+        survival_num = buildTextArea(getRelativeBounds(survival_num_position), null);
         add(survival_num);
-        
-        deception_num = new DBTextAreaComponent(getRelativeBounds(deception_num_position));
+        deception_num = buildTextArea(getRelativeBounds(deception_num_position), null);
         add(deception_num);
-        
-        intimidation_num = new DBTextAreaComponent(getRelativeBounds(intimidation_num_position));
+        intimidation_num = buildTextArea(getRelativeBounds(intimidation_num_position), null);
         add(intimidation_num);
-        
-        performance_num = new DBTextAreaComponent(getRelativeBounds(performance_num_position));
+        performance_num = buildTextArea(getRelativeBounds(performance_num_position), null);
         add(performance_num);
-        
-        persuasion_num = new DBTextAreaComponent(getRelativeBounds(persuasion_num_position));
+        persuasion_num = buildTextArea(getRelativeBounds(persuasion_num_position), null);
         add(persuasion_num);
 
         //Text Boxes
 
-        other_proficiencies_languages = new DBTextAreaComponent(getRelativeBounds(other_proficiencies_languages_position));
+        other_proficiencies_languages = buildTextArea(getRelativeBounds(other_proficiencies_languages_position), null);
         add(other_proficiencies_languages);
-        
-        attacks_spellcasting = new DBTextAreaComponent(getRelativeBounds(attacks_spellcasting_position));
+        attacks_spellcasting = buildTextArea(getRelativeBounds(attacks_spellcasting_position), null);
         add(attacks_spellcasting);
-        
-        features_traits = new DBTextAreaComponent(getRelativeBounds(features_traits_position));
+        features_traits = buildTextArea(getRelativeBounds(features_traits_position), null);
         add(features_traits);
-        
-        equipment = new DBTextAreaComponent(getRelativeBounds(equipment_position));
+        equipment = buildTextArea(getRelativeBounds(equipment_position), null);
         add(equipment);
 
         //Character Information
 
-        armor_class = new DBTextAreaComponent(getRelativeBounds(armor_class_position));
+        armor_class = buildTextArea(getRelativeBounds(armor_class_position), null);
         add(armor_class);
-        
-        initiative = new DBTextAreaComponent(getRelativeBounds(initiative_position));
+        initiative = buildTextArea(getRelativeBounds(initiative_position), null);
         add(initiative);
-        
-        speed = new DBTextAreaComponent(getRelativeBounds(speed_position));
+        speed = buildTextArea(getRelativeBounds(speed_position), null);
         add(speed);
-        
-        current_hit_points = new DBTextAreaComponent(getRelativeBounds(current_hit_points_position));
+        current_hit_points = buildTextArea(getRelativeBounds(current_hit_points_position), null);
         add(current_hit_points);
-        
-        temp_hit_points = new DBTextAreaComponent(getRelativeBounds(temp_hit_points_position));
+        temp_hit_points = buildTextArea(getRelativeBounds(temp_hit_points_position), null);
         add(temp_hit_points);
-        
-        current_hit_point_max = new DBTextAreaComponent(getRelativeBounds(current_hit_point_max_position));
+        current_hit_point_max = buildTextArea(getRelativeBounds(current_hit_point_max_position), null);
         add(current_hit_point_max);
-        
-        total_hit_dice = new DBTextAreaComponent(getRelativeBounds(total_hit_dice_position));
+        total_hit_dice = buildTextArea(getRelativeBounds(total_hit_dice_position), null);
         add(total_hit_dice);
-        
-        hit_dice = new DBTextAreaComponent(getRelativeBounds(hit_dice_position));
+        hit_dice = buildTextArea(getRelativeBounds(hit_dice_position), null);
         add(hit_dice);
-        
-        death_saves = new DBTextAreaComponent(getRelativeBounds(death_saves_position));
+        death_saves = buildTextArea(getRelativeBounds(death_saves_position), null);
         add(death_saves);
 
         //ADD INSPIRATION POINT AND OTHER POINTS
@@ -357,11 +301,12 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     }
 
 
-    public void pullFromSheet(){
-
+    public void pullFromCharacter(){
+        player_name.setText(character.getPlayerName());
+        character_name.setText(character.getCharacterName());
     }
 
-    public void pushToSheet(){
+    public void pushToCharacter(){
 
     }
 
@@ -393,6 +338,14 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         return (int)((s/layoutSheetUnit) * windowUnit);
     }
 
+    private static DBTextAreaComponent buildTextArea(Rectangle rect, Font font){
+        DBTextAreaComponent ret = new DBTextAreaComponent(rect);
+        if (font != null) ret.setFont(font);
+        ret.setLineWrap(true);
+        ret.setWrapStyleWord(true);
+        return ret;
+    }
+
     private static JCheckBox buildCheckBox(Point pos){
         JCheckBox ret = new JCheckBox();
         ret.setLocation((int)pos.getX(), (int)pos.getY());
@@ -408,7 +361,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
         switch(k) {
             case VK_ENTER:
-                pushToSheet();
+                pushToCharacter();
                 break;
             default:
                 break;
@@ -441,8 +394,6 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     public void drawMainSheet(Graphics g){
         g.drawImage(layoutSheet, 0, 0, this);
 
-
-        // DungeonsBeyond.drawBox(strength_save_checkbox, g);
     }
 
     public void drawInfoSheet(Graphics g){
