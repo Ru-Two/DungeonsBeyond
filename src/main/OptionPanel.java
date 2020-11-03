@@ -2,6 +2,8 @@ package main;
 
 import character.*;
 import utilities.*;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -18,6 +20,13 @@ public class OptionPanel extends JPanel implements MouseListener {
         ArrayList<JButton> buttons = new ArrayList<JButton>();
         addMouseListener(this);
         buttons.add(addButton(10,10,80,10, "Save as PNG"));
+        buttons.get(0).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                //Have to use ImageIOWrite
+            }
+        });
     }
 
     public OptionPanel(int x, int y, int wid, int hei){
