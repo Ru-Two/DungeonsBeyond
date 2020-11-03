@@ -20,11 +20,29 @@ public class OptionPanel extends JPanel implements MouseListener {
         ArrayList<JButton> buttons = new ArrayList<JButton>();
         addMouseListener(this);
         buttons.add(addButton(10,10,80,10, "Save as PNG"));
+        /*---
+        buttons.add(addButton(10,10,80,10, "Save as PNG"));
+        
+        
+        */
         buttons.get(0).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                //Have to use ImageIOWrite
+                /* Have to use ImageIOWrite
+                
+               Need to find filename  
+               BufferedImage image = new BufferedImage(frame.getWidth(), frame.getHeight(), BufferedImage.TYPE_INT_RGB); 
+               Graphics2D graphics2D = image.createGraphics(); 
+               frame.paint(graphics2D); 
+               ImageIO.write(image,"png", new File("image.png"));
+               
+               write(RenderedImage im, String formatName, File output)
+               
+               
+               
+               
+               */
             }
         });
     }
