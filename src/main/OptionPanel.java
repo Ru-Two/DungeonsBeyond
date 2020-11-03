@@ -21,15 +21,28 @@ public class OptionPanel extends JPanel implements MouseListener {
         addMouseListener(this);
         buttons.add(addButton(10,10,80,10, "Save as PNG"));
         /*---
-        buttons.add(addButton(10,10,80,10, "Save as PNG"));
+        need to correct dimensions for buttons
+        
+        buttons.add(addButton(10,10,80,10, "Save as file"));
+        buttons.add(addButton((10,10,80,10, "Load file into new sheet"));
         
         
         */
+        //save as PNG
         buttons.get(0).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 /* Have to use ImageIOWrite
+                what we need
+                - index of sheet to be made png
+                - panel of that sheet
+                - name generator method for file name of saved sheet maybe ex. output string "charactersheet1" 2, 3 and soforth.
+                 or input file name
+                
+                 do we have to make a getter method for current sheet index in dungeonsBeyond class?
+                
+                DungeonsBeyond.allSheets.get(DungeonsBeyond.get(currentSheetIndex))
                 
                Need to find filename  
                BufferedImage image = new BufferedImage(frame.getWidth(), frame.getHeight(), BufferedImage.TYPE_INT_RGB); 
@@ -45,6 +58,32 @@ public class OptionPanel extends JPanel implements MouseListener {
                */
             }
         });
+        
+        // save as text file 
+        buttons.get(1).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                /* Have to use ImageIOWrite
+                what we need
+               - saving characterinfo to txt file
+               
+               */
+            }
+        });
+        
+        // load a text file
+        buttons.get(2).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                /* 
+                what we need
+               -loading characterinfo into a new sheet
+               */
+            }
+        });
+        
     }
 
     public OptionPanel(int x, int y, int wid, int hei){
