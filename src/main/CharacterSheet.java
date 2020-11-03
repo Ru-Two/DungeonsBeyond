@@ -308,6 +308,9 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     public void pushToCharacter(){
 
+
+
+        pullFromCharacter();
     }
 
     /*

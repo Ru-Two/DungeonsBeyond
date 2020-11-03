@@ -109,6 +109,8 @@ public class CharacterCreator extends JPanel implements MouseListener, ActionLis
 
     public void start(){
         setVisible(true);
+        player_name_tf.setText("");
+        character_name_tf.setText("");
         running = false;
         ready = false;
     }
