@@ -14,20 +14,23 @@ import java.nio.Buffer;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
+import static utilities.PreloadedImages.*;
 
 public class OptionPanel extends JPanel implements MouseListener {
 
-    //ArrayList<JButton> buttons;
+    ArrayList<JButton> buttons;
+    boolean saveFlag;
 
     public OptionPanel(){
         setLocation(0,0);
         setSize(100,100);
-        ArrayList<JButton> buttons = new ArrayList<JButton>();
+        buttons = new ArrayList<JButton>();
         addMouseListener(this);
+        saveFlag = false;
 
         buttons.add(addButton(10,10,80,10, "Save as PNG"));
-        buttons.add(addButton(10,10,80,10, "Save as file"));
-        buttons.add(addButton(10,10,80,10, "Load file into new sheet"));
+        //buttons.add(addButton(10,10,80,10, "Save as file"));
+        //buttons.add(addButton(10,10,80,10, "Load file into new sheet"));
 
         //save as PNG
         buttons.get(0).addActionListener(new ActionListener() {
@@ -45,44 +48,13 @@ public class OptionPanel extends JPanel implements MouseListener {
                do we have to make a getter method for current sheet index in dungeonsBeyond class?
 
                 DungeonsBeyond.allSheets.get(DungeonsBeyond.get(currentSheetIndex))
-
-
                */
-
-                //Takes screen shot of sheet window
-                //TODO fix cropping to only display the character sheet
-                Container pic = getRootPane().getContentPane();
-                BufferedImage image = new BufferedImage((pic.getWidth()), pic.getHeight(), BufferedImage.TYPE_INT_RGB);
-                BufferedImage crop = image.getSubimage(0, 0 ,image.getWidth(),image.getHeight());
-                Graphics2D g = crop.createGraphics();
-                pic.paint(g);
-
-
-                JFrame parentFrame = new JFrame();
-                JFileChooser fileChooser = new JFileChooser();
-
-                //information for the save directory window
-                fileChooser.setDialogTitle("Specify a file to save");
-                int userSelection = fileChooser.showSaveDialog(parentFrame);
-
-                //If the user hits save
-                if (userSelection == JFileChooser.APPROVE_OPTION) {
-                    File fileToSave = fileChooser.getSelectedFile();
-                    System.out.println("Save as file: " + fileToSave.getAbsolutePath());
-
-                }
-
-                //Saves to this director
-                //fileChooser.getSelectedFile() = selected director and file name
-                try {
-                    ImageIO.write(crop,"png", fileChooser.getSelectedFile());
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+                saveFlag = true;
 
             }
         });
 
+        /*
         // save as text file
         buttons.get(1).addActionListener(new ActionListener() {
             @Override
@@ -91,7 +63,7 @@ public class OptionPanel extends JPanel implements MouseListener {
                 /* Have to use ImageIOWrite
                 what we need
                - saving characterinfo to txt file
-                 */
+
 
                 JFrame frame = new JFrame();
                 JFileChooser fileChooser = new JFileChooser();
@@ -114,7 +86,7 @@ public class OptionPanel extends JPanel implements MouseListener {
                 /*
                 what we need
                -loading characterinfo into a new sheet
-                */
+
 
                 JFrame frame = new JFrame();
                 JFileChooser fileChooser = new JFileChooser();
@@ -137,7 +109,7 @@ public class OptionPanel extends JPanel implements MouseListener {
 
             }
         });
-
+    */
     }
 
     public OptionPanel(int x, int y, int wid, int hei){
@@ -157,6 +129,14 @@ public class OptionPanel extends JPanel implements MouseListener {
         newButton.setBounds(x, y, wid, hei);
         add(newButton);
         return newButton;
+    }
+
+    public boolean checkSaveFlag(){
+        if (saveFlag){
+            saveFlag = false;
+            return true;
+        }
+        return false;
     }
 
     public void mousePressed(MouseEvent e) {}
