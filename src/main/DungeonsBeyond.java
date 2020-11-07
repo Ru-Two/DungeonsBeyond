@@ -168,7 +168,7 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
         }
 
         CharacterSheet newCharacter = new CharacterSheet(splitInfo[0], splitInfo[1], r, c, as_choice_const, options.getWidth(), 0);
-        newCharacter.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        newCharacter.setBorder(BorderFactory. createLineBorder(Color.BLACK));
         addSheet(newCharacter);
     }
 
@@ -201,6 +201,47 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
         selectSheet(0);
     }
 
+    //Takes the contents of the sheet and saves as png
+    public void saveSheet(){
+        Container pic;
+        if(currentSheetIndex >= 0 && !allSheets.isEmpty()){
+            pic = allSheets.get(currentSheetIndex);
+        }
+
+        else
+            {
+            pic = this;
+        }
+
+        BufferedImage image = new BufferedImage((pic.getWidth()), pic.getHeight(), BufferedImage.TYPE_INT_RGB);
+        BufferedImage crop = image.getSubimage(0, 0 , image.getWidth(), image.getHeight());
+        Graphics2D g = crop.createGraphics();
+        pic.paint(g);
+
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+
+        //information for the save directory window
+        fileChooser.setDialogTitle("Specify a file to save");
+        int userSelection = fileChooser.showSaveDialog(parentFrame);
+
+
+        //If the user hits save
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToSave = fileChooser.getSelectedFile();
+            System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+
+        }
+
+        //Saves to this director
+        //fileChooser.getSelectedFile() = selected director and file name
+        try {
+            ImageIO.write(crop,"png", fileChooser.getSelectedFile());
+        } catch (Exception ioException) {
+            ioException.printStackTrace();
+        }
+    }
+
     //ActionListener function
 
     public void actionPerformed(ActionEvent evt){
@@ -213,6 +254,9 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
             }
             if (sheetListPanel.checkSheetChangeFlag()) {
                 selectSheet(sheetListPanel.getSelectedSheet());
+            }
+            if(options.checkSaveFlag()){
+                saveSheet();
             }
         }
         if (cc.isReady()){
