@@ -4,7 +4,7 @@ public class AbilityScore {
     private String name;
     private int constName;
 
-    //private int total;
+    private int total;
     //private int modifier;
 
     private int base;
@@ -57,10 +57,15 @@ public class AbilityScore {
     }
 
     public int getScore(){
-        return (base + racialBonus + miscBonus + otherModifier) <= 20 ? base + racialBonus + miscBonus + otherModifier : 20;
+        total = (base + racialBonus + miscBonus + otherModifier);
+        return total <= 20 ? total : 20;
+    }
+
+    public void setScore(int num){
+        total = num;
     }
 
     public int getModifier(){
-        return (this.getScore() / 2) - 5;
+        return (total / 2) - 5;
     }
 }
