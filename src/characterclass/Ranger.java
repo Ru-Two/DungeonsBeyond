@@ -6,6 +6,9 @@ public class Ranger extends CharacterClass{
 
     public Ranger(){
         super("Ranger", 10 );
+
+        savingThrows[0] = STR;
+        savingThrows[0] = DEX;
         spellcasterAbility = WIS;
 
         features.get(favoredEnemy.getLevel()).add(favoredEnemy);

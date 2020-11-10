@@ -7,6 +7,9 @@ public class Barbarian extends CharacterClass {
     public Barbarian(){
         super("Barbarian", 12);
 
+        savingThrows[0] = STR;
+        savingThrows[1] = CON;
+
         features.get(abilityScoreImprovement.getLevel()).add(abilityScoreImprovement);
         features.get(rage.getLevel()).add(rage);
         features.get(unarmoredDefense.getLevel()).add(unarmoredDefense);

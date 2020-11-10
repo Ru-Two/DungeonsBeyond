@@ -7,6 +7,9 @@ public class Fighter extends CharacterClass {
     public Fighter(){
             super("Fighter", 10);
 
+            savingThrows[0] = STR;
+            savingThrows[0] = CON;
+
             features.get(fightingStyle.getLevel()).add(fightingStyle);
             features.get(secondWind.getLevel()).add(secondWind);
             features.get(actionSurge.getLevel()).add(actionSurge);

@@ -5,6 +5,10 @@ import static utilities.Utilities.*;
 public class Sorcerer extends CharacterClass {
 	public Sorcerer() {
 		super("Sorcerer", 8);
+
+		savingThrows[0] = CON;
+		savingThrows[0] = CHA;
+
 		spellcasterAbility = CHA;
 
 		features.get(spellcastingSourcerer.getLevel()).add(spellcastingSourcerer);

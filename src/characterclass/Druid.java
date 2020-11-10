@@ -5,6 +5,9 @@ public class Druid extends CharacterClass{
     public Druid() {
         super("Druid", 8);
 
+        savingThrows[0] = INT;
+        savingThrows[1] = WIS;
+
         spellcasterAbility = WIS;
         features.get(abilityScoreImprovement.getLevel()).add(abilityScoreImprovement);
         features.get(getSpellcastingDruid.getLevel()).add(getSpellcastingDruid);

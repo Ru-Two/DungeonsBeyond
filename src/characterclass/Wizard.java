@@ -5,6 +5,10 @@ import static utilities.Utilities.*;
 public class Wizard extends CharacterClass {
     public Wizard(){
         super("Wizard", 8);
+
+        savingThrows[0] = INT;
+        savingThrows[0] = WIS;
+
         spellcasterAbility = INT;
         
         features.get(spellcastingWizard.getLevel()).add(spellcastingWizard);

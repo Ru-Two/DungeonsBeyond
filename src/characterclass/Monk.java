@@ -7,6 +7,9 @@ public class Monk extends CharacterClass{
     public Monk(){
         super("Monk", 8);
 
+        savingThrows[0] = STR;
+        savingThrows[0] = DEX;
+
         features.get(unarmoredDefense.getLevel()).add(unarmoredDefense);
         features.get(martialArts.getLevel()).add(martialArts);
         features.get(Ki.getLevel()).add(Ki);

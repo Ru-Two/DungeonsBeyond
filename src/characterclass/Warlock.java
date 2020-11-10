@@ -5,6 +5,10 @@ import static utilities.Utilities.*;
 public class Warlock extends CharacterClass{
     public Warlock(){
         super("Warlock", 8);
+
+        savingThrows[0] = WIS;
+        savingThrows[0] = CHA;
+
         spellcasterAbility = CHA;
 		
         features.get(otherworldlyPatron.getLevel()).add(otherworldlyPatron);

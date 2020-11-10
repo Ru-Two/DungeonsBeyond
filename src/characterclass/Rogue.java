@@ -6,7 +6,8 @@ public class Rogue extends CharacterClass{
     public Rogue(){
         super("Rogue", 8);
         //spellcasterAbility = INT; only applicable when rogue archetype is "Arcane Trickster"
-        
+        savingThrows[0] = DEX;
+        savingThrows[0] = INT;
         features.get(rogueExpertise.getLevel()).add(rogueExpertise);
         features.get(sneakAttack.getLevel()).add(sneakAttack);
         features.get(theivesCant.getLevel()).add(theivesCant);

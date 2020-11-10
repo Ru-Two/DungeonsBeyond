@@ -6,6 +6,9 @@ public class Bard extends CharacterClass{
         super("Bard", 8);
         spellcasterAbility = CHA;
 
+        savingThrows[0] = DEX;
+        savingThrows[1] = CHA;
+
         features.get(abilityScoreImprovement.getLevel()).add(abilityScoreImprovement);
         features.get(spellcastingBard.getLevel()).add(spellcastingBard);
         features.get(bardicInspiration.getLevel()).add(bardicInspiration);
