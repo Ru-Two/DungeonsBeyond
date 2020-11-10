@@ -513,8 +513,17 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         levelUp();
         adjustFeatsandTraits();
 
-        character.setInitiative(Integer.parseInt(initiative.getText()));
+        character.setInitiative(character.getMod(DEX));
+        initiative.setText("" + character.getMod(DEX));
         total_hit_dice.setText("" + character.getLevel());
+        for(int i = 0; i < checkboxes.size(); i ++){
+            JCheckBox temp = checkboxes.get(i);
+            DBTextAreaComponent tempTextarea = savesAndSkills.get(i);
+            if(temp.isSelected()){
+                int tempNum = Integer.parseInt(tempTextarea.getText()) + Integer.parseInt(proficiency_bonus.getText());
+                tempTextarea.setText("" + tempNum);
+            }
+        }
 
     }
 
