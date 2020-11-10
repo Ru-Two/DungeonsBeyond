@@ -46,7 +46,7 @@ public final class PreloadedImages {
     public static final Rectangle wisdom_save_num_position = new Rectangle(302,1287,29,24);
     public static final Rectangle charisma_save_num_position = new Rectangle(302,1477,29,24);
 
-    public static final Rectangle strength_as_position = new Rectangle(117,586,85,62);
+    public static final Rectangle strength_as_position = new Rectangle(120,586,85,62);
     public static final Rectangle dexterity_as_position = new Rectangle(117,776,85,62);
     public static final Rectangle constitution_as_position = new Rectangle(117,964,85,62);
     public static final Rectangle intelligence_as_position = new Rectangle(117,1153,85,62);
@@ -114,7 +114,9 @@ public final class PreloadedImages {
 
     //Different font styles for different fields
 
-    public static final Font saves_and_skills_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/10));
+    public static final Font larger_sized_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/4));
+    public static final Font medium_sized_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/5));
+    public static final Font smaller_sized_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/10));
     public static final Font player_name_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/4.2));
     public static final Font header_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/5.5));
 
