@@ -32,7 +32,7 @@ public final class PreloadedImages {
 
     public static final Point inspiration_checkbox_position = new Point(123,447);
 
-    public static final Point strength_save_checkbox_position = new Point(256, 524);
+    public static final Point strength_save_checkbox_position = new Point(256, 530);
     public static final Point dexterity_save_checkbox_position = new Point(256, 717);
     public static final Point constitution_save_checkbox_position = new Point(256, 907);
     public static final Point intelligence_save_checkbox_position = new Point(256, 1095);
@@ -60,24 +60,24 @@ public final class PreloadedImages {
     public static final Rectangle wisdom_as_bonus_position = new Rectangle(144,1297,36,43);
     public static final Rectangle charisma_as_bonus_position = new Rectangle(144,1486,36,43);
 
-    public static final Point athletics_checkbox_position = new Point(274, 561);
-    public static final Point acrobatics_checkbox_position = new Point(274, 750);
-    public static final Point sleightofhands_checkbox_position = new Point(274, 776);
-    public static final Point stealth_checkbox_position = new Point(274, 803);
-    public static final Point arcana_checkbox_position = new Point(274, 1129);
-    public static final Point history_checkbox_position = new Point(274, 1155);
-    public static final Point investigation_checkbox_position = new Point(274, 1182);
-    public static final Point nature_checkbox_position = new Point(274, 1208);
-    public static final Point religion_checkbox_position = new Point(274, 1234);
-    public static final Point animalhandling_checkbox_position = new Point(274, 1318);
-    public static final Point insight_checkbox_position = new Point(274, 1345);
-    public static final Point medicine_checkbox_position = new Point(274, 1371);
-    public static final Point perception_checkbox_position = new Point(274, 1397);
-    public static final Point survival_checkbox_position = new Point(274, 1423);
-    public static final Point deception_checkbox_position = new Point(274, 1508);
-    public static final Point intimidation_checkbox_position = new Point(274, 1534);
-    public static final Point performance_checkbox_position = new Point(274, 1560);
-    public static final Point persuasion_checkbox_position = new Point(274, 1586);
+    public static final Point athletics_checkbox_position = new Point(256, 557);
+    public static final Point acrobatics_checkbox_position = new Point(256, 746);
+    public static final Point sleightofhands_checkbox_position = new Point(256, 772);
+    public static final Point stealth_checkbox_position = new Point(256, 799);
+    public static final Point arcana_checkbox_position = new Point(256, 1125);
+    public static final Point history_checkbox_position = new Point(256, 1151);
+    public static final Point investigation_checkbox_position = new Point(256, 1178);
+    public static final Point nature_checkbox_position = new Point(256, 1204);
+    public static final Point religion_checkbox_position = new Point(256, 1230);
+    public static final Point animalhandling_checkbox_position = new Point(256, 1314);
+    public static final Point insight_checkbox_position = new Point(256, 1341);
+    public static final Point medicine_checkbox_position = new Point(256, 1367);
+    public static final Point perception_checkbox_position = new Point(256, 1393);
+    public static final Point survival_checkbox_position = new Point(256, 1420);
+    public static final Point deception_checkbox_position = new Point(256, 1504);
+    public static final Point intimidation_checkbox_position = new Point(256, 1530);
+    public static final Point performance_checkbox_position = new Point(256, 1556);
+    public static final Point persuasion_checkbox_position = new Point(256, 1583);
 
     public static final Rectangle athletics_num_position = new Rectangle(302,557,29,24);
     public static final Rectangle acrobatics_num_position = new Rectangle(302,746,29,24);
