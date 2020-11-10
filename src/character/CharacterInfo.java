@@ -120,7 +120,7 @@ public class CharacterInfo {
         this.mergeRace();
         initiative = getMod(DEX);
     }
-    
+
     public void setProfSavingThrows(CharacterClass c){
         int[] temp = c.getSavingThrows();
         int prof1 = temp[0];
@@ -131,7 +131,7 @@ public class CharacterInfo {
     public boolean[] getProfSavingThrows(){
         return savingThrows;
     }
-    
+
     public void setRaceAndClass(CharacterRace r, CharacterClass c){
         race = r;
         cclass = c;
@@ -291,6 +291,9 @@ public class CharacterInfo {
 
     public int getLevel() {
         return level;
+    }
+    public void setInitiative(int num){
+        initiative = num;
     }
 
     public int getInitiative() {
