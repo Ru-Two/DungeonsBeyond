@@ -292,6 +292,7 @@ public class CharacterInfo {
     public int getLevel() {
         return level;
     }
+
     public void setInitiative(int num){
         initiative = num;
     }
