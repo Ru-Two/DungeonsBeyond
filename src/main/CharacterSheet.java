@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static java.awt.event.KeyEvent.*;
 import static utilities.PreloadedImages.*;
@@ -17,6 +18,7 @@ import static utilities.Utilities.*;
 public class CharacterSheet extends JPanel implements MouseListener, KeyListener, MouseMotionListener{
 
     private CharacterInfo character;
+    private CharacterClass characterClass;
 
     private boolean mainSheetDisplay;
 
@@ -144,6 +146,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         }
 
         character.setRaceAndClass(r, c);
+        character.setProfSavingThrows(c);
     }
 
     public CharacterSheet(CharacterRace race, CharacterClass cclass){
@@ -213,12 +216,12 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
         //SAVES
         //Saves numbers
-        strength_save_num = buildTextArea(getRelativeBounds(strength_save_num_position), null);
-        dexterity_save_num = buildTextArea(getRelativeBounds(dexterity_save_num_position), null);
-        constitution_save_num = buildTextArea(getRelativeBounds(constitution_save_num_position), null);
-        intelligence_save_num = buildTextArea(getRelativeBounds(intelligence_save_num_position), null);
-        wisdom_save_num = buildTextArea(getRelativeBounds(wisdom_save_num_position), null);
-        charisma_save_num = buildTextArea(getRelativeBounds(charisma_save_num_position), null);
+        strength_save_num = buildTextArea(getRelativeBounds(strength_save_num_position), saves_and_skills_font);
+        dexterity_save_num = buildTextArea(getRelativeBounds(dexterity_save_num_position), saves_and_skills_font);
+        constitution_save_num = buildTextArea(getRelativeBounds(constitution_save_num_position), saves_and_skills_font);
+        intelligence_save_num = buildTextArea(getRelativeBounds(intelligence_save_num_position), saves_and_skills_font);
+        wisdom_save_num = buildTextArea(getRelativeBounds(wisdom_save_num_position), saves_and_skills_font);
+        charisma_save_num = buildTextArea(getRelativeBounds(charisma_save_num_position), saves_and_skills_font);
 
         strength_save_num.setEditable(false);
         dexterity_save_num.setEditable(false);
@@ -266,24 +269,24 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
         //Skills
         //Skills numbers
-        athletics_num = buildTextArea(getRelativeBounds(athletics_num_position), null);
-        acrobatics_num = buildTextArea(getRelativeBounds(acrobatics_num_position), null);
-        sleightofhand_num = buildTextArea(getRelativeBounds(sleightofhand_num_position), null);
-        stealth_num = buildTextArea(getRelativeBounds(stealth_num_position), null);
-        arcana_num = buildTextArea(getRelativeBounds(arcana_num_position), null);
-        history_num = buildTextArea(getRelativeBounds(history_num_position), null);
-        investigation_num = buildTextArea(getRelativeBounds(investigation_num_position), null);
-        nature_num = buildTextArea(getRelativeBounds(nature_num_position), null);
-        religion_num = buildTextArea(getRelativeBounds(religion_num_position), null);
-        animalhandling_num = buildTextArea(getRelativeBounds(animalhandling_num_position), null);
-        insight_num = buildTextArea(getRelativeBounds(insight_num_position), null);
-        medicine_num = buildTextArea(getRelativeBounds(medicine_num_position), null);
-        perception_num = buildTextArea(getRelativeBounds(perception_num_position), null);
-        survival_num = buildTextArea(getRelativeBounds(survival_num_position), null);
-        deception_num = buildTextArea(getRelativeBounds(deception_num_position), null);
-        intimidation_num = buildTextArea(getRelativeBounds(intimidation_num_position), null);
-        performance_num = buildTextArea(getRelativeBounds(performance_num_position), null);
-        persuasion_num = buildTextArea(getRelativeBounds(persuasion_num_position), null);
+        athletics_num = buildTextArea(getRelativeBounds(athletics_num_position), saves_and_skills_font);
+        acrobatics_num = buildTextArea(getRelativeBounds(acrobatics_num_position), saves_and_skills_font);
+        sleightofhand_num = buildTextArea(getRelativeBounds(sleightofhand_num_position), saves_and_skills_font);
+        stealth_num = buildTextArea(getRelativeBounds(stealth_num_position), saves_and_skills_font);
+        arcana_num = buildTextArea(getRelativeBounds(arcana_num_position), saves_and_skills_font);
+        history_num = buildTextArea(getRelativeBounds(history_num_position), saves_and_skills_font);
+        investigation_num = buildTextArea(getRelativeBounds(investigation_num_position), saves_and_skills_font);
+        nature_num = buildTextArea(getRelativeBounds(nature_num_position), saves_and_skills_font);
+        religion_num = buildTextArea(getRelativeBounds(religion_num_position), saves_and_skills_font);
+        animalhandling_num = buildTextArea(getRelativeBounds(animalhandling_num_position), saves_and_skills_font);
+        insight_num = buildTextArea(getRelativeBounds(insight_num_position), saves_and_skills_font);
+        medicine_num = buildTextArea(getRelativeBounds(medicine_num_position), saves_and_skills_font);
+        perception_num = buildTextArea(getRelativeBounds(perception_num_position), saves_and_skills_font);
+        survival_num = buildTextArea(getRelativeBounds(survival_num_position), saves_and_skills_font);
+        deception_num = buildTextArea(getRelativeBounds(deception_num_position), saves_and_skills_font);
+        intimidation_num = buildTextArea(getRelativeBounds(intimidation_num_position), saves_and_skills_font);
+        performance_num = buildTextArea(getRelativeBounds(performance_num_position), saves_and_skills_font);
+        persuasion_num = buildTextArea(getRelativeBounds(persuasion_num_position), saves_and_skills_font);
 
         athletics_num.setEditable(false);
         acrobatics_num.setEditable(false);
@@ -421,7 +424,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         speed = buildTextArea(getRelativeBounds(speed_position), null);
         current_hit_points = buildTextArea(getRelativeBounds(current_hit_points_position), null);
         temp_hit_points = buildTextArea(getRelativeBounds(temp_hit_points_position), null);
-        current_hit_point_max = buildTextArea(getRelativeBounds(current_hit_point_max_position), null);
+        current_hit_point_max = buildTextArea(getRelativeBounds(current_hit_point_max_position), saves_and_skills_font);
         total_hit_dice = buildTextArea(getRelativeBounds(total_hit_dice_position), null);
         hit_dice = buildTextArea(getRelativeBounds(hit_dice_position), null);
         death_saves = buildTextArea(getRelativeBounds(death_saves_position), null);
@@ -454,9 +457,10 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         race_name.setText(character.getRaceName());
         proficiency_bonus.setText("" + character.getProficiencyBonus());
         armor_class.setText("" + character.getArmourClass());
-        initiative.setText("" + character.getInitiative());
         speed.setText("" + character.getSpeed());
-        current_hit_point_max.setText("" + character.getCurrHp());
+        current_hit_point_max.setText("" + character.getMaxHp());
+        current_hit_points.setText("" + character.getCurrHp());
+        temp_hit_points.setText("" + character.getTmpMaxHp());
 
         strength_as.setText("" + character.getAbilityScores()[STR].getScore());
         dexterity_as.setText("" + character.getAbilityScores()[DEX].getScore());
@@ -469,8 +473,11 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         adjustSavesandSkills();
         adjustFeatsandTraits();
 
+        initiative.setText("" + character.getMod(DEX));
+
 
         //proficiencies
+
         for(int i = 0; i < checkboxes.size(); i++){
             JCheckBox tempCheckbox = checkboxes.get(i);
             DBTextAreaComponent tempTextarea = savesAndSkills.get(i);
@@ -479,6 +486,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
                 @Override
                 public void itemStateChanged(ItemEvent e){
                     if(e.getStateChange() == ItemEvent.SELECTED){
+
                         int tempNum = Integer.parseInt(tempTextarea.getText()) + Integer.parseInt(proficiency_bonus.getText());
                         tempTextarea.setText("" + tempNum);
                     }
@@ -489,6 +497,13 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
                 }
             });
         }
+        boolean[] temp = character.getProfSavingThrows();
+        for(int i = 0; i < temp.length; i++){
+            if(temp[i])
+                checkboxes.get(i).setSelected(true);
+        }
+
+
     }
 
     public void pushToCharacter(){
@@ -497,7 +512,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         adjustSavesandSkills();
         levelUp();
         adjustFeatsandTraits();
-
+        character.setInitiative(Integer.parseInt(initiative.getText()));
     }
 
     private void updateAbilityScores(){
@@ -517,12 +532,12 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         charisma_as_bonus.setText("" + character.getAbilityScores()[CHA].getModifier());
     }
     private void adjustSavesandSkills(){
-        strength_save_num.setText("" + character.getAbilityScores()[STR].getModifier());
-        dexterity_save_num.setText("" + character.getAbilityScores()[DEX].getModifier());
-        constitution_save_num.setText("" + character.getAbilityScores()[CON].getModifier());
-        intelligence_save_num.setText("" + character.getAbilityScores()[INT].getModifier());
-        wisdom_save_num.setText("" + character.getAbilityScores()[WIS].getModifier());
-        charisma_save_num.setText("" + character.getAbilityScores()[CHA].getModifier());
+        strength_save_num.setText("" + character.getMod(STR));
+        dexterity_save_num.setText("" + character.getMod(DEX));
+        constitution_save_num.setText("" + character.getMod(CON));
+        intelligence_save_num.setText("" + character.getMod(INT));
+        wisdom_save_num.setText("" + character.getMod(WIS));
+        charisma_save_num.setText("" + character.getMod(CHA));
 
         acrobatics_num.setText("" + character.getAbilityScores()[character.getSkills()[ACROBATICS].getModifier()].getModifier());
         animalhandling_num.setText("" + character.getAbilityScores()[character.getSkills()[ANIMAL_HANDLING].getModifier()].getModifier());
