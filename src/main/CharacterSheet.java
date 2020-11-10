@@ -425,8 +425,9 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         current_hit_points = buildTextArea(getRelativeBounds(current_hit_points_position), null);
         temp_hit_points = buildTextArea(getRelativeBounds(temp_hit_points_position), null);
         current_hit_point_max = buildTextArea(getRelativeBounds(current_hit_point_max_position), saves_and_skills_font);
-        total_hit_dice = buildTextArea(getRelativeBounds(total_hit_dice_position), null);
+        total_hit_dice = buildTextArea(getRelativeBounds(total_hit_dice_position), saves_and_skills_font);
         hit_dice = buildTextArea(getRelativeBounds(hit_dice_position), null);
+        hit_dice.setEditable(false);
         death_saves = buildTextArea(getRelativeBounds(death_saves_position), null);
 
         add(armor_class);
@@ -461,6 +462,8 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         current_hit_point_max.setText("" + character.getMaxHp());
         current_hit_points.setText("" + character.getCurrHp());
         temp_hit_points.setText("" + character.getTmpMaxHp());
+        total_hit_dice.setText("" + character.getLevel());
+        hit_dice.setText("" + character.getHitDice());
 
         strength_as.setText("" + character.getAbilityScores()[STR].getScore());
         dexterity_as.setText("" + character.getAbilityScores()[DEX].getScore());
@@ -512,7 +515,10 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         adjustSavesandSkills();
         levelUp();
         adjustFeatsandTraits();
+
         character.setInitiative(Integer.parseInt(initiative.getText()));
+        total_hit_dice.setText("" + character.getLevel());
+
     }
 
     private void updateAbilityScores(){
