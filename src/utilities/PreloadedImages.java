@@ -28,7 +28,7 @@ public final class PreloadedImages {
     public static final Rectangle race_position = new Rectangle(736,178,306,50);
     public static final Rectangle alignment_position = new Rectangle(1046,177,264,50);
     public static final Rectangle exp_points_position = new Rectangle(1314,177,243,50);
-    public static final Rectangle proficiency_bonus_position = new Rectangle(124,371,76,43);
+    public static final Rectangle proficiency_bonus_position = new Rectangle(153,364,50,43);
 
     public static final Point inspiration_checkbox_position = new Point(123,447);
 
@@ -46,19 +46,19 @@ public final class PreloadedImages {
     public static final Rectangle wisdom_save_num_position = new Rectangle(302,1287,29,24);
     public static final Rectangle charisma_save_num_position = new Rectangle(302,1477,29,24);
 
-    public static final Rectangle strength_as_position = new Rectangle(120,586,85,62);
-    public static final Rectangle dexterity_as_position = new Rectangle(117,776,85,62);
-    public static final Rectangle constitution_as_position = new Rectangle(117,964,85,62);
-    public static final Rectangle intelligence_as_position = new Rectangle(117,1153,85,62);
-    public static final Rectangle wisdom_as_position = new Rectangle(117,1343,85,62);
-    public static final Rectangle charisma_as_position = new Rectangle(117,1533,85,62);
+    public static final Rectangle strength_as_position = new Rectangle(130,586,85,62);
+    public static final Rectangle dexterity_as_position = new Rectangle(130,776,85,62);
+    public static final Rectangle constitution_as_position = new Rectangle(130,964,85,62);
+    public static final Rectangle intelligence_as_position = new Rectangle(130,1153,85,62);
+    public static final Rectangle wisdom_as_position = new Rectangle(130,1343,85,62);
+    public static final Rectangle charisma_as_position = new Rectangle(130,1533,85,62);
 
-    public static final Rectangle strength_as_bonus_position = new Rectangle(144,537,36,30);
-    public static final Rectangle dexterity_as_bonus_position = new Rectangle(144,729,36,43);
-    public static final Rectangle constitution_as_bonus_position = new Rectangle(144,917,36,43);
-    public static final Rectangle intelligence_as_bonus_position = new Rectangle(144,1107,36,43);
-    public static final Rectangle wisdom_as_bonus_position = new Rectangle(144,1297,36,43);
-    public static final Rectangle charisma_as_bonus_position = new Rectangle(144,1486,36,43);
+    public static final Rectangle strength_as_bonus_position = new Rectangle(150,537,36,30);
+    public static final Rectangle dexterity_as_bonus_position = new Rectangle(150,729,36,30);
+    public static final Rectangle constitution_as_bonus_position = new Rectangle(150,917,36,30);
+    public static final Rectangle intelligence_as_bonus_position = new Rectangle(150,1107,36,30);
+    public static final Rectangle wisdom_as_bonus_position = new Rectangle(150,1297,36,30);
+    public static final Rectangle charisma_as_bonus_position = new Rectangle(150,1486,36,30);
 
     public static final Point athletics_checkbox_position = new Point(256, 557);
     public static final Point acrobatics_checkbox_position = new Point(256, 746);
@@ -102,14 +102,14 @@ public final class PreloadedImages {
     public static final Rectangle attacks_spellcasting_position = new Rectangle(607,1050,461,1027);
     public static final Rectangle features_traits_position = new Rectangle(1133,1046,461,1027);
     public static final Rectangle equipment_position = new Rectangle(1132,342,461,642);
-    public static final Rectangle armor_class_position = new Rectangle(638,387,72,65);
-    public static final Rectangle initiative_position = new Rectangle(780,380,103,92);
-    public static final Rectangle speed_position = new Rectangle(942,382,103,92);
-    public static final Rectangle current_hit_points_position = new Rectangle(624,571,428,92);
-    public static final Rectangle temp_hit_points_position = new Rectangle(622,725,428,92);
+    public static final Rectangle armor_class_position = new Rectangle(643,387,72,65);
+    public static final Rectangle initiative_position = new Rectangle(815,380,70,92);
+    public static final Rectangle speed_position = new Rectangle(963,382,80,92);
+    public static final Rectangle current_hit_points_position = new Rectangle(630,571,428,92);
+    public static final Rectangle temp_hit_points_position = new Rectangle(630,725,428,92);
     public static final Rectangle current_hit_point_max_position = new Rectangle(822,534,222,22);
     public static final Rectangle total_hit_dice_position = new Rectangle(672,864,133,24);
-    public static final Rectangle hit_dice_position = new Rectangle(625,895,181,65);
+    public static final Rectangle hit_dice_position = new Rectangle(655,895,150,65);
     public static final Rectangle death_saves_position = new Rectangle(864,866,185,97);
 
     //Different font styles for different fields
