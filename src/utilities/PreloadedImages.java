@@ -114,6 +114,7 @@ public final class PreloadedImages {
 
     //Different font styles for different fields
 
+    public static final Font saves_and_skills_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/10));
     public static final Font player_name_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/4.2));
     public static final Font header_font = new Font("Verdana", Font.PLAIN, (int)(windowUnit/5.5));
 
