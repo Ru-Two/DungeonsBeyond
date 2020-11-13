@@ -4,6 +4,7 @@ import org.w3c.dom.css.Rect;
 
 import java.awt.*;
 import java.awt.image.ImageObserver;
+import static utilities.PreloadedImages.*;
 
 public class DBButton {
 
@@ -12,6 +13,8 @@ public class DBButton {
     private Image img;
     private Color selectColor;
     private Color col;
+    private Font font;
+    private String txt;
 
     private boolean selected;
 
@@ -21,6 +24,8 @@ public class DBButton {
         selectColor = new Color(255,255,255, 20);
         col = Color.WHITE;
         selected = false;
+        txt = "";
+        font = larger_sized_font;
     }
 
     public DBButton(int x, int y, int wid, int hei){
@@ -65,6 +70,11 @@ public class DBButton {
         else {
             g.setColor(col);
             g.fillRect(getX(), getY(), getWidth(), getHeight());
+            g.setColor(Color.BLACK);
+            g.setFont(font);
+            int w = g.getFontMetrics().stringWidth(txt);
+            //int h = g.getFontMetrics().stringHeight(txt);
+            g.drawString(txt, getX() + getWidth()/2 - w/2,getY()+getHeight()/2 + 10);
         }
         if (selected){
             g.setColor(selectColor);
@@ -74,6 +84,14 @@ public class DBButton {
             g.setColor(Color.BLACK);
             g.drawRect(getX(), getY(), getWidth(), getHeight());
         }
+    }
+
+    public void setFont(Font f){
+        font = f;
+    }
+
+    public void setText(String s){
+        txt = s;
     }
 
     /*

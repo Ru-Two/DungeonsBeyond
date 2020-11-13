@@ -56,11 +56,11 @@ public class SheetListPanel extends JPanel implements MouseListener {
         newSheetButton.setBounds(getNextButtonBounds());
     }
 
+
     public void addSheet(String charactername){
-
-
         DBButton newBtn = new DBButton(getNextButtonBounds());
         newBtn.setSelectColor(SELECT_COLOR);
+        newBtn.setText(charactername);
         sheetButtons.add(newBtn);
 
         DBButton newDelBtn = new DBButton(getNextDelButtonBounds());

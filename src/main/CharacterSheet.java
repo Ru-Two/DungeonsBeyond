@@ -457,8 +457,8 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         armor_class.setText("" + character.getArmourClass());
         speed.setText("" + character.getSpeed());
         current_hit_point_max.setText("" + character.getMaxHp());
-        current_hit_points.setText("" + character.getCurrHp());
-        temp_hit_points.setText("" + character.getTmpMaxHp());
+        current_hit_points.setText("           " + character.getCurrHp());
+        temp_hit_points.setText("           " + character.getTmpMaxHp());
         total_hit_dice.setText("" + character.getLevel());
         hit_dice.setText("" + character.getHitDice());
 
