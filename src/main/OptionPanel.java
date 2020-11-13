@@ -28,7 +28,7 @@ public class OptionPanel extends JPanel implements MouseListener {
         addMouseListener(this);
         saveFlag = false;
 
-        buttons.add(addButton(10,10,80,10, "Save as PNG"));
+        buttons.add(addButton(getX() + 30,getY() + 30,getWidth() - 60,getWidth() - 60, "Save as PNG"));
         //buttons.add(addButton(10,10,80,10, "Save as file"));
         //buttons.add(addButton(10,10,80,10, "Load file into new sheet"));
 
@@ -110,12 +110,14 @@ public class OptionPanel extends JPanel implements MouseListener {
             }
         });
     */
+        setLayout(null);
     }
 
     public OptionPanel(int x, int y, int wid, int hei){
         this();
         setLocation(x, y);
         setSize(wid, hei);
+        buttons.get(0).setBounds(getX() + 30,getY() + 30,getWidth() - 60,getHeight() - 60);
     }
 
     public void addButton(int x, int y, int wid, int hei){
