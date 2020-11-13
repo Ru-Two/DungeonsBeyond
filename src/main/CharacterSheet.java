@@ -590,8 +590,9 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         features_traits.setText(tempFeatTrait.toString());
     }
 
-
-
+    public String getCharactername(){
+        return character.getCharacterName();
+    }
 
 
     /*
@@ -609,6 +610,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     public static Rectangle getRelativeBounds(int x, int y, int wid, int hei){
         return new Rectangle(shiftInt(x), shiftInt(y), shiftInt(wid), shiftInt(hei));
     }
+
 
     public static Rectangle getRelativeBounds(Rectangle r){
         return new Rectangle(shiftInt(r.getX()), shiftInt(r.getY()), shiftInt(r.getWidth()), shiftInt(r.getHeight()));

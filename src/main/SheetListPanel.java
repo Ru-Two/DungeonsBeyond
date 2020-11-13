@@ -56,7 +56,7 @@ public class SheetListPanel extends JPanel implements MouseListener {
         newSheetButton.setBounds(getNextButtonBounds());
     }
 
-    public void addSheet(){
+    public void addSheet(String charactername){
 
 
         DBButton newBtn = new DBButton(getNextButtonBounds());
@@ -250,6 +250,7 @@ public class SheetListPanel extends JPanel implements MouseListener {
 
         }
     }
+
 
     @Override
     public void paintComponent(Graphics g){
