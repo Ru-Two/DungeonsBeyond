@@ -17,10 +17,15 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
     private CharacterInfo character;
     private CharacterClass characterClass;
 
+    private JButton information;
+
     private boolean mainSheetDisplay;
 
     private ArrayList<JCheckBox> checkboxes = new ArrayList<>();
     private ArrayList<DBTextAreaComponent> savesAndSkills = new ArrayList<>();
+
+    private DBTextAreaComponent traits_info;
+    private JScrollPane traits_info_scroll;
 
     private DBTextAreaComponent character_name;
     private DBTextAreaComponent class_level;
@@ -153,6 +158,25 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
     private void loadAllComponents(){
 
+        information = new JButton("Information");
+        information.setBounds(588, 950, 100, 20);
+        add(information);
+        information.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switchScreens(true);
+            }
+        });
+
+
+        traits_info = buildTextArea(getRelativeBounds(traits_text_box), null);
+        traits_info_scroll = new JScrollPane();
+        traits_info_scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        traits_info_scroll.setBounds(traits_text_box);
+        traits_info_scroll.getViewport().add(traits_info);
+
+        traits_info.setEditable(false);
+
         character_name = buildTextArea(getRelativeBounds(character_name_position), player_name_font);
         class_level = buildTextArea(getRelativeBounds(class_level_position), header_font);
         background = buildTextArea(getRelativeBounds(background_position), header_font);
@@ -162,14 +186,8 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         exp_points = buildTextArea(getRelativeBounds(exp_points_position), header_font);
         proficiency_bonus = buildTextArea(getRelativeBounds(proficiency_bonus_position), medium_sized_font);
 
-        add(character_name);
-        add(class_level);
-        add(background);
-        add(player_name);
-        add(race_name);
-        add(alignment);
-        add(exp_points);
-        add(proficiency_bonus);
+
+
 
         proficiency_bonus.setEditable(false);
 
@@ -181,12 +199,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         wisdom_as = buildTextArea(getRelativeBounds(wisdom_as_position), larger_sized_font);
         charisma_as = buildTextArea(getRelativeBounds(charisma_as_position), larger_sized_font);
 
-        add(strength_as);
-        add(dexterity_as);
-        add(constitution_as);
-        add(intelligence_as);
-        add(wisdom_as);
-        add(charisma_as);
+
 
         //Ability Score Bonuses
 
@@ -204,12 +217,9 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         wisdom_as_bonus.setEditable(false);
         charisma_as_bonus.setEditable(false);
 
-        add(strength_as_bonus);
-        add(dexterity_as_bonus);
-        add(constitution_as_bonus);
-        add(intelligence_as_bonus);
-        add(wisdom_as_bonus);
-        add(charisma_as_bonus);
+
+
+
 
         //SAVES
         //Saves numbers
@@ -227,12 +237,9 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         wisdom_save_num.setEditable(false);
         charisma_save_num.setEditable(false);
 
-        add(strength_save_num);
-        add(dexterity_save_num);
-        add(constitution_save_num);
-        add(intelligence_save_num);
-        add(wisdom_save_num);
-        add(charisma_save_num);
+
+
+
 
         savesAndSkills.add(strength_save_num);
         savesAndSkills.add(dexterity_save_num);
@@ -250,12 +257,6 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         wisdom_save_checkbox = buildCheckBox(getRelativePos(wisdom_save_checkbox_position));
         charisma_save_checkbox = buildCheckBox(getRelativePos(charisma_save_checkbox_position));
 
-        add(strength_save_checkbox);
-        add(dexterity_save_checkbox);
-        add(constitution_save_checkbox);
-        add(intelligence_save_checkbox);
-        add(wisdom_save_checkbox);
-        add(charisma_save_checkbox);
 
         checkboxes.add(strength_save_checkbox);
         checkboxes.add(dexterity_save_checkbox);
@@ -304,24 +305,6 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         performance_num.setEditable(false);
         persuasion_num.setEditable(false);
 
-        add(athletics_num);
-        add(acrobatics_num);
-        add(sleightofhand_num);
-        add(stealth_num);
-        add(arcana_num);
-        add(history_num);
-        add(investigation_num);
-        add(nature_num);
-        add(religion_num);
-        add(animalhandling_num);
-        add(insight_num);
-        add(medicine_num);
-        add(perception_num);
-        add(survival_num);
-        add(deception_num);
-        add(intimidation_num);
-        add(performance_num);
-        add(persuasion_num);
 
         savesAndSkills.add(athletics_num);
         savesAndSkills.add(acrobatics_num);
@@ -362,24 +345,7 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         performance_checkbox = buildCheckBox(getRelativePos(performance_checkbox_position));
         persuasion_checkbox = buildCheckBox(getRelativePos(persuasion_checkbox_position));
 
-        add(athletics_checkbox);
-        add(acrobatics_checkbox);
-        add(sleightofhand_checkbox);
-        add(stealth_checkbox);
-        add(arcana_checkbox);
-        add(history_checkbox);
-        add(investigation_checkbox);
-        add(nature_checkbox);
-        add(religion_checkbox);
-        add(animalhandling_checkbox);
-        add(insight_checkbox);
-        add(medicine_checkbox);
-        add(perception_checkbox);
-        add(survival_checkbox);
-        add(deception_checkbox);
-        add(intimidation_checkbox);
-        add(performance_checkbox);
-        add(persuasion_checkbox);
+
 
         checkboxes.add(athletics_checkbox);
         checkboxes.add(acrobatics_checkbox);
@@ -408,10 +374,8 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         features_traits = buildTextArea(getRelativeBounds(features_traits_position), null);
         equipment = buildTextArea(getRelativeBounds(equipment_position), null);
 
-        add(other_proficiencies_languages);
-        add(attacks_spellcasting);
-        add(features_traits);
-        add(equipment);
+
+
 
         features_traits.setEditable(false);
 
@@ -427,28 +391,224 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         hit_dice.setEditable(false);
         death_saves = buildTextArea(getRelativeBounds(death_saves_position), null);
 
-        add(armor_class);
-        add(initiative);
-        add(speed);
-        add(current_hit_points);
-        add(temp_hit_points);
-        add(current_hit_point_max);
-        add(total_hit_dice);
-        add(hit_dice);
-        add(death_saves);
 
+
+
+        switchScreens(false);
         current_hit_point_max.setEditable(false);
 
         //ADD INSPIRATION POINT AND OTHER POINTS
-
     }
 
-    public void switchScreens(){
-        mainSheetDisplay = !mainSheetDisplay;
+    public JButton addButton(int x, int y, int wid, int hei, String name){
+        JButton newButton = new JButton(name);
+        newButton.setBounds(x, y, wid, hei);
+        add(newButton);
+        return newButton;
+    }
+
+    public void switchScreens(boolean buttonClick){
+        if(buttonClick)
+            mainSheetDisplay = !mainSheetDisplay;
+
+        if(mainSheetDisplay){
+            add(character_name);
+            add(class_level);
+            add(background);
+            add(player_name);
+            add(race_name);
+            add(alignment);
+            add(exp_points);
+            add(proficiency_bonus);
+
+            add(strength_as);
+            add(dexterity_as);
+            add(constitution_as);
+            add(intelligence_as);
+            add(wisdom_as);
+            add(charisma_as);
+
+            add(strength_as_bonus);
+            add(dexterity_as_bonus);
+            add(constitution_as_bonus);
+            add(intelligence_as_bonus);
+            add(wisdom_as_bonus);
+            add(charisma_as_bonus);
+
+            add(strength_save_num);
+            add(dexterity_save_num);
+            add(constitution_save_num);
+            add(intelligence_save_num);
+            add(wisdom_save_num);
+            add(charisma_save_num);
+
+            add(strength_save_checkbox);
+            add(dexterity_save_checkbox);
+            add(constitution_save_checkbox);
+            add(intelligence_save_checkbox);
+            add(wisdom_save_checkbox);
+            add(charisma_save_checkbox);
+
+            add(athletics_num);
+            add(acrobatics_num);
+            add(sleightofhand_num);
+            add(stealth_num);
+            add(arcana_num);
+            add(history_num);
+            add(investigation_num);
+            add(nature_num);
+            add(religion_num);
+            add(animalhandling_num);
+            add(insight_num);
+            add(medicine_num);
+            add(perception_num);
+            add(survival_num);
+            add(deception_num);
+            add(intimidation_num);
+            add(performance_num);
+            add(persuasion_num);
+
+            add(athletics_checkbox);
+            add(acrobatics_checkbox);
+            add(sleightofhand_checkbox);
+            add(stealth_checkbox);
+            add(arcana_checkbox);
+            add(history_checkbox);
+            add(investigation_checkbox);
+            add(nature_checkbox);
+            add(religion_checkbox);
+            add(animalhandling_checkbox);
+            add(insight_checkbox);
+            add(medicine_checkbox);
+            add(perception_checkbox);
+            add(survival_checkbox);
+            add(deception_checkbox);
+            add(intimidation_checkbox);
+            add(performance_checkbox);
+            add(persuasion_checkbox);
+
+            add(other_proficiencies_languages);
+            add(attacks_spellcasting);
+            add(features_traits);
+            add(equipment);
+
+            add(armor_class);
+            add(initiative);
+            add(speed);
+            add(current_hit_points);
+            add(temp_hit_points);
+            add(current_hit_point_max);
+            add(total_hit_dice);
+            add(hit_dice);
+            add(death_saves);
+
+            remove(traits_info_scroll);
+            information.setBounds(588, 950, 100, 20);
+            information.setText("Information");
+
+
+        }
+        if(!mainSheetDisplay) {
+            remove(character_name);
+            remove(class_level);
+            remove(background);
+            remove(player_name);
+            remove(race_name);
+            remove(alignment);
+            remove(exp_points);
+            remove(proficiency_bonus);
+
+            remove(strength_as);
+            remove(dexterity_as);
+            remove(constitution_as);
+            remove(intelligence_as);
+            remove(wisdom_as);
+            remove(charisma_as);
+
+            remove(strength_as_bonus);
+            remove(dexterity_as_bonus);
+            remove(constitution_as_bonus);
+            remove(intelligence_as_bonus);
+            remove(wisdom_as_bonus);
+            remove(charisma_as_bonus);
+
+            remove(strength_save_num);
+            remove(dexterity_save_num);
+            remove(constitution_save_num);
+            remove(intelligence_save_num);
+            remove(wisdom_save_num);
+            remove(charisma_save_num);
+
+            remove(strength_save_checkbox);
+            remove(dexterity_save_checkbox);
+            remove(constitution_save_checkbox);
+            remove(intelligence_save_checkbox);
+            remove(wisdom_save_checkbox);
+            remove(charisma_save_checkbox);
+
+            remove(athletics_num);
+            remove(acrobatics_num);
+            remove(sleightofhand_num);
+            remove(stealth_num);
+            remove(arcana_num);
+            remove(history_num);
+            remove(investigation_num);
+            remove(nature_num);
+            remove(religion_num);
+            remove(animalhandling_num);
+            remove(insight_num);
+            remove(medicine_num);
+            remove(perception_num);
+            remove(survival_num);
+            remove(deception_num);
+            remove(intimidation_num);
+            remove(performance_num);
+            remove(persuasion_num);
+
+            remove(athletics_checkbox);
+            remove(acrobatics_checkbox);
+            remove(sleightofhand_checkbox);
+            remove(stealth_checkbox);
+            remove(arcana_checkbox);
+            remove(history_checkbox);
+            remove(investigation_checkbox);
+            remove(nature_checkbox);
+            remove(religion_checkbox);
+            remove(animalhandling_checkbox);
+            remove(insight_checkbox);
+            remove(medicine_checkbox);
+            remove(perception_checkbox);
+            remove(survival_checkbox);
+            remove(deception_checkbox);
+            remove(intimidation_checkbox);
+            remove(performance_checkbox);
+            remove(persuasion_checkbox);
+
+            remove(other_proficiencies_languages);
+            remove(attacks_spellcasting);
+            remove(features_traits);
+            remove(equipment);
+
+            remove(armor_class);
+            remove(initiative);
+            remove(speed);
+            remove(current_hit_points);
+            remove(temp_hit_points);
+            remove(current_hit_point_max);
+            remove(total_hit_dice);
+            remove(hit_dice);
+            remove(death_saves);
+
+            add(traits_info_scroll);
+            information.setBounds(15, 15, 75, 20);
+            information.setText("Exit");
+
+        }
     }
 
 
     public void pullFromCharacter(){
+
         player_name.setText(character.getPlayerName());
         character_name.setText(character.getCharacterName());
         class_level.setText(character.getClassName() + " " + character.getLevel());
@@ -478,19 +638,18 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
 
         //proficiencies
 
-        for(int i = 0; i < checkboxes.size(); i++){
+        for (int i = 0; i < checkboxes.size(); i++) {
             JCheckBox tempCheckbox = checkboxes.get(i);
             DBTextAreaComponent tempTextarea = savesAndSkills.get(i);
 
-            tempCheckbox.addItemListener(new ItemListener(){
+            tempCheckbox.addItemListener(new ItemListener() {
                 @Override
-                public void itemStateChanged(ItemEvent e){
-                    if(e.getStateChange() == ItemEvent.SELECTED){
+                public void itemStateChanged(ItemEvent e) {
+                    if (e.getStateChange() == ItemEvent.SELECTED) {
 
                         int tempNum = Integer.parseInt(tempTextarea.getText()) + Integer.parseInt(proficiency_bonus.getText());
                         tempTextarea.setText("" + tempNum);
-                    }
-                    else{
+                    } else {
                         int tempNum = Integer.parseInt(tempTextarea.getText()) - Integer.parseInt(proficiency_bonus.getText());
                         tempTextarea.setText("" + tempNum);
                     }
@@ -498,10 +657,16 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
             });
         }
         boolean[] temp = character.getProfSavingThrows();
-        for(int i = 0; i < temp.length; i++){
-            if(temp[i])
+        for (int i = 0; i < temp.length; i++) {
+            if (temp[i])
                 checkboxes.get(i).setSelected(true);
         }
+
+
+
+        adjustFeatsandTraitsDesc();
+
+
 
 
     }
@@ -516,15 +681,15 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
         character.setInitiative(character.getMod(DEX));
         initiative.setText("" + character.getMod(DEX));
         total_hit_dice.setText("" + character.getLevel());
-        for(int i = 0; i < checkboxes.size(); i ++){
+        for (int i = 0; i < checkboxes.size(); i++) {
             JCheckBox temp = checkboxes.get(i);
             DBTextAreaComponent tempTextarea = savesAndSkills.get(i);
-            if(temp.isSelected()){
+            if (temp.isSelected()) {
                 int tempNum = Integer.parseInt(tempTextarea.getText()) + Integer.parseInt(proficiency_bonus.getText());
                 tempTextarea.setText("" + tempNum);
             }
         }
-
+        adjustFeatsandTraitsDesc();
     }
 
     private void updateAbilityScores(){
@@ -588,6 +753,25 @@ public class CharacterSheet extends JPanel implements MouseListener, KeyListener
             tempFeatTrait.append("\n");
         }
         features_traits.setText(tempFeatTrait.toString());
+    }
+    private void adjustFeatsandTraitsDesc(){
+        StringBuilder tempFeatTraitDesc = new StringBuilder();
+        tempFeatTraitDesc.append("TRAITS: \n");
+        for(int i = 0; i < character.getTraits().size(); i++){
+            tempFeatTraitDesc.append(character.getTraits().get(i).getName());
+            tempFeatTraitDesc.append("\n");
+            tempFeatTraitDesc.append(character.getTraits().get(i).getDescription());
+            tempFeatTraitDesc.append("\n\n");
+        }
+
+        tempFeatTraitDesc.append("\nFEATURES: \n");
+        for(int i = 0; i < character.getCurrentFeatures().size(); i++){
+            tempFeatTraitDesc.append(character.getCurrentFeatures().get(i).getName());
+            tempFeatTraitDesc.append("\n");
+            tempFeatTraitDesc.append(character.getCurrentFeatures().get(i).getDescription());
+            tempFeatTraitDesc.append("\n\n");
+        }
+        traits_info.setText(tempFeatTraitDesc.toString());
     }
 
     public String getCharactername(){
