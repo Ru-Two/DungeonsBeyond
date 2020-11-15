@@ -21,6 +21,8 @@ public final class PreloadedImages {
     public static final Icon checkbox_selected = new ImageIcon("src/graphics/selected.png");
 
     //Positions of everything on the sheet
+    public static final Rectangle traits_text_box = new Rectangle(15,45, 755, (int)(windowSize.getHeight() - 100));
+    
     public static final Rectangle character_name_position = new Rectangle(119, 146, 570, 65);
     public static final Rectangle class_level_position = new Rectangle(739,105,303,50);
     public static final Rectangle background_position = new Rectangle(1048,103,259,50);
