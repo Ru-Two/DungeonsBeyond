@@ -2,6 +2,7 @@ package main;
 
 import characterclass.*;
 import characterrace.*;
+//import org.junit.Test;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
