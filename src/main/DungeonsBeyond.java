@@ -243,6 +243,13 @@ public class DungeonsBeyond extends JFrame implements ActionListener, KeyListene
         }
     }
 
+    public String getCurrentPlayerName(){
+        if (currentSheetIndex >= 0 && allSheets.size() > 0){
+            return allSheets.get(currentSheetIndex).getCharactername();
+        }
+        return "null";
+    }
+
     //ActionListener function
 
     public void actionPerformed(ActionEvent evt){
