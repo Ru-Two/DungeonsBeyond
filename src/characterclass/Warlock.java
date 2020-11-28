@@ -7,7 +7,7 @@ public class Warlock extends CharacterClass{
         super("Warlock", 8);
 
         savingThrows[0] = WIS;
-        savingThrows[0] = CHA;
+        savingThrows[1] = CHA;
 
         spellcasterAbility = CHA;
 		
