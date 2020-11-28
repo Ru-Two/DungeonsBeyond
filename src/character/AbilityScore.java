@@ -34,18 +34,22 @@ public class AbilityScore {
 
     public void setBase(int base){
         this.base = base;
+        recalculate();
     }
 
     public void setRacialBonus(int racialBonus) {
         this.racialBonus = racialBonus;
+        recalculate();
     }
 
     public void setMiscBonus(int miscBonus) {
         this.miscBonus = miscBonus;
+        recalculate();
     }
 
     public void setOtherModifier(int otherModifier) {
         this.otherModifier = otherModifier;
+        recalculate();
     }
 
     public String getName() {
@@ -56,13 +60,21 @@ public class AbilityScore {
         return constName;
     }
 
-    public int getScore(){
+    private void recalculate(){
         total = (base + racialBonus + miscBonus + otherModifier);
+    }
+
+    public int getScore(){
         return total <= 20 ? total : 20;
     }
 
-    public void setScore(int num){
-        total = num;
+    public <T> void setScore(T num){
+        try {
+            total = (int) num;
+        }
+        catch(Exception e){
+            System.out.println("Invalid Input");
+        }
     }
 
     public int getModifier(){
