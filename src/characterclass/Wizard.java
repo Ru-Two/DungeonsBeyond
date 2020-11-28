@@ -7,7 +7,7 @@ public class Wizard extends CharacterClass {
         super("Wizard", 8);
 
         savingThrows[0] = INT;
-        savingThrows[0] = WIS;
+        savingThrows[1] = WIS;
 
         spellcasterAbility = INT;
         
