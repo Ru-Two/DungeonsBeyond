@@ -7,7 +7,7 @@ public class Sorcerer extends CharacterClass {
 		super("Sorcerer", 8);
 
 		savingThrows[0] = CON;
-		savingThrows[0] = CHA;
+		savingThrows[1] = CHA;
 
 		spellcasterAbility = CHA;
 
